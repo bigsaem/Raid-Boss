@@ -1,0 +1,53 @@
+header{
+  text-align: center;
+  background-color: green;
+  font-size:20pt;
+  color:white;
+  padding: 1px;
+}
+
+div img{
+  width:40%;
+  margin:4%;
+  
+}
+body{
+  background-color:lightpink;
+  margin:0;
+  
+  
+}
+
+div > p{
+  background-color:firebrick;
+  margin:0;
+  padding:1%;
+  text-align:center;
+  font-size:20pt;
+  color:white;
+}
+
+#bcit{
+  width:20%;
+  float:left;
+  margin-top:1%;
+  margin-bottom:0;
+}
+#loveFood{
+  width:15%;
+  float:left;
+  margin-top:-1%;
+  margin-bottom:-1%;
+}
+#metro{
+  width:30%;
+  margin-top:5%;
+  
+  
+}
+
+#footer{
+  background-color:darkred;
+  margin-top:10%;
+}
+
