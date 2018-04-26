@@ -46,8 +46,22 @@ div > p{
   
 }
 
+#basket {
+  background-color: yellow;
+
+}
+
+#basket img {
+  width: 10%;
+  display: none;
+}
+
+#arrow {
+  float: right;
+  display: none;
+}
+
 #footer{
   background-color:darkred;
-  margin-top:10%;
 }
 
