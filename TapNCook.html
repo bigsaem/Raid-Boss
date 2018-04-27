@@ -4,6 +4,7 @@
     <title> TapNCook </title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="basicStyle.css"/>
+
   </head>
     
   <body>
@@ -13,21 +14,69 @@
     
     
     
-    <div>
+    <div id= "whole">
       <p>What do you want to use?</p>
-      <img src = "icons/carrot.png"/>
-      <img src = "icons/lettuce.png"/>
-      <img src = "icons/cheese%20(1).png"/>
-      <img src = "icons/banana.png"/>
+		  	<div class="icons"><img id = "carrot" src = "icons/carrot.png" alt = "broken"/>
+			   <p>Carrot</p></div>
+		  	<div class="icons"><img id = "lettuce" src = "icons/lettuce.png" alt = "broken"/>
+			   <p>Lettuce</p></div>
+		  	<div class="icons"><img id = "cheese" src = "icons/cheese%20(1).png" alt = "broken"/>
+			   <p>Cheese</p></div>
+		  	<div class="icons"><img id = "banana" src = "icons/banana.png" alt = "broken"/>
+			   <p>Banana</p></div>
+
+    <div id = "basket">
+      <p>Basket</p>
+      <img id = "bcarrot" class = "dhide" src = "icons/carrot.png" alt = "broken"/>
+      <img id = "blettuce" class = "dhide" src = "icons/lettuce.png" alt = "broken"/>
+      <img id = "bcheese" class = "dhide" src = "icons/cheese%20(1).png" alt = "broken"/>
+      <img id = "bbanana" class = "dhide" src = "icons/banana.png" alt = "broken"/>
+      <img id = "arrow" src = "icons/whitearrow.png"/>
     </div>
-    
+
     <div id="footer">
-      <img src = "logos/192px-BCITwordmark.svg.png" id="bcit"/>
-      <img src = "logos/logo_og.png" id="loveFood"/>
-      <img src = "logos/MV-DefaultLockup_RGB_05157.png" id="metro"/>
+      <a href = "https://www.bcit.ca/" target="blank">
+        <img src = "logos/192px-BCITwordmark.svg.png" id = "bcit"/>
+      </a>
+      <img src = "logos/logo_og.png" id = "loveFood"/>
+      <img src = "logos/MV-DefaultLockup_RGB_05157.png" id = "metro"/>
     </div>
     
-   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script>
+      /*<![CDATA[*/
+      $(document).ready(function() {
+
+          $("#carrot").click(function() {
+              $("#bcarrot").show(500);
+              $("#carrot").css("filter" , "grayscale(100%)");
+              $("#arrow").show(500);
+          });
+          $("#lettuce").click(function() {
+              $("#blettuce").show(500);
+              $("#lettuce").css("filter" , "grayscale(100%)");
+              $("#arrow").show(500);
+          });
+          $("#cheese").click(function() {
+              $("#bcheese").show(500);
+              $("#cheese").css("filter" , "grayscale(100%)");
+              $("#arrow").show(500);
+          });
+          $("#banana").click(function() {
+              $("#bbanana").show(500);
+              $("#banana").css("filter" , "grayscale(100%)");
+              $("#arrow").show(500);
+          });
+          $("#arrow").click(function(){
+            $("#whole").hide(500);
+            $("#black").show(500);
+          });
+
+      });
+    
+  /*]]>*/
+  </script>
     
     
 
