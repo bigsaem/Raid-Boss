@@ -4,6 +4,7 @@
     <title> TapNCook </title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="basicStyle.css"/>
+
   </head>
     
   <body>
@@ -15,10 +16,14 @@
     
     <div id= "whole">
       <p>What do you want to use?</p>
-      <img id = "carrot" src = "icons/carrot.png" alt = "broken"/>
-      <img id = "lettuce" src = "icons/lettuce.png" alt = "broken"/>
-      <img id = "cheese" src = "icons/cheese%20(1).png" alt = "broken"/>
-      <img id = "banana" src = "icons/banana.png" alt = "broken"/>
+		  	<div class="icons"><img id = "carrot" src =    "icons/carrot.png" alt = "broken"/>
+			   <p>Carrot</p></div>
+		  	<div class="icons"><img id = "lettuce" src =      "icons/lettuce.png" alt = "broken"/>
+			   <p>Lettuce</p></div>
+		  	<div class="icons"><img id = "cheese" src =  "icons/cheese%20(1).png" alt = "broken"/>
+			   <p>Cheese</p></div>
+		  	<div class="icons"><img id = "banana" src =  "icons/banana.png" alt = "broken"/>
+			   <p>Banana</p></div>
 
     <div id = "basket">
       <p>Basket</p>
@@ -46,6 +51,7 @@
           $("#carrot").click(function() {
               $("#bcarrot").show(500);
               $("#carrot").css("filter" , "grayscale(100%)");
+						  $("#carrot").
               $("#arrow").show(500);
           });
           $("#lettuce").click(function() {
