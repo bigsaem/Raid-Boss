@@ -1,9 +1,10 @@
 header{
   text-align: center;
   background-color: green;
-  font-size:20pt;
+  font-size:50pt;
   color:white;
   padding: 1px;
+  font-family: 'Lily Script One', cursive;
 }
 
 .icons {
@@ -28,11 +29,12 @@ header{
 }
 
 div img{
-  width:40%;
+  width:100%;
 	margin: 4%;
   
 }
 body{
+  font-family: 'PT Sans', sans-serif;
   background-color:lightpink;
 	background: linear-gradient(to right, lightpink, white, lightpink);
   margin:0;
@@ -93,5 +95,64 @@ div > p{
 }
 
 #whole {
+  text-align: center;
+}
+#subhead {
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+#headAU{
+  text-align: center;
+  background-color: green;
+  font-size:20pt;
+  color:white;
+}
+
+#footerAU{
+	background-color: rgba(255, 10, 10, 1);
+	display:block;
+	position: absolute;
+	bottom:0;
+	right:0;
+	left:0;
+	text-align: center;		
+  background-color:darkred;
+	flex-shrink: 0;
+}
+
+#AU {
+	background-color: green;
+	color: white;
+	font-size: 14pt;
+	padding: 2px;
+}
+#AU > p {
+	text-align: left;
+	font-size: 14pt;
+	background-color: green;
+}
+
+.title {
+	background-color: rgba(255, 255, 255, 0.25);
+	border-style: hidden;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	
+}
+
+/*RECIPES PAGE CSS */
+.images{
+  max-height: 500px important!;
+  max-width: 500px important!;
+  width: 200% important!;
+  height: 200% ;
+}
+
+.col-sm-4 > p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#menu{
   text-align: center;
 }

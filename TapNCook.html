@@ -8,12 +8,16 @@
   </head>
     
   <body>
+
+<!-- Bootstrap stuff!-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <header>
       <p>Tap'N CooK</p>
     </header>
-    
-    
-    
+  
     <div id= "whole">
       <p>What do you want to use?</p>
 		  	<div class="icons"><img id = "carrot" src = "icons/carrot.png" alt = "broken"/>
@@ -41,47 +45,164 @@
       <img src = "logos/logo_og.png" id = "loveFood"/>
       <img src = "logos/MV-DefaultLockup_RGB_05157.png" id = "metro"/>
     </div>
+    </div>
     
+    <div id = "menu">
+        <div class="col-sm-4">
+            <p><a href='#'class="recipeID"></p></a><img class = "images">
+                <p class = "recipeNumber"></p>
+            <p><a href='#'class="recipeID"></p></a><img class = "images"> 
+              <p class = "recipeNumber"></p>
+            <p><a href='#'class="recipeID"></p></a><img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
+              <p class = "recipeNumber"></p>
+            </div>
+            <div class="col-sm-4">
+            <p><a href='#'class="recipeID"></p></a><img class = "images"> 
+              <p class = "recipeNumber"></p>
+            <p><a href='#'class="recipeID"></p></a><img class = "images">
+             <p class = "recipeNumber"></p>
+            <p><a href='#'class="recipeID"></p></a><img class = "images">
+             <p class = "recipeNumber"></p>
+          </div>
+
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script>
       /*<![CDATA[*/
       $(document).ready(function() {
 
+          var ingredients = ["", "", "", "", ""];
+          var count = 0;
           $("#carrot").click(function() {
               $("#bcarrot").show(500);
               $("#carrot").css("filter" , "grayscale(100%)");
               $("#arrow").show(500);
+              ingredients[count] = "carrot";
+              count++;
           });
           $("#lettuce").click(function() {
               $("#blettuce").show(500);
               $("#lettuce").css("filter" , "grayscale(100%)");
               $("#arrow").show(500);
+              ingredients[count] = "lettuce";
+              count++;
           });
           $("#cheese").click(function() {
               $("#bcheese").show(500);
               $("#cheese").css("filter" , "grayscale(100%)");
               $("#arrow").show(500);
+              ingredients[count] = "cheese";
+              count++;
           });
           $("#banana").click(function() {
               $("#bbanana").show(500);
               $("#banana").css("filter" , "grayscale(100%)");
               $("#arrow").show(500);
+              ingredients[count] = "banana";
+              count++;
           });
           $("#arrow").click(function(){
             $("#whole").hide(500);
-            $("#black").show(500);
+           // $("#black").show(500);
+
+            $.ajax({
+              url: "GetRecipeID.php",
+              dataType: "json",
+              type: "GET",
+              data: { output: 'json' , ingredients: ingredients },
+              success: function (data) {
+              var items = data;
+
+              var x = 0;
+
+              //Loops through all the recipeID classes, and sets the recipe title for each.
+              $('.recipeID').each(function (i, $this) {
+                if ((items["body"][x]) != null) {
+                  $(this).text(items["body"][x]["title"] /*+ " and ID: " + items["body"][x]["id"]*/);
+                  $(this).attr('id', items["body"][x]["id"]);
+                }
+                x++;
+              });
+
+              x = 0;
+              
+              //loops through all the recipeID classes, and sets the images for each
+              $('.images').each(function (i, $this) {
+                if ((items["body"][x]) != null) {
+                  $(this).text(items["body"][x]["image"]);
+                  $(this).attr('src', items["body"][x]["image"]);
+                }
+                x++;
+              }); 
+
+              x = 0;
+              //Loops through all the recipeNumber classes (paragraph element), and changes the class name
+              //to the recipe id for future reference
+              $('.recipeNumber').each(function (i, $this) {
+                if ((items["body"][x]) != null) {
+                  $(this).attr('class', items["body"][x]["id"]);
+                }
+                x++;
+              });
+
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                $("#p1").text(textStatus + " " + errorThrown
+                  + jqXHR.responseText);
+              }
+            });
           });
 
+          $('.recipeID').click(function (e) {
+          // don't allow the anchor to visit the link
+          e.preventDefault();
+          console.log('clicked to get recipe info');
+          var clickedElement = this;
+
+          $.ajax({
+            url: "GetRecipeInfo.php",
+            dataType: "json",
+            type: "GET",
+            data: { output: 'json', id: $(this).attr("id") },
+            success: function (data) {
+
+              var dataBody = data["body"][0];
+
+              //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
+              $("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
+              var ingredientsNeeded = "";
+              for (var i = 0; i < dataBody["steps"].length; i++ ){
+                for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++){
+                  if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1 ){
+                    ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
+                  }
+                  else {
+                    console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+                  }
+                }
+              } 
+              $("." + $(clickedElement).attr("id")).append(ingredientsNeeded);
+              $("." + $(clickedElement).attr("id")).append("</br>");
+
+              //APPENDS THE RECIPE STEPS
+              $("." + $(clickedElement).attr("id")).append("<b>Here is the list of steps:</b> </br>" );
+              for(var i = 0; i < dataBody["steps"].length; i++  ){
+                $("." + $(clickedElement).attr("id")).append("Step " + (parseInt(i) + 1) + ": " + dataBody["steps"][i]["step"] + "</br>");
+              }
+              
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              $("#p1").text(textStatus + " " + errorThrown
+                + jqXHR.responseText);
+            }
+          });
+        });
       });
     
   /*]]>*/
   </script>
-    
-    
-
-
- 
     
   </body>
 </html>

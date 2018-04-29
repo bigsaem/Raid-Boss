@@ -1,0 +1,7 @@
+{
+    "require-dev": {
+    },
+    "require": {
+        "mashape/unirest-php": "^3.0"
+    }
+}
