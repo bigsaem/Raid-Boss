@@ -28,13 +28,18 @@
 			   <p>Cheese</p></div>
 		  	<div class="icons"><img id = "banana" src = "icons/banana.png" alt = "broken"/>
 			   <p>Banana</p></div>
-
+            <div class="icons"><img id = "tomato" src = "icons/tomato.png" alt = "broken"/>
+			   <p>Tomato</p></div>
+            <div class="icons"><img id = "bread" src = "icons/toast.png" alt = "broken"/>
+			   <p>Bread</p></div>
     <div id = "basket">
       <p>Basket</p>
       <img id = "bcarrot" class = "dhide" src = "icons/carrot.png" alt = "broken"/>
       <img id = "blettuce" class = "dhide" src = "icons/lettuce.png" alt = "broken"/>
       <img id = "bcheese" class = "dhide" src = "icons/cheese%20(1).png" alt = "broken"/>
       <img id = "bbanana" class = "dhide" src = "icons/banana.png" alt = "broken"/>
+      <img id = "btomato" class = "dhide" src = "icons/tomato.png" alt = "broken"/>
+      <img id = "bbread" class = "dhide" src = "icons/toast.png" alt = "broken"/>
       <img id = "arrow" src = "icons/whitearrow.png"/>
     </div>
 
@@ -71,7 +76,7 @@
     <script>
       /*<![CDATA[*/
       $(document).ready(function() {
-
+          
           var ingredients = ["", "", "", "", ""];
           var count = 0;
           $("#carrot").click(function() {
@@ -80,6 +85,7 @@
               $("#arrow").show(500);
               ingredients[count] = "carrot";
               count++;
+              console.log(ingredients + count);
           });
           $("#lettuce").click(function() {
               $("#blettuce").show(500);
@@ -87,6 +93,7 @@
               $("#arrow").show(500);
               ingredients[count] = "lettuce";
               count++;
+            console.log(ingredients + count);
           });
           $("#cheese").click(function() {
               $("#bcheese").show(500);
@@ -94,6 +101,7 @@
               $("#arrow").show(500);
               ingredients[count] = "cheese";
               count++;
+            console.log(ingredients + count);
           });
           $("#banana").click(function() {
               $("#bbanana").show(500);
@@ -101,7 +109,176 @@
               $("#arrow").show(500);
               ingredients[count] = "banana";
               count++;
+            console.log(ingredients + count);
           });
+          $("#tomato").click(function() {
+              $("#btomato").show(500);
+              $("#tomato").css("filter" , "grayscale(100%)");
+              $("#arrow").show(500);
+              ingredients[count] = "tomato";
+              count++;
+            console.log(ingredients + count);
+          });
+          $("#bread").click(function() {
+              $("#bbread").show(500);
+              $("#bread").css("filter" , "grayscale(100%)");
+              $("#arrow").show(500);
+              ingredients[count] = "bread";
+              count++;
+            console.log(ingredients + count);
+          });
+        /*****************************************/
+        /*********removal functionality **********/
+        /*****************************************/
+        $("#bcarrot").click(function() {
+              count--;
+              $("#bcarrot").hide(500);
+              $("#carrot").css("filter" , "");
+              for(let i = 0; i < ingredients.length;i++) {
+                if (ingredients[i] == "carrot"){
+                  ingredients[i]="";
+                  var removedIndex = i;
+                  console.log(removedIndex);
+                }
+              }
+              for(var i = ingredients.length - 1; i > removedIndex;i--) {
+                console.log(ingredients[i] + count);
+                if (ingredients[i] != ""){
+                  ingredients[removedIndex] = ingredients[i];
+                  ingredients[i] = "";
+                  break;
+                }
+              }
+              console.log(ingredients);
+              removeArrow();
+          });
+          $("#blettuce").click(function() {
+            count--;
+              $("#blettuce").hide(500);
+              $("#lettuce").css("filter" , "");
+              for(let i = 0; i < ingredients.length;i++) {
+                if (ingredients[i] == "lettuce"){
+                  ingredients[i]="";
+                  var removedIndex = i;
+                  console.log(removedIndex);
+                }
+              }
+              for(var i = ingredients.length - 1; i > removedIndex;i--) {
+                console.log(ingredients[i] + count);
+                if (ingredients[i] != ""){
+                  ingredients[removedIndex] = ingredients[i];
+                  ingredients[i] = "";
+                  break;
+                }
+              }
+              removeArrow();
+            console.log(ingredients);
+          });
+          $("#bcheese").click(function() {
+            count--;
+              $("#bcheese").hide(500);
+              $("#cheese").css("filter" , "");
+              for(let i = 0; i < ingredients.length;i++) {
+                if (ingredients[i] == "cheese"){
+                  ingredients[i]="";
+                  var removedIndex = i;
+                  console.log(removedIndex);
+                }
+              }
+              for(var i = ingredients.length - 1; i > removedIndex;i--) {
+                console.log(ingredients[i] + count);
+                if (ingredients[i] != ""){
+                  ingredients[removedIndex] = ingredients[i];
+                  ingredients[i] = "";
+                  break;
+                }
+              }
+              removeArrow();
+            console.log(ingredients);
+          });
+          $("#bbanana").click(function() {
+            count--;
+              $("#bbanana").hide(500);
+              $("#banana").css("filter" , "");
+              for(let i = 0; i < ingredients.length;i++) {
+                if (ingredients[i] == "banana"){
+                  ingredients[i]="";
+                  var removedIndex = i;
+                  console.log(removedIndex);
+                }
+              }
+              for(var i = ingredients.length - 1; i > removedIndex;i--) {
+                console.log(ingredients[i] + count);
+                if (ingredients[i] != ""){
+                  ingredients[removedIndex] = ingredients[i];
+                  ingredients[i] = "";
+                  break;
+                }
+              }
+              removeArrow();
+            console.log(ingredients);
+          });
+          $("#btomato").click(function() {
+            count--;
+              $("#btomato").hide(500);
+              $("#tomato").css("filter" , "");
+              for(let i = 0; i < ingredients.length;i++) {
+                if (ingredients[i] == "tomato"){
+                  ingredients[i]="";
+                  var removedIndex = i;
+                  console.log(removedIndex);
+                }
+              }
+              for(var i = ingredients.length - 1; i > removedIndex;i--) {
+                console.log(ingredients[i] + count);
+                if (ingredients[i] != ""){
+                  ingredients[removedIndex] = ingredients[i];
+                  ingredients[i] = "";
+                  break;
+                }
+              }
+              removeArrow();
+            console.log(ingredients);
+          });
+          $("#bbread").click(function() {
+            count--;
+              $("#bbread").hide(500);
+              $("#bread").css("filter" , "");
+              for(let i = 0; i < ingredients.length;i++) {
+                if (ingredients[i] == "bread"){
+                  ingredients[i]="";
+                  var removedIndex = i;
+                  console.log(removedIndex);
+                }
+              }
+              for(var i = ingredients.length - 1; i > removedIndex;i--) {
+                console.log(ingredients[i] + count);
+                if (ingredients[i] != ""){
+                  ingredients[removedIndex] = ingredients[i];
+                  ingredients[i] = "";
+                  break;
+                }
+              }
+              removeArrow();
+            console.log(ingredients);
+          });
+          var removeArrow = function(){
+            var isEmpty = true;
+            for (let i = 0 ; i < ingredients.length; i++){
+              if (ingredients[i] != "") {
+                isEmpty = false;
+                break;
+              } else {
+                isEmpty = true;
+              }
+            }
+            if(isEmpty == true){
+                $("#arrow").hide(500);
+              }
+          }
+        /*****************************************/
+        /*********removal functionality end*******/
+        /*****************************************/
           $("#arrow").click(function(){
             $("#whole").hide(500);
            // $("#black").show(500);

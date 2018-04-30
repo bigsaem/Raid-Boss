@@ -1,0 +1,30 @@
+Proposed method to obtain the recipe name, ingredients needed, and instructions from API.
+Assumptions: user can only select a max of 5 ingredients (any more than that will no longer be simple recipes). 
+This can be modified to work with vararg I think, but for now we need a pre-determined # of max ingredients for this to work.
+
+1) Create an array of String in Javascript of the max size setting everything to "". 
+Every time the user selects an ingredient, we will add the ingredient as a string to the array
+For example, if the user selects banana as first ingredient, it will be stored as array[0] = "banana". 
+If the user doesn't select up to the max # of ingredients, it will simply be stored to "". 
+
+2) Once the user presses the button to get the recommended recipes, we will send the JS array to PHP (as String array) (how?)
+refer to: https://stackoverflow.com/questions/5035547/pass-javascript-array-php
+Pressing the button will also trigger an Ajax call, that returns JSON, similar to lab 7. 
+
+3) Once we have the array of ingredients in PHP, since the first api request uses the url in the string form of:
+"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=bread%2C+banana&limitLicense=false&number=5&ranking=2"
+Using a for loop for the array, we use string concatenation with the ingredients given ("...ingredients=" . "array[0]" . + "%2+" . "array[1]" ....) to get the url in String form.
+If the user entered less than max ingredients, it will simply concat "" which doesnt affect url (hence why we need to set max ingredients).
+
+4) Call the API using the url we generated. This api request will return a 'id' and 'human-readable name' of the recipe, among other stuff we don't really need.
+The 'id' is the non-human readable name of the recipe, and we will store the id in a variable, and use it in the next step.
+The 'human-readable name' is what we can use to print out the name of the recipe.
+
+5) Create the second API request using the 'id' obtained in the previous step in a similar way to step 3.
+This step is mostly done. 
+
+6) Call the second API request we generated. This will return the recipe's instructions and ingredients. 
+Format and display the data to the webpage as JS/JSON.
+This data will be what the Ajax call actually returns. Every other step between this and step 2 is done in the PHP file during the call. 
+
+7) We done. 
