@@ -38,47 +38,56 @@
   <div id="whole">
     <p id="subhead">What do you want to use?</p>
     <div class="icons">
-      <img id="carrot" src="icons/carrot.png" alt="broken" />
+      <img id="carrot" src="icon/carrot.png" alt="broken" />
       <p>Carrot</p>
     </div>
     <div class="icons">
-      <img id="lettuce" src="icons/lettuce.png" alt="broken" />
+      <img id="lettuce" src="icon/lettuce.png" alt="broken" />
       <p>Lettuce</p>
     </div>
     <div class="icons">
-      <img id="cheese" src="icons/cheese%20(1).png" alt="broken" />
+      <img id="cheese" src="icon/cheese%20(1).png" alt="broken" />
       <p>Cheese</p>
     </div>
     <div class="icons">
-      <img id="banana" src="icons/banana.png" alt="broken" />
+      <img id="banana" src="icon/banana.png" alt="broken" />
       <p>Banana</p>
     </div>
     <div class="icons">
-       <img id = "tomato" src = "icons/tomato.png" alt = "broken"/>
+       <img id = "tomato" src = "icon/tomato.png" alt = "broken"/>
 			 <p>Tomato</p></div>
     <div class="icons">
-       <img id = "bread" src = "icons/toast.png" alt = "broken"/>
+       <img id = "bread" src = "icon/toast.png" alt = "broken"/>
 			 <p>Bread</p>
     </div>
     <div id="basket">
       <p>Basket</p>
-      <img id="bcarrot" class="dhide" src="icons/carrot.png" alt="broken" />
-      <img id="blettuce" class="dhide" src="icons/lettuce.png" alt="broken" />
-      <img id="bcheese" class="dhide" src="icons/cheese%20(1).png" alt="broken" />
-      <img id="bbanana" class="dhide" src="icons/banana.png" alt="broken" />
-      <img id = "btomato" class = "dhide" src = "icons/tomato.png" alt = "broken"/>
-      <img id = "bbread" class = "dhide" src = "icons/toast.png" alt = "broken"/>
-      <img id="arrow" src="icons/whitearrow.png" />
+      <img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
+      <img id="blettuce" class="dhide" src="icon/lettuce.png" alt="broken" />
+      <img id="bcheese" class="dhide" src="icon/cheese%20(1).png" alt="broken" />
+      <img id="bbanana" class="dhide" src="icon/banana.png" alt="broken" />
+      <img id = "btomato" class = "dhide" src = "icon/tomato.png" alt = "broken"/>
+      <img id = "bbread" class = "dhide" src = "icon/toast.png" alt = "broken"/>
+      <img id="arrow" src="icon/whitearrow.png" />
     </div>
 
     <div id="footer">
-      <a href="https://www.bcit.ca/" target="blank">
-        <img src="logos/192px-BCITwordmark.svg.png" id="bcit" />
+      <div id="bcitdiv">
+      <a href = "https://www.bcit.ca/" target="blank">
+        <img src = "logos/192px-BCITwordmark.svg.png" id = "bcit"/>
       </a>
-      <img src="logos/logo_og.png" id="loveFood" />
-      <img src="logos/MV-DefaultLockup_RGB_05157.png" id="metro" />
+      </div>  
+      <div id="loveFooddiv">
+      <a href="https://www.lovefoodhatewaste.com/" target="blank">
+      <img src = "logos/logo_og.png" id = "loveFood"/>
+      </a>
+      </div>
+      <div id="metroVandiv">
+      <a href="http://www.metrovancouver.org/" target="blank">
+      <img src = "logos/MV-DefaultLockup_RGB_05157.png" id = "metro"/>
+      </a>
+      </div>
     </div>
-  </div>
 
 
   <div id = "menu">
@@ -310,7 +319,7 @@
         /*****************************************/
       $("#arrow").click(function () {
         $("#whole").hide(500);
-        // $("#black").show(500);
+        $("#menu").show(500);
 
         $.ajax({
           url: "GetRecipeID.php",
