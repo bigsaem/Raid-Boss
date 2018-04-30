@@ -143,14 +143,11 @@ div > p{
 
 /*RECIPES PAGE CSS */
 .images{
-  max-height: 500px important!;
-  max-width: 500px important!;
-  width: 200% important!;
-  height: 200% ;
+
 }
 
 .col-sm-4 > p {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
