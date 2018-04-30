@@ -111,10 +111,11 @@ div > p{
 #footerAU{
 	background-color: rgba(255, 10, 10, 1);
 	display:block;
-	position: absolute;
+	/*position: absolute;
 	bottom:0;
 	right:0;
-	left:0;
+  left:0;
+  */
 	text-align: center;		
   background-color:darkred;
 	flex-shrink: 0;
