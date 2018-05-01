@@ -94,18 +94,24 @@
       <div class="row">
       <div class="col-sm-4">
           <p><a href='#'class="recipeID"></p></a><img class = "images">
+              <p class = "recipeStats"></p>
               <p class = "recipeNumber"></p>
           <p><a href='#'class="recipeID"></p></a><img class = "images"> 
+             <p class = "recipeStats"></p>
             <p class = "recipeNumber"></p>
           <p><a href='#'class="recipeID"></p></a><img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
+            <p class = "recipeStats"></p>
             <p class = "recipeNumber"></p>
           </div>
           <div class="col-sm-4">
           <p><a href='#'class="recipeID"></p></a><img class = "images"> 
+             <p class = "recipeStats"></p>
             <p class = "recipeNumber"></p>
           <p><a href='#'class="recipeID"></p></a><img class = "images">
+            <p class = "recipeStats"></p>
            <p class = "recipeNumber"></p>
           <p><a href='#'class="recipeID"></p></a><img class = "images">
+           <p class = "recipeStats"></p>
            <p class = "recipeNumber"></p>
         </div>
       </div>
@@ -364,6 +370,20 @@
               x++;
             });
 
+            x=0;
+            //Loops through all the recipeStats classes (paragraph element that holds stats (time, dietary needs))
+            //, and changes the class name
+            //to "statsrecipe id" for future reference
+            $('.recipeStats').each(function (i, $this) {
+              if ((items["body"][x]) != null) {
+                console.log((items["body"][x]));
+                $(this).attr('class', "stats_"+items["body"][x]["id"]);
+                //$(this).addClass(items["body"][x]["id"]);
+                //$(this).attr('src', items["body"][x]["image"]);
+              }
+              x++;
+            });
+
           },
           error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(textStatus + " " + errorThrown +
@@ -411,7 +431,48 @@
               $("." + $(clickedElement).attr("id")).append("Step " + (parseInt(i) + 1) + ": " + dataBody[
                 "steps"][i]["step"] + "</br>");
             }
+            
+            //////NEW CHANGESS (TIME FEATURE)  VIA NESTED AJAX CALL/////
+      $.ajax({
+        url: "GetRecipeAdditionalInfo.php",
+        dataType: "json",
+        type: "GET",
+        data: { id: $(clickedElement).attr("id") },
+        success: function (response) {
+          var info = response;
+          //do stuff
+          console.log("ready in "+ info["body"]["readyInMinutes"] + " minutes");
+          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
+          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
+          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
+          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
 
+          //I am appending it to the div with class ".stats_RECIPEID" 
+          $(".stats_" + $(clickedElement).attr("id")).append("Estimated Time Needed: " + info["body"]["readyInMinutes"] + " minutes. </br>");
+
+          var infoBody = info["body"];
+
+          if (infoBody["vegetarian"] == "true"){
+            $(".stats_" + $(clickedElement).attr("id")).append("For Vegetarians! </br>");
+          }
+          if (infoBody["vegan"] == "true"){
+            $(".stats_" + $(clickedElement).attr("id")).append("For Vegans! </br>");
+          }
+          if (infoBody["glutenFree"] == "true"){
+            $(".stats_" + $(clickedElement).attr("id")).append("Gluten Free! </br>");
+          }
+          if (infoBody["dairyFree"] == "true"){
+            $(".stats_" + $(clickedElement).attr("id")).append("Dairy Free! </br>");
+          }
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log("ajax failed");
+          console.log(textStatus + " " + errorThrown
+        + jqXHR.responseText);
+         }
+        
+      });
 
           },
           error: function (jqXHR, textStatus, errorThrown) {
