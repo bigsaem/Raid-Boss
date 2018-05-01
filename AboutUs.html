@@ -1,54 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title> About Us </title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="basicStyle.css"/>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 
-  </head>
-	
-	<body>
-	  <header id="headAU">
-      <p>Tap'N CooK</p>
-    </header>
-		<div id="whole">
-      <p>About us:</p>
-		</div>
-		
-		<div id="AU">
+<head>
+	<title> About Us </title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="aboutStyle.css" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 
-			<p>Tap'N Cook is a web app that is optimized for mobile devices. The app's purpose follows the Love Food Hate Waste campaign that was initiated by Metro Vancouver</p>
-			
-			<p>The app simply prompts users for input, the input is the user's almost-expiring food. Based on user's input the app will recommend simple, nutricious recipes to make use of the provided ingredients as opposed to throwing them away.</p>
-			
-			<p>Our goals are:</p>
-			<ol>
-				<li>Reduce food waste</li>
-				<li>Promote green environment</li>
-				<li>Encourage healthier lifestyle</li>			
-			</ol>
-			
-			<p>Our members are:</p>
-			<ol>
-				<li>Kelvin Lee: Gym rat.</li>
-				<li>Peter Ahn </li>
-				<li>Amir Kbah</li>
-				<li>Sam Lee.</li>
-				<li>Perry Li</li>
-			</ol>
-		
-		
-		</div>
-		
-		<div id="footerAU">
+</head>
+
+<body>
+	<!-- Bootstrap stuff!-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+	<header id="headAU">
+		<p>Tap'N CooK</p>
+	</header>
+
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="./TapNCook.html">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="./AboutUs.html">About Us</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="whole">
+		<p>About Us</p>
+	</div>
+
+	<div id="AU">
+
+		<p>Tap'N Cook is a web app that is optimized for mobile devices. <br/>
+          The app's purpose follows the Love Food Hate Waste campaign
+			that was initiated by Metro Vancouver</p>
+
+		<p>The app simply prompts users for input, the input is the user's almost-expiring food.<br/>
+          Based on user's input the app will
+			recommend simple, nutrious recipes to make use of the provided ingredients as opposed to throwing them away.</p>
+
+		<p><b>Our goals are:</b></p>
+		<ol>
+			<li>Reduce food waste</li>
+			<li>Promote green environment</li>
+			<li>Encourage healthier lifestyle</li>
+		</ol>
+
+		<p><b>Our members are:</b></p>
+		<ol>
+			<li>Kelvin Lee</li>
+			<li>Peter Ahn</li>
+			<li>Amir Kbah</li>
+			<li>Sam Lee</li>
+			<li>Perry Li</li>
+		</ol>
+
+
+	</div>
+
+	<div id="footer">
+      <div id="bcitdiv">
       <a href = "https://www.bcit.ca/" target="blank">
         <img src = "logos/192px-BCITwordmark.svg.png" id = "bcit"/>
       </a>
+      </div>  
+      <div id="loveFooddiv">
+      <a href="https://www.lovefoodhatewaste.com/" target="blank">
       <img src = "logos/logo_og.png" id = "loveFood"/>
+      </a>
+      </div>
+      <div id="metroVandiv">
+      <a href="http://www.metrovancouver.org/" target="blank">
       <img src = "logos/MV-DefaultLockup_RGB_05157.png" id = "metro"/>
+      </a>
+      </div>
     </div>
-		
-	</body>
-	
+
+</body>
+
 </html>

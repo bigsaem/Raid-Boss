@@ -1,6 +1,5 @@
 header{
   text-align: center;
-  /* I think this color is the best*/
   background-image: url(icon/green.png);
   font-size:50pt;
   color:white;
@@ -32,29 +31,35 @@ header{
 div img{
   width:100%;
 	margin: 4%;
-  
-}
-body{
-  font-family: 'PT Sans', sans-serif;
-  background-color:lightpink;
-	background: linear-gradient(to right, lightpink, white, lightpink);
-  margin:0;
-  
-  
 }
 
-div > p{
-  background-color:firebrick;
-  margin:0;
-  padding:1%;
-  text-align:center;
-  font-size:20pt;
-  color:white;
+body{
+  /*font-family: 'PT Sans Caption', sans-serif;*/
+  background-color:lightpink;
+	background: linear-gradient(to right, lightpink, white, lightpink);
+  margin:0 auto;
+}
+
+#whole{
+  background-color: firebrick;
+  color: white;
+  font-size: 25pt;
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+#AU {
+  font-family: 'PT Sans Caption', sans-serif;
+}
+#AU p{
+  text-align: center;
+  font-size: 18pt;
+}
+
+li {
+  font-size:16pt;
 }
 
 #basket {
   background-color: yellow;
-
 }
 
 #basket img {
@@ -67,9 +72,6 @@ div > p{
   display: none;
 }
 
-/***********************************/
-/***********footer start************/
-/***********************************/
 #footer{
   width:100%;
   background-color:black;
@@ -81,20 +83,24 @@ div > p{
   width: 40%;
   float:left;
   height: 120px;
+  text-align: center;
 }
 #loveFooddiv{
   width: 20%;
   float: left;
   height: 120px;
+  text-align: center;
 }
 #metroVandiv{
   width:40%;
   float:left;
   height: 120px;
+  text-align: center;
 }
 #bcit{
+  text-align: center;
   width:150px;
-  margin-top:-1px;
+  margin-top:-0.5px;
 }
 
 #loveFood{
@@ -106,9 +112,6 @@ div > p{
   width:300px;
   padding-top: 18px;
 }
-/***********************************/
-/***********footer ends*************/
-/***********************************/
 
 .icons:hover {
 	box-shadow: 0px 0px 28px #888888;
@@ -121,13 +124,32 @@ div > p{
   font-family: 'Oleo Script Swash Caps', cursive;
 }
 
-#headAU{
-  text-align: center;
-  background-color: green;
-  font-size:20pt;
-  color:white;
+#footerAU{
+	display:block;
+	/*position: absolute;
+	bottom:0;
+	right:0;
+  left:0;
+  */
+	text-align: center;		
+  background-color:black;
+	flex-shrink: 0;
 }
 
+/*#AU {
+    text-align: center;
+	background-color:crimson;
+	color: white;
+	font-size: 14pt;
+	padding: 2px;
+}
+#AU > p {
+	text-align: center;
+	font-size: 14pt;
+}
+#AU ol {
+  text-align: center;
+}*/
 .title {
 	background-color: rgba(255, 255, 255, 0.25);
 	border-style: hidden;
@@ -138,20 +160,18 @@ div > p{
 
 /*RECIPES PAGE CSS */
 .images{
-  
+  max-height: 500px important!;
+  max-width: 500px important!;
+  width: 200% important!;
+  height: 200% ;
 }
 
 .col-sm-4 > p {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 #menu{
   text-align: center;
-}
-#menu div{
-  margin: 0 auto;
-}
-#menu p{
-  color: white;
+  display:none;
 }
