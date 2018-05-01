@@ -21,6 +21,13 @@ if ($methodType === 'GET') {
         )
         );
 
+        /*$response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/479101/information?includeNutrition=false",
+  array(
+    "X-Mashape-Key" => "r8vXkqjsrjmsh2sYTcnFu4HIyAMGp14tqKvjsnQtsrvyKoKmmb",
+    "Accept" => "application/json"
+  )
+);*/
+       // $requestStringTime 
         switch($output) { //can remove this later, this is just copy pasted from the lab, where case:json and case:html
             case "json":
 
