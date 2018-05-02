@@ -22,7 +22,7 @@
   <header>
     Tap'N CooK
   </header>
-
+  
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav">
@@ -35,31 +35,84 @@
     </ul>
   </nav>
 
-  <div id="whole">
+  <div id="whole">    
     <p id="subhead">What do you want to use?</p>
-    <div class="icons">
-      <img id="carrot" src="icon/carrot.png" alt="broken" />
-      <p>Carrot</p>
+
+    <div class="iconsDivs">
+      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables"/>
+      <div id="vegDiv">
+        <div class="vegies">
+          <p id="carrot">Carrot</p>
+        </div>
+        <div class="vegies">
+          <p id="lettuce">Lettuce</p>
+        </div>
+        <div class="vegies">
+          <p id="tomato">Tomato</p>
+        </div>      
+      </div>
     </div>
-    <div class="icons">
-      <img id="lettuce" src="icon/lettuce.png" alt="broken" />
-      <p>Lettuce</p>
+
+    <div class="iconsDivs">
+      <img id="fruitIcon" class="icons" src="icon/banana.png" alt="Vegetables"/>
+      <div id="fruitDiv">
+        <div class="fruits">
+          <p id="banana">Banana</p>
+        </div>
+        <div class="fruits">
+          <p id="apple">Apple</p>
+        </div>
+        <div class="fruits">
+          <p id="grapes">Grapes</p>
+        </div>      
+      </div>
     </div>
-    <div class="icons">
-      <img id="cheese" src="icon/cheese%20(1).png" alt="broken" />
-      <p>Cheese</p>
+
+    <div class="iconsDivs">
+      <img id="breadIcon" class="icons" src="icon/toast.png" alt="Bread"/>
+      <div id="breadDiv">
+        <div class="bread">
+          <p id="toast">Toast</p>
+        </div>
+        <div class="bread">
+          <p id="flatbread">Flat Bread</p>
+        </div>
+        <div class="bread">
+            <p id="bagguette">Baguette</p>
+        </div>      
+      </div>
     </div>
-    <div class="icons">
-      <img id="banana" src="icon/banana.png" alt="broken" />
-      <p>Banana</p>
+
+    <div class="iconsDivs">
+      <img id="meatIcon" class="icons" src="icon/steak.png" alt="Bread"/>
+      <div id="meatDiv">
+        <div class="meat">
+          <p id="beef">Beef</p>
+        </div>
+        <div class="meat">
+          <p id="chicken">Chicken</p>
+        </div>
+        <div class="meat">
+            <p id="pork">Pork</p>
+        </div>      
+      </div>
     </div>
-    <div class="icons">
-       <img id = "tomato" src = "icon/tomato.png" alt = "broken"/>
-			 <p>Tomato</p></div>
-    <div class="icons">
-       <img id = "bread" src = "icon/toast.png" alt = "broken"/>
-			 <p>Bread</p>
+
+    <div class="iconsDivs">
+    <img id="dairyIcon" class="icons" src="icon/egg.png" alt="Bread"/>
+    <div id="dairyDiv">
+      <div class="dairy">
+        <p id="milk">Milk</p>
+      </div>
+      <div class="dairy">
+        <p id="cheese">Cheese</p>
+      </div>
+      <div class="dairy">
+        <p id="butter">Butter</p>
+      </div>      
     </div>
+  </div>
+
     <div id="basket">
       <p>Basket</p>
       <img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
@@ -127,6 +180,23 @@
 
       var ingredients = ["", "", "", "", ""];
       var count = 0;
+
+      $("#vegIcon").click(function (){
+        $("#vegDiv").slideToggle();
+      });
+      $("#fruitIcon").click(function (){
+        $("#fruitDiv").slideToggle();
+      });
+      $("#breadIcon").click(function (){
+        $("#breadDiv").slideToggle();
+      });
+      $("#meatIcon").click(function (){
+        $("#meatDiv").slideToggle();
+      });
+      $("#dairyIcon").click(function (){
+        $("#dairyDiv").slideToggle();
+      });
+
       $("#carrot").click(function () {
         $("#bcarrot").show(500);
         $("#carrot").css("filter", "grayscale(100%)");
