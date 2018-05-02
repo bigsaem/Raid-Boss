@@ -484,25 +484,33 @@
             var dataBody = data["body"][0];
 
             //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
-            $("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
-            var ingredientsNeeded = "";
-            for (var i = 0; i < dataBody["steps"].length; i++) {
-              for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
-                if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
-                  ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
-                } else {
-                  console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+            //$("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
+            var ingredientsNeeded = "<b>Ingredients Needed:</b> ";
+            if (data["body"][0] != undefined){
+              for (var i = 0; i < dataBody["steps"].length; i++) {
+                for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
+                  if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
+                    ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
+                  } else {
+                    console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+                  }
                 }
               }
+            }
+            else {
+              ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
+              console.log("databody not defined!");
             }
             $("." + $(clickedElement).attr("id")).append(ingredientsNeeded);
             $("." + $(clickedElement).attr("id")).append("</br>");
 
             //APPENDS THE RECIPE STEPS
-            $("." + $(clickedElement).attr("id")).append("<b>Here is the list of steps:</b> </br>");
-            for (var i = 0; i < dataBody["steps"].length; i++) {
-              $("." + $(clickedElement).attr("id")).append("Step " + (parseInt(i) + 1) + ": " + dataBody[
-                "steps"][i]["step"] + "</br>");
+            if (data["body"][0] != undefined){
+              $("." + $(clickedElement).attr("id")).append("<b>Here is the list of steps:</b> </br>");
+              for (var i = 0; i < dataBody["steps"].length; i++) {
+                $("." + $(clickedElement).attr("id")).append("Step " + (parseInt(i) + 1) + ": " + dataBody[
+                  "steps"][i]["step"] + "</br>");
+              }
             }
             
             //////NEW CHANGESS (TIME FEATURE)  VIA NESTED AJAX CALL/////
@@ -515,26 +523,28 @@
           var info = response;
           //do stuff
           console.log("ready in "+ info["body"]["readyInMinutes"] + " minutes");
-          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
-          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
-          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
-          console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
+          console.log("IS IT VEGETARIAN? "+ info["body"]["vegetarian"] + " minutes");
+          console.log("is it vegan? "+ info["body"]["vegan"] + " minutes");
+          console.log("is it gluten free? "+ info["body"]["glutenFree"] + " minutes");
+          console.log("dairy free?  "+ info["body"]["dairyFree"] + " minutes");
 
           //I am appending it to the div with class ".stats_RECIPEID" 
           $(".stats_" + $(clickedElement).attr("id")).append("Estimated Time Needed: " + info["body"]["readyInMinutes"] + " minutes. </br>");
 
           var infoBody = info["body"];
+          console.log("infobody vegetarian is:" + infoBody["vegetarian"]); //this returns a boolean value 
 
-          if (infoBody["vegetarian"] == "true"){
+          if (infoBody["vegetarian"] === true){
+            console.log("is vegetarian");
             $(".stats_" + $(clickedElement).attr("id")).append("For Vegetarians! </br>");
           }
-          if (infoBody["vegan"] == "true"){
+          if (infoBody["vegan"] === true){
             $(".stats_" + $(clickedElement).attr("id")).append("For Vegans! </br>");
           }
-          if (infoBody["glutenFree"] == "true"){
+          if (infoBody["glutenFree"] === true){
             $(".stats_" + $(clickedElement).attr("id")).append("Gluten Free! </br>");
           }
-          if (infoBody["dairyFree"] == "true"){
+          if (infoBody["dairyFree"] === true){
             $(".stats_" + $(clickedElement).attr("id")).append("Dairy Free! </br>");
           }
 
