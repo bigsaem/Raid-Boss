@@ -88,7 +88,7 @@ div > p{
   height: 120px;
 }
 #metroVandiv{
-  width:40%;
+  width:35%;
   float:left;
   height: 120px;
 }
@@ -137,21 +137,27 @@ div > p{
 }
 
 /*RECIPES PAGE CSS */
-.images{
-  
+.recipeID{
+  color: white;
 }
-
-.col-sm-4 > p {
-  font-size: 15px;
+.col-sm-12  p {
+  font-size: 20px;
   font-weight: bold;
 }
 
 #menu{
   text-align: center;
 }
+#menu p{
+  background-color: firebrick;
+}
 #menu div{
   margin: 0 auto;
 }
 #menu p{
   color: white;
+  border: 5px solid white;
+}
+.recipes {
+  border: 2px solid white;
 }

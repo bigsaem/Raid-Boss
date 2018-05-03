@@ -90,34 +90,54 @@
     </div>
 
     </div>
-  <div id = "menu">
+    <!--##########################################
+      #############Recipe page starts#############
+      ############################################-->
+  <div id = "menu" style="display: none">
       <div class="row">
-      <div class="col-sm-4">
-          <p><a href='#'class="recipeID"></p></a><img class = "images">
-              <p class = "recipeStats"></p>
-              <p class = "recipeNumber"></p>
-          <p><a href='#'class="recipeID"></p></a><img class = "images"> 
-             <p class = "recipeStats"></p>
-            <p class = "recipeNumber"></p>
-          <p><a href='#'class="recipeID"></p></a><img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
-            <p class = "recipeStats"></p>
-            <p class = "recipeNumber"></p>
+        <div class="col-sm-12">
+          <div class="recipes">
+            <a href='#'><p class="recipeID" id="firstRecipe"></p></a>
+            <img class = "images" style="z-index: -1">
+            <p class = "recipeStats" style="display:none"></p>
+            <p class = "recipeNumber" style="display:none"></p>
           </div>
-          <div class="col-sm-4">
-          <p><a href='#'class="recipeID"></p></a><img class = "images"> 
-             <p class = "recipeStats"></p>
-            <p class = "recipeNumber"></p>
-          <p><a href='#'class="recipeID"></p></a><img class = "images">
-            <p class = "recipeStats"></p>
-           <p class = "recipeNumber"></p>
-          <p><a href='#'class="recipeID"></p></a><img class = "images">
-           <p class = "recipeStats"></p>
-           <p class = "recipeNumber"></p>
+          <div class="recipes">
+            <p><a href='#'class="recipeID"></p></a>
+            <img class = "images"> 
+            <p class = "recipeStats" style="display:none"></p>
+            <p class = "recipeNumber" style="display:none"></p>
+          </div>
+          <div class="recipes">
+            <p><a href='#'class="recipeID"></p></a>
+            <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
+            <p class = "recipeStats" style="display:none"></p>
+            <p class = "recipeNumber" style="display:none"></p>
+          </div>
+          <div class="recipes">
+            <p><a href='#'class="recipeID"></p></a>
+            <img class = "images"> 
+             <p class = "recipeStats" style="display:none"></p>
+            <p class = "recipeNumber" style="display:none"></p>
+          </div>
+          <div class="recipes">
+            <p><a href='#'class="recipeID"></p></a>
+            <img class = "images">
+            <p class = "recipeStats" style="display:none"></p>
+            <p class = "recipeNumber" style="display:none"></p>
+          </div>
+          <div class="recipes">
+            <p><a href='#'class="recipeID"></p></a>
+            <img class = "images">
+            <p class = "recipeStats" style="display:none"></p>
+            <p class = "recipeNumber" style="display:none"></p>
+          </div>
         </div>
       </div>
-
   </div>
-
+<!--##########################################
+      #############Recipe page ends#############
+      ############################################-->
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -345,17 +365,23 @@
               if ((items["body"][x]) != null) {
                 $(this).text(items["body"][x]["title"] /*+ " and ID: " + items["body"][x]["id"]*/ );
                 $(this).attr('id', items["body"][x]["id"]);
+                //$(this).css("background-image", "url(" + items["body"][x]["image"] + ")");
+                //$(this).css("background-size", "100% 100%");
+                //$(this).css(":before", "font-size: 24pt");
               }
               x++;
             });
+
+            
 
             x = 0;
 
             //loops through all the recipeID classes, and sets the images for each
             $('.images').each(function (i, $this) {
               if ((items["body"][x]) != null) {
-                $(this).text(items["body"][x]["image"]);
+                //$(this).text(items["body"][x]["image"]);
                 $(this).attr('src', items["body"][x]["image"]);
+                
               }
               x++;
             });
@@ -369,6 +395,8 @@
               }
               x++;
             });
+
+            
 
             x=0;
             //Loops through all the recipeStats classes (paragraph element that holds stats (time, dietary needs))
@@ -411,8 +439,9 @@
             var dataBody = data["body"][0];
 
             //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
-            $("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
-            var ingredientsNeeded = "";
+            $("." + $(clickedElement).attr("id")).append('<b>Ingredients</b><br/>');
+            $("." + $(clickedElement).attr("id")).show (500);
+            var ingredientsNeeded = [];
             for (var i = 0; i < dataBody["steps"].length; i++) {
               for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
                 if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
@@ -423,14 +452,15 @@
               }
             }
             $("." + $(clickedElement).attr("id")).append(ingredientsNeeded);
-            $("." + $(clickedElement).attr("id")).append("</br>");
+            $("." + $(clickedElement).attr("id")).append("<hr/>");
 
             //APPENDS THE RECIPE STEPS
-            $("." + $(clickedElement).attr("id")).append("<b>Here is the list of steps:</b> </br>");
+            $("." + $(clickedElement).attr("id")).append("<ol>Instruction");
             for (var i = 0; i < dataBody["steps"].length; i++) {
-              $("." + $(clickedElement).attr("id")).append("Step " + (parseInt(i) + 1) + ": " + dataBody[
-                "steps"][i]["step"] + "</br>");
+              $("." + $(clickedElement).attr("id")).append("<li>" + dataBody[
+                "steps"][i]["step"] + "</li>");
             }
+            $("." + $(clickedElement).attr("id")).append("</ol>");
             
             //////NEW CHANGESS (TIME FEATURE)  VIA NESTED AJAX CALL/////
       $.ajax({
@@ -448,8 +478,8 @@
           console.log("ready in "+ info["body"]["vegetarian"] + " minutes");
 
           //I am appending it to the div with class ".stats_RECIPEID" 
-          $(".stats_" + $(clickedElement).attr("id")).append("Estimated Time Needed: " + info["body"]["readyInMinutes"] + " minutes. </br>");
-
+          $(".stats_" + $(clickedElement).attr("id")).append("Estimated Time: " + info["body"]["readyInMinutes"] + " minutes. </br>");
+          $(".stats_" + $(clickedElement).attr("id")).show(500);
           var infoBody = info["body"];
 
           if (infoBody["vegetarian"] == "true"){
@@ -481,6 +511,15 @@
           }
         });
       });
+      $(".images").height(400);
+      $(".images").css("margin", "0 auto");
+      
+
+      
+      $(".recipes").each(function (i, $this) {
+        $(this).css("border", "solid 3px white");
+      });
+      
     });
 
     /*]]>*/
