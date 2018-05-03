@@ -58,8 +58,6 @@ div > p{
 
 #basket {
   background-color: yellow;
-  margin-top: 1px;
-
 }
 
 #basket img {
@@ -108,7 +106,7 @@ div > p{
 }
 
 #metro{
-  width:300px;
+  width:200px;
   padding-top: 18px;
 }
 /***********************************/
@@ -121,6 +119,7 @@ div > p{
 
 #whole {
   text-align: center;
+  width: 100%;
 }
 #subhead {
   font-family: 'Oleo Script Swash Caps', cursive;
@@ -164,8 +163,7 @@ div > p{
 /* Categories */
 
 #vegDiv {
-  display: none;
-  
+  display: none;  
 }
 
 .vegies {
@@ -266,9 +264,47 @@ div > p{
 }
 
 .iconsDivs {
-  display: inline-block;
-  margin: 0-auto;
-  width: 40%;
-  
+  display: inline-table;
+  margin: 2%;
+  width: 45%;  
 }
+
+.basketItem {
+  display: inline-block;
+  background-color: burlywood;
+  float: left;
+}
+
+#bcarrot {
+  display: none; 
+}
+
+.basketItem p {
+  background-color: burlywood;
+  border-style: solid;
+  border-color: cornsilk;
+  border-radius: 5px;
+  display: inline-block;
+  float: left;
+  vertical-align: middle; 
+
+}
+
+#blettuce {
+  display: none;
+}
+
+#blettuce p {
+  background-color: burlywood;
+  border-style: solid;
+  border-color: cornsilk;
+  border-radius: 5px;
+  display: inline-block;
+  float: left;
+}
+
+#searchBar {
+  display: none;
+}
+
 
