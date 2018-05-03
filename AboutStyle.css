@@ -58,20 +58,6 @@ li {
   font-size:12pt;
 }
 
-#basket {
-  background-color: yellow;
-}
-
-#basket img {
-  width: 10%;
-  display: none;
-}
-
-#arrow {
-  float: right;
-  display: none;
-}
-
 #footer{
   width:100%;
   background-color:black;
@@ -156,22 +142,4 @@ li {
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 	
-}
-
-/*RECIPES PAGE CSS */
-.images{
-  max-height: 500px important!;
-  max-width: 500px important!;
-  width: 200% important!;
-  height: 200% ;
-}
-
-.col-sm-4 > p {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#menu{
-  text-align: center;
-  display:none;
 }
