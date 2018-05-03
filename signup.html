@@ -6,25 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up</title>
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCT9sjX4c5YvGjmrjt_4cFvQpHsbCbNw0k",
-            authDomain: "tap-n-cook.firebaseapp.com",
-            databaseURL: "https://tap-n-cook.firebaseio.com",
-            projectId: "tap-n-cook",
-            storageBucket: "",
-            messagingSenderId: "355026196583"
-        };
-        firebase.initializeApp(config);
-    </script>
+    <link rel="stylesheet" type="text/css" href="basicStyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Bootstrap stuff!-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <div class="container-fluid">
+        <header>
+            Tap'N CooK
+        </header>
 
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./TapNCook.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./AboutUs.html">About Us</a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
+                    More Features
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./login.html">Login</a>
+                    <a class="dropdown-item" href="./signup.html">Sign Up</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                </div>
+            </div>
+        </nav>
+        <p>Sign Up</p>
+        </br>
+        <form id="signupListForm">
+            <div class="form-group w-50 mx-auto">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+            </div>
+            <div class="form-group w-50 mx-auto">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+            </div>
+            <div class="w-50 mx-auto">
+                <input type="submit" id="submit" value="Submit" />
+            </div>
+        </form>
+        </br>
+        </br>
+        <div id="footer" class="row">
+            <div class="col-sm-3">
+                <a href="https://www.bcit.ca/" target="blank">
+                    <img src="logos/192px-BCITwordmark.svg.png" id="bcit" />
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="https://www.lovefoodhatewaste.com/" target="blank">
+                    <img src="logos/logo_og.png" id="loveFood" />
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="http://www.metrovancouver.org/" target="blank">
+                    <img src="logos/MV-DefaultLockup_RGB_05157.png" id="metro" />
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
 
+            $("#signupListForm").submit(function (e) {
+                e.preventDefault();
+                var formData = ConvertFormToJSON("#signupListForm");
+                console.log("Data from form (to be sent): ", formData);
+
+                $.ajax({
+                    url: "signup-post.php",
+                    type: "POST",
+                    dataType: "JSON",
+                    data: formData,
+                    success: function (data) {
+                        console.log("Data returned from server: ", data);
+                        var listData = data.msg;
+                        // for (var key in data) {
+                        //     listData += data[key] + " ";
+                        // }
+                        $("#p1").text(listData);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        $("#p1").text(jqXHR.statusText);
+                    }
+
+                });
+
+            });
+
+            // Converts form to JSON
+            function ConvertFormToJSON(form) {
+                var array = $(form).serializeArray();
+                var json = {};
+                jQuery.each(array, function () {
+                    json[this.name] = this.value || '';
+                });
+                return json;
+            }
+
+        });
+    </script>
 </body>
 
 </html>

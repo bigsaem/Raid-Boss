@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +30,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./AboutUs.html">About Us</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="current"></a>
+                </li>
             </ul>
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
@@ -34,12 +40,12 @@
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="./login.html">Login</a>
-                    <a class="dropdown-item" href="#">Sign Up</a>
+                    <a class="dropdown-item" href="./signup.html">Sign Up</a>
                     <a class="dropdown-item" href="#">Settings</a>
                 </div>
             </div>
         </nav>
-        </br>
+        <p>Login</p>
         <form id="loginListForm">
             <div class="form-group w-50 mx-auto">
                 <label for="username">Username:</label>
@@ -78,10 +84,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
     <script>
+        $(document).ready(function () {
 
-        $(document).ready(function() {
-
-            $("#loginListForm").submit(function(e) {
+            $("#loginListForm").submit(function (e) {
                 e.preventDefault();
                 var formData = ConvertFormToJSON("#loginListForm");
                 console.log("Data from form (to be sent): ", formData);
@@ -91,13 +96,12 @@
                     type: "POST",
                     dataType: "JSON",
                     data: formData,
-                    success: function(data) {
-                        console.log("Data returned from server: ", data);
-                        var listData = "";
-                        for (var key in data) {
-                            listData += data[key] + " ";
-                        }
-                        $("#p1").text(listData);
+                    success: function (data) {
+                        // for (var key in data) {
+                        //     listData += data[key] + " ";
+                        // }
+                        $("#p1").text(data.msg);
+                        $("#current").text(data.username);
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         $("#p1").text(jqXHR.statusText);
@@ -109,13 +113,13 @@
 
             // Converts form to JSON
             function ConvertFormToJSON(form) {
-                    var array = $(form).serializeArray();
-                    var json = {};
-                    jQuery.each(array, function () {
-                        json[this.name] = this.value || '';
-                    });
-                    return json;
-                }
+                var array = $(form).serializeArray();
+                var json = {};
+                jQuery.each(array, function () {
+                    json[this.name] = this.value || '';
+                });
+                return json;
+            }
 
         });
     </script>

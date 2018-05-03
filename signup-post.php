@@ -32,8 +32,8 @@
                     // set the PDO error mode to exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-                    $sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
-                    $hs = "SELECT high_score FROM user WHERE user.user_name='$login'";
+                    //$sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
+                    $sql = "INSERT INTO user (user_name, password, high_score) VALUES ('$login', '$pwd', 0)";
 
                     $statement = $conn->prepare($sql);
                     $statement->execute();
@@ -41,15 +41,15 @@
         
                     if($count > 0) {
                         // sucess
-                        $_SESSION['username'] = $login;
+                        //$_SESSION['username'] = $login;
                         //$_SESSION['password'] = $pwd;
-                        $_SESSION['high_score'] = $hs;
+                        //$_SESSION['high_score'] = $hs;
                         // $_SESSION['lastname'] = "Ferguson";
                         // $_SESSION['email'] = "arron_ferguson@bcit.ca";
                         $_SESSION['loggedin'] = true;
     
                         $sid= session_id();
-                        $data = array("msg" => "Success", "sid" => $sid, "username" => $login);
+                        $data = array("msg" => "Success", "sid" => $sid);
     
                     } else {
                         $data = array("msg" => "User name and/or password not correct.");
