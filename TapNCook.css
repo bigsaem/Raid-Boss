@@ -108,8 +108,10 @@ header{
   }
   
   #metro{
-    width:300px;
-    padding-top: 18px;
+    margin-top: 0.5px;
+    margin-bottom:0.5px;
+    padding-top:0.5px;
+    width:75px;
   }
   /***********************************/
   /***********footer ends*************/
@@ -142,9 +144,11 @@ header{
   }
   
   /*RECIPES PAGE CSS */
-  
-  .col-sm-4 > p {
-    font-size: 15px;
+  .recipeID{
+    font-size: 20pt;
+  }
+  p {
+    font-size: 15pt;
     font-weight: bold;
   }
   
@@ -155,7 +159,8 @@ header{
     margin: 0 auto;
   }
   #menu p{
-    color: white;
+    color: black;
+    background-color: white;
   }
   
   /* Categories */
@@ -171,7 +176,6 @@ header{
     border-radius: 20px;
     padding: 1%;
     margin: 0.5%;
-    display: inline-block;
     float: left;
     clear: left;
   }
@@ -191,7 +195,6 @@ header{
     border-radius: 20px;
     padding: 1%;
     margin: 0.5%;
-    display: inline-block;
     float: left;
     clear: left;
   }
