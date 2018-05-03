@@ -8,10 +8,10 @@
     $data = array("status" => "fail", "msg" => "$methodType");
 
     // DB Login
-    $servername = "localhost";
-    $dblogin = "root";
-    $adminpass = "root";
-    $dbname = "tapncook";
+    $servername = "db736774578.db.1and1.com";
+    $dblogin = "dbo736774578";
+    $adminpass = "159753Rb$";
+    $dbname = "db736774578";
 
     if ($methodType === 'POST') {
 
@@ -33,7 +33,7 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
                     $sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
-                    $hs = "SELECT high_score FROM user WHERE user.user_name='$login'";
+                    //$hs = "SELECT high_score FROM user WHERE user.user_name='$login'";
 
                     $statement = $conn->prepare($sql);
                     $statement->execute();
@@ -43,7 +43,7 @@
                         // sucess
                         $_SESSION['username'] = $login;
                         //$_SESSION['password'] = $pwd;
-                        $_SESSION['high_score'] = $hs;
+                        //$_SESSION['high_score'] = $hs;
                         // $_SESSION['lastname'] = "Ferguson";
                         // $_SESSION['email'] = "arron_ferguson@bcit.ca";
                         $_SESSION['loggedin'] = true;
