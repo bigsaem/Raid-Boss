@@ -42,7 +42,7 @@
         </br>
         <form id="loginListForm">
             <div class="form-group w-50 mx-auto">
-                <label for="usernam">Username:</label>
+                <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
             </div>
             <div class="form-group w-50 mx-auto">
@@ -95,14 +95,14 @@
                         console.log("Data returned from server: ", data);
                         var listData = "";
                         for (var key in data) {
-                            listData += key + ":" + data[key] + " ";
+                            listData += data[key] + " ";
                         }
                         $("#p1").text(listData);
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         $("#p1").text(jqXHR.statusText);
                     }
-                    
+
                 });
 
             });

@@ -1,17 +1,19 @@
 <?php
-    // empty JSON
+    // get the session
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     $methodType = $_SERVER['REQUEST_METHOD'];
-    $data = array("msg" => "$methodType");
+    $data = array("status" => "fail", "msg" => "$methodType");
+
+    // DB Login
+    $servername = "localhost";
+    $dblogin = "root";
+    $adminpass = "root";
+    $dbname = "tapncook";
 
     if ($methodType === 'POST') {
-
-        foreach ($_POST as $key => $value){
-            // simply parrot back what was sent
-            $data[$key] = $value;
-        }
-        echo json_encode($data, JSON_FORCE_OBJECT);
-        return;
-
 
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -20,53 +22,55 @@
             if(isset($_POST["username"]) && !empty($_POST["username"])
                 && isset($_POST["password"]) && !empty($_POST["password"])){
 
-
                 // get the data from the post and store in variables
-                $username = $_POST["username"];
+                $login = $_POST["username"];
                 $pwd = $_POST["password"];
 
-                $data = array("msg" => "Thank you $username $pwd, you've been added to our mailing list!",
-                    "username" => "$username", "password" => "$pwd");
-                ////////////////////////////////////////////////////////////
-                ///   HERE'S WHERE YOU COULD DO A DATABASE ENTRY UPDATE
-                ////////////////////////////////////////////////////////////
-
-                $servername = "localhost";
-                $dblogin = "root";
-                $password = "root";
-                $dbname = "tapncook";
-
                 try {
-                    $conn = new PDO("mysql:host=$servername;dbname=$bdname", $dblogin, $password);
-
+                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $adminpass);
+        
+                    // set the PDO error mode to exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    
-                    $sql = "INSERT INTO 'user' (user_name, password) VALUES (:uName, :pWord)";
+        
+                    $sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
+                    //$hs = ""
 
                     $statement = $conn->prepare($sql);
-                    $statement->execute(array(":uName" => $username, ":pWord" => $pwd));
-                } catch (PDOEXCEPTION $e) {
-                    echo "<p>$sql</p>";
-                    $error = $e->getMessage();
-                    echo "<p>$error</p>";
+                    $statement->execute();
+                    $count = $statement->rowCount();
+        
+                    if($count > 0) {
+                        // sucess
+                        $_SESSION['username'] = $login;
+                        //$_SESSION['password'] = $pwd;
+                        //$_SESSION['high_score'] = ;
+                        // $_SESSION['lastname'] = "Ferguson";
+                        // $_SESSION['email'] = "arron_ferguson@bcit.ca";
+                        // $_SESSION['loggedin'] = true;
+    
+                        $sid= session_id();
+                        $data = array("status" => "Success");
+    
+                    } else {
+                        $data = array("msg" => "User name and/or password not correct.");
+                    }
+        
+                } catch(PDOException $e) {
+                    $data = array("errorlol", $e->getMessage());
                 }
 
-
             } else {
-                $data = array("msg" => "Either firstName, lastName, or email were not filled out correctly.");
+                $data = array("status" => "fail", "msg" => "Either login or password were absent.");
             }
-
-
 
         } else {
             // not AJAX
-            $data = array("msg" => "Has to be an AJAX call.");
+            $data = array("status" => "fail", "msg" => "Has to be an AJAX call.");
         }
-
 
     } else {
         // simple error message, only taking POST requests
-        $data = array("msg" => "Error: only POST allowed.");
+        $data = array("status" => "fail", "msg" => "Error: only POST allowed.");
     }
 
     echo json_encode($data, JSON_FORCE_OBJECT);
