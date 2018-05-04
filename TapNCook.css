@@ -41,7 +41,7 @@ header{
   body{
     font-family: 'PT Sans', sans-serif;
     background-color:lightpink;
-      background: linear-gradient(to right, lightpink, white, lightpink);
+    background: linear-gradient(to right, lightpink, white, lightpink);
     margin:0;
     
     
@@ -58,8 +58,7 @@ header{
   
   #basket {
     background-color: yellow;
-    margin-top: 1px;
-  
+    margin-top: 1px;  
   }
   
   #basket img {
@@ -123,6 +122,7 @@ header{
   
   #whole {
     text-align: center;
+
   }
   #subhead {
     font-family: 'Oleo Script Swash Caps', cursive;
@@ -266,10 +266,48 @@ header{
   }
   
   .iconsDivs {
-    display: inline-block;
+    display: inline-table;
     margin: 0-auto;
     width: 40%;
     
   }
+  .basketItem {
+    display: inline-block;
+    background-color: burlywood;
+    float: left;
+  }
+  
+  #bcarrot {
+    display: none; 
+  }
+  
+  .basketItem p {
+    background-color: burlywood;
+    border-style: solid;
+    border-color: cornsilk;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    vertical-align: middle; 
+  
+  }
+  
+  #blettuce {
+    display: none;
+  }
+  
+  #blettuce p {
+    background-color: burlywood;
+    border-style: solid;
+    border-color: cornsilk;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+  }
+  
+  #searchBar {
+    display: none;
+  }
+  
   
   
