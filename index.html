@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="./TapNCook.html">Home</a>
+        <a class="nav-link" href="./index.html">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./AboutUs.html">About Us</a>
@@ -51,8 +51,11 @@
       </div>
   </nav>
 
+
+
   <div id="whole">    
     <p id="subhead">What do you want to use?</p>
+    <div id="searchBar"><input placeholder="Search Ingredient"></div>
 
     <div class="iconsDivs">
       <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables"/>
@@ -131,13 +134,18 @@
 
     <div id="basket">
       <p>Basket</p>
-      <img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
+      <!--<img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
       <img id="blettuce" class="dhide" src="icon/lettuce.png" alt="broken" />
       <img id="bcheese" class="dhide" src="icon/cheese%20(1).png" alt="broken" />
       <img id="bbanana" class="dhide" src="icon/banana.png" alt="broken" />
       <img id = "btomato" class = "dhide" src = "icon/tomato.png" alt = "broken"/>
-      <img id = "bbread" class = "dhide" src = "icon/toast.png" alt = "broken"/>
-      <img id="arrow" src="icon/whitearrow.png" />
+      <img id = "bbread" class = "dhide" src = "icon/toast.png" alt = "broken"/>-->
+      <div id="bdiv0" class="basketItem"><p></p></div>
+      <div id="bdiv1" class="basketItem"><p></p></div>
+      <div id="bdiv2" class="basketItem"><p></p></div>
+      <div id="bdiv3" class="basketItem"><p></p></div>
+      <div id="bdiv4" class="basketItem"><p></p></div>
+      <img id="arrow" src="icon/whitearrow.png" />-
     </div>
 
     <div id="footer">
@@ -242,6 +250,110 @@
 
       var ingredients = ["", "", "", "", ""];
       var count = 0;
+      var basketCount = 0;
+
+      /*$('#vegDiv').on('click', '*', function() {
+        var idVeg = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idVeg);
+        basketCount++;
+        console.log(idVeg);
+      });
+      $('#fruitDiv').on('click', '*', function() {
+        var idFruit = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idFruit);
+        basketCount++;
+        console.log(idFruit);
+      });
+      $('#breadDiv').on('click', '*', function() {
+        var idBread = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idBread);
+        basketCount++;
+        console.log(idBread);
+      });
+
+      $('#dairyDiv').on('click', '*', function() {
+        var idDairy = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text();
+        console.log(basketCount);
+        console.log(idDairy);
+        basketCount++;
+        console.log(basketCount);
+      });
+      
+      $('#meatDiv').on("click", '*', function() {
+        
+        var idMeat = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idMeat);
+        console.log(basketCount);
+        console.log(idMeat);
+        basketCount++;
+        console.log(basketCount);
+        
+      });*/
+
+      $('#searchBar > input').keyup( function(e) {
+        if(e.keyCode == 13 && basketCount < 5){
+          var sb = $(this).val();
+          $("#bdiv" + basketCount + "").children("p").text(sb);
+          $("#arrow").show(500);
+          console.log(sb);
+          ingredients[basketCount] = sb;
+          basketCount++;
+          $(this).val("");
+        }
+      });
+
+
+
+      $('#vegDiv > div > p').click(function() {
+        if(basketCount < 5){
+          var idVeg = $(this).text();
+          $("#bdiv" + basketCount + "").children("p").text(idVeg);
+          $("#arrow").show(500);
+          ingredients[basketCount] = idVeg;
+          basketCount++;
+        }
+      });
+
+      $('#fruitDiv > div > p').click(function() {
+        if(basketCount < 5){
+          var idFruit = $(this).text();
+          $("#bdiv" + basketCount + "").children("p").text(idFruit);
+          $("#arrow").show(500);
+          ingredients[basketCount] = idFruit;
+          basketCount++;
+        }
+      });
+
+      $('#breadDiv > div > p').click(function() {
+        if(basketCount < 5){
+          var idBread = $(this).text();
+          $("#bdiv" + basketCount + "").children("p").text(idBread);
+          $("#arrow").show(500);
+          ingredients[basketCount] = idBread;
+          basketCount++;
+        }
+      });     
+
+      $("#meatDiv > div > p").click( function() {
+        if(basketCount < 5){
+          var idMeat = $(this).text();
+          $("#bdiv" + basketCount + "").children("p").text(idMeat);
+          $("#arrow").show(500);
+          ingredients[basketCount] = idMeat;
+          basketCount++;    
+        }    
+      });
+
+      $("#dairyDiv > div > p").click(function() {
+        if(basketCount < 5){
+          var idDairy = $(this).text();
+          $("#bdiv" + basketCount + "").children("p").text(idDairy);
+          $("#arrow").show(500);
+          ingredients[basketCount] = idDairy;
+          basketCount++;
+        }
+      });
 
       $("#vegIcon").click(function (){
         $("#vegDiv").slideToggle();
@@ -257,9 +369,36 @@
       });
       $("#dairyIcon").click(function (){
         $("#dairyDiv").slideToggle();
+      }); 
+
+     /* $("#carrot").click(function () {
+        //$("#bcarrot").show(500);
+        $("#carrot").css("color", "rgba(0, 0, 0, 0.5)");
+        $("#carrot").css("text-decoration", "line-through");
+        $("#bcarrot").show(500);        
+        $("#arrow").show(500);
+        ingredients[count] = "carrot";
+        count++;
+      });
+      
+      $("#lettuce").click(function () {
+        $("#blettuce").show(500);
+        $("#lettuce").css("color", "rgba(0, 0, 0, 0.5)");
+        $("#lettuce").css("text-decoration", "line-through");
+        $("#arrow").show(500);
+        ingredients[count] = "lettuce";
+        count++;
       });
 
-      $("#carrot").click(function () {
+      $("#basket").click(function (){
+        
+      }); */
+
+      
+
+
+
+     /* $("#carrot").click(function () {
         $("#bcarrot").show(500);
         $("#carrot").css("filter", "grayscale(100%)");
         $("#arrow").show(500);
@@ -302,7 +441,7 @@
               ingredients[count] = "bread";
               count++;
             console.log(ingredients + count);
-          });
+          });*/
         /*****************************************/
         /*********removal functionality **********/
         /*****************************************/
