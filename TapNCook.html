@@ -159,62 +159,62 @@
             <a href='#'><p class="recipeID"></p></a>
             <img class = "images" style="z-index: -1">
             <div class = "toggle">
-            <p class = "information">information</p>
+            <p class = "information"  style="display:none">Information</p>
             <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients">Ingredients</p>
+            <p class = "ingredients"  style="display:none">Ingredients</p>
             <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions">Instruction</p>
+            <p class = "instructions"  style="display:none">Instruction</p>
             <p class = "recipeIns" style="display:none"></p>
             </div>
           </div>
           <div class="recipes">
             <a href='#'><p class="recipeID"></p></a>
             <img class = "images"> 
-            <p class = "information">information</p>
+            <p class = "information"  style="display:none">Information</p>
             <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients">Ingredients</p>
+            <p class = "ingredients"  style="display:none">Ingredients</p>
             <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions">Instruction</p>
+            <p class = "instructions"  style="display:none">Instruction</p>
             <p class = "recipeIns" style="display:none"></p>
           </div>
           <div class="recipes">
             <a href='#'><p class="recipeID"></p></a>
             <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
-            <p class = "information">information</p>
+            <p class = "information"  style="display:none">Information</p>
             <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients">Ingredients</p>
+            <p class = "ingredients"  style="display:none">Ingredients</p>
             <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions">Instruction</p>
+            <p class = "instructions"  style="display:none">Instruction</p>
             <p class = "recipeIns" style="display:none"></p>
           </div>
           <div class="recipes">
             <a href='#'><p class="recipeID"></p></a>
             <img class = "images"> 
-            <p class = "information">information</p>
+            <p class = "information"  style="display:none">Information</p>
              <p class = "recipeStats" style="display:none"></p>
-             <p class = "ingredients">Ingredients</p>
+             <p class = "ingredients"  style="display:none">Ingredients</p>
             <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions">Instruction</p>
+            <p class = "instructions"  style="display:none">Instruction</p>
             <p class = "recipeIns" style="display:none"></p>
           </div>
           <div class="recipes">
             <a href='#'><p class="recipeID"></p></a>
             <img class = "images">
-            <p class = "information">information</p>
+            <p class = "information"  style="display:none">Information</p>
             <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients">Ingredients</p>
+            <p class = "ingredients"  style="display:none">Ingredients</p>
             <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions">Instruction</p>
+            <p class = "instructions"  style="display:none">Instruction</p>
             <p class = "recipeIns" style="display:none"></p>
           </div>
           <div class="recipes">
             <a href='#'><p class="recipeID"></p></a>
             <img class = "images">
-            <p class = "information">information</p>
+            <p class = "information"  style="display:none">Information</p>
             <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients">Ingredients</p>
+            <p class = "ingredients"  style="display:none">Ingredients</p>
             <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions">Instruction</p>
+            <p class = "instructions"  style="display:none">Instruction</p>
             <p class = "recipeIns" style="display:none"></p>
           </div>
         </div>
@@ -505,6 +505,7 @@
             $('.information').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -532,6 +533,7 @@
               
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -550,6 +552,7 @@
             $('.instructions').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -577,14 +580,22 @@
       //prevent to put the same information into paragraphs.
       showmenu = [];
       $('.images').click(function (e) {
+        
         // don't allow the anchor to visit the link
         e.preventDefault();
+        $('.information_' + $(this).attr('id')).toggle(200);
+        $('.ingredients_' + $(this).attr('id')).toggle(200);
+        $('.instructions_' + $(this).attr('id')).toggle(200);
+        $('.stats_' + $(this).attr('id')).hide(200);
+        $('.ing_' + $(this).attr('id')).hide(200);
+        $('.rec_' + $(this).attr('id')).hide(200);
+        //prevent to put the same information into paragraphs.
         if(showmenu[""+ $(this).attr("id")] == null){
           showmenu[""+ $(this).attr("id")] = true;
         
         console.log('clicked to get recipe info');
         var clickedElement = this;
-
+        
         $.ajax({
           url: "GetRecipeInfo.php",
           dataType: "json",
@@ -617,17 +628,22 @@
               ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
               console.log("databody not defined!");
             }
+            //Capitalize the first letter of each ingredient
+            console.log(ingredientsNeeded);
+            
             $(".ing_" + $(clickedElement).attr("id")).append(ingredientsNeeded);
             
+            var recipeTable = "<ol>";
 
             //APPENDS THE RECIPE STEPS
             if (data["body"][0] != undefined){
+              
               for (var i = 0; i < dataBody["steps"].length; i++) {
-                $(".rec_" + $(clickedElement).attr("id")).append("<li>" + dataBody[
-                  "steps"][i]["step"] + "</li>");
+                recipeTable+= "<li>" + dataBody["steps"][i]["step"] + "</li><br/>";
               }
+              recipeTable += "</ol>";
             }
-            
+            $(".rec_" + $(clickedElement).attr("id")).append(recipeTable);
       
             //////NEW CHANGESS (TIME FEATURE)  VIA NESTED AJAX CALL/////
       $.ajax({
@@ -711,10 +727,10 @@
       $(".information").css("border", "1px solid black");
       $(".ingredients").css("border", "1px solid black");
       $(".instructions").css("border", "1px solid black");
-
+      $(".recipeIns").css("text-align", "left");
       $(".recipeID").css("margin", "0 auto");
       $(".recipeID").css("background-color", "crimson");
-      $(".images").height(400);
+      
       $(".images").css("margin", "0 auto");
       $(".images").css("padding", "0");
       $(".images").hover(function() {
