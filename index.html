@@ -19,9 +19,15 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-  <header>
-    Tap'N CooK
-  </header>
+  <div id="header">
+		<div id="menu">
+      <img id="menuIcon" src="icon/Menu.png" alt="Menu">
+    </div>
+		<p>Tap'N CooK</p>
+		<div id="search">
+      <img id="searchIcon" src="icon/Mag.png" alt="Search">
+    </div>
+  </div>
   
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -145,7 +151,7 @@
       <div id="bdiv2" class="basketItem"><p></p></div>
       <div id="bdiv3" class="basketItem"><p></p></div>
       <div id="bdiv4" class="basketItem"><p></p></div>
-      <img id="arrow" src="icon/whitearrow.png" />-
+      <img id="arrow" src="icon/whitearrow.png" />
     </div>
 
     <div id="footer">
@@ -292,67 +298,75 @@
       });*/
 
       $('#searchBar > input').keyup( function(e) {
-        if(e.keyCode == 13 && basketCount < 5){
+        if(e.keyCode == 13 && count < 5){
           var sb = $(this).val();
-          $("#bdiv" + basketCount + "").children("p").text(sb);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(sb);
           $("#arrow").show(500);
           console.log(sb);
-          ingredients[basketCount] = sb;
-          basketCount++;
+          ingredients[count] = sb;
+          count++;
           $(this).val("");
         }
       });
 
-
-
       $('#vegDiv > div > p').click(function() {
-        if(basketCount < 5){
+        if(count < 5){
           var idVeg = $(this).text();
-          $("#bdiv" + basketCount + "").children("p").text(idVeg);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idVeg);
           $("#arrow").show(500);
-          ingredients[basketCount] = idVeg;
-          basketCount++;
+          ingredients[count] = idVeg;
+          count++;
         }
       });
 
       $('#fruitDiv > div > p').click(function() {
-        if(basketCount < 5){
+        if(count < 5){
           var idFruit = $(this).text();
-          $("#bdiv" + basketCount + "").children("p").text(idFruit);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idFruit);
           $("#arrow").show(500);
-          ingredients[basketCount] = idFruit;
-          basketCount++;
+          ingredients[count] = idFruit;
+          count++;
         }
       });
 
       $('#breadDiv > div > p').click(function() {
-        if(basketCount < 5){
+        if(count < 5){
           var idBread = $(this).text();
-          $("#bdiv" + basketCount + "").children("p").text(idBread);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idBread);
           $("#arrow").show(500);
-          ingredients[basketCount] = idBread;
-          basketCount++;
+          ingredients[count] = idBread;
+          count++;
         }
       });     
 
       $("#meatDiv > div > p").click( function() {
-        if(basketCount < 5){
+        if(count < 5){
           var idMeat = $(this).text();
-          $("#bdiv" + basketCount + "").children("p").text(idMeat);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idMeat);
           $("#arrow").show(500);
-          ingredients[basketCount] = idMeat;
-          basketCount++;    
+          ingredients[count] = idMeat;
+          count++;    
         }    
       });
 
       $("#dairyDiv > div > p").click(function() {
-        if(basketCount < 5){
+        if(count < 5){
           var idDairy = $(this).text();
-          $("#bdiv" + basketCount + "").children("p").text(idDairy);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idDairy);
           $("#arrow").show(500);
-          ingredients[basketCount] = idDairy;
-          basketCount++;
+          ingredients[count] = idDairy;
+          count++;
         }
+      });
+			
+			$("#search").click(function (){
+        $("#searchBar").slideToggle();
       });
 
       $("#vegIcon").click(function (){
@@ -371,81 +385,41 @@
         $("#dairyDiv").slideToggle();
       }); 
 
-     /* $("#carrot").click(function () {
-        //$("#bcarrot").show(500);
-        $("#carrot").css("color", "rgba(0, 0, 0, 0.5)");
-        $("#carrot").css("text-decoration", "line-through");
-        $("#bcarrot").show(500);        
-        $("#arrow").show(500);
-        ingredients[count] = "carrot";
-        count++;
-      });
-      
-      $("#lettuce").click(function () {
-        $("#blettuce").show(500);
-        $("#lettuce").css("color", "rgba(0, 0, 0, 0.5)");
-        $("#lettuce").css("text-decoration", "line-through");
-        $("#arrow").show(500);
-        ingredients[count] = "lettuce";
-        count++;
-      });
-
-      $("#basket").click(function (){
-        
-      }); */
-
-      
 
 
-
-     /* $("#carrot").click(function () {
-        $("#bcarrot").show(500);
-        $("#carrot").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "carrot";
-        count++;
-      });
-      $("#lettuce").click(function () {
-        $("#blettuce").show(500);
-        $("#lettuce").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "lettuce";
-        count++;
-      });
-      $("#cheese").click(function () {
-        $("#bcheese").show(500);
-        $("#cheese").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "cheese";
-        count++;
-      });
-      $("#banana").click(function () {
-        $("#bbanana").show(500);
-        $("#banana").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "banana";
-        count++;
-      });
-      $("#tomato").click(function() {
-              $("#btomato").show(500);
-              $("#tomato").css("filter" , "grayscale(100%)");
-              $("#arrow").show(500);
-              ingredients[count] = "tomato";
-              count++;
-            console.log(ingredients + count);
-          });
-       $("#bread").click(function() {
-              $("#bbread").show(500);
-              $("#bread").css("filter" , "grayscale(100%)");
-              $("#arrow").show(500);
-              ingredients[count] = "bread";
-              count++;
-            console.log(ingredients + count);
-          });*/
         /*****************************************/
         /*********removal functionality **********/
         /*****************************************/
-        $("#bcarrot").click(function() {
+			$("#basket > div").click(function() {
+				var ids = $(this).attr("id");
+				$(this).hide();
+				var remove = $(this).children("p").text("");
+				
+				for(let i = 0; i < ingredients.length;i++) {
+          if (ingredients[i] == remove){
+            ingredients[i]="";
+            var removedIndex = i;
+            console.log(removedIndex);
+          }
+        }
+        for(var i = ingredients.length - 1; i > removedIndex;i--) {
+          console.log(ingredients[i] + count);
+          if (ingredients[i] != ""){
+            ingredients[removedIndex] = ingredients[i];
+            ingredients[i] = "";
+            break;
+          }
+        }
+				
+				count--;
+				if (count == 0) {
+					$("#arrow").slideUp();
+				} 
+
+				console.log(ids);
+			});
+			
+       /* $("#bcarrot").click(function() {
               count--;
               $("#bcarrot").hide(500);
               $("#carrot").css("filter" , "");
@@ -590,7 +564,7 @@
             if(isEmpty == true){
                 $("#arrow").hide(500);
               }
-          }
+          }*/
         /*****************************************/
         /*********removal functionality end*******/
         /*****************************************/
