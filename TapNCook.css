@@ -1,19 +1,40 @@
-header{
-    text-align: center;
-    /* I think this color is the best*/
-    background-image: url(icon/green.png);
-    font-size:50pt;
-    color:white;
-    padding: 1px;
-    font-family: 'Lily Script One', cursive;
-  }
+#header {
+  text-align: center;
+  /* I think this color is the best*/
+  /*background-image: url(icon/green.png);*/
+  background-color: mediumseagreen;
+  color:white;
+  padding: 1px;
+  font-family: 'Lily Script One', cursive;
+}
+
+#header p {
+font-size:25pt;
+display: inline-block;
+background-color: mediumseagreen;
+margin-right: -25px;
+}
+
+#header #search {
+float: right;
+display: inline-block;
+width: 55px;
+margin-right: 25px;
+}
+
+#header #menuDiv {
+float: left;
+display: inline-block;
+width: 55px;
+margin-left: 25px;
+}
   
   .icons {
     display: inline-block;
       border-style: solid;
       border-color: rgba(0, 0, 0, 0);
       border-radius: 25px;
-    background-color: firebrick;
+    background-color: green;
     width: 90%;
     margin: 20px;
       padding-left: 10px;
@@ -59,11 +80,40 @@ header{
   #basket {
     background-color: yellow;
     margin-top: 1px;  
+		width: 100%;
   }
+
+.basketItem {
+    /*display: inline-block;*/
+    background-color: burlywood;
+    float: left;	
+  }
+  
+#bdiv0, #bdiv1, #bdiv2, #bdiv3, #bdiv4 {
+	display: none;	
+	border-style: solid;
+  border-color: cornsilk;
+  border-radius: 2px;
+	padding: 2px;
+	width: 16%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	height:90%;	
+}
   
   #basket img {
     width: 10%;
     display: none;
+  }
+
+  .basketItem p {
+    background-color: burlywood;
+		font-size: 15px;
+		text-align: center;
+    display: inline-block;
+    float: left; 
+		height: 100%;
+				
   }
   
   #arrow {
@@ -197,7 +247,6 @@ header{
     float: left;
     clear: left;
   }
-  
   .fruits p {
     background-color: rgba(0, 0, 0, 0);
     text-align: center;
@@ -300,10 +349,16 @@ header{
     border-radius: 5px;
     float: left;
   }
-  
+
   #searchBar {
     display: none;
   }
+
+
+
+
+
+
   
   
   

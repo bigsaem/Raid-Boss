@@ -3,7 +3,7 @@
 <head>
   <title> TapNCook </title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="TapNCook.css" />
+  <link rel="stylesheet" type="text/css" href="./TapNCook.css" />
   <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
@@ -19,33 +19,58 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-  <header>
-    Tap'N CooK
-  </header>
+  <div id="header">
+		<div id="menuDiv">
+      <img id="menuIcon" src="icon/Menu.png" alt="Menu">
+    </div>
+		<p>Tap'N CooK</p>
+		<div id="search">
+      <img id="searchIcon" src="icon/Mag.png" alt="Search">
+    </div>
+  </div>
   
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="./TapNCook.html">Home</a>
+        <a class="nav-link" href="./index.html">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./AboutUs.html">About Us</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="./AffiliatedApps.html">Affiliated Apps</a>
-        </li>
+        <a class="nav-link" href="./AffiliatedApps.html">Affiliated Apps</a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link" href="./FoodNinjaTest.html">Don't Click</a>
+        <a class="nav-link" href="./login.html">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./signup.html">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./bait.html">Don't Click</a>
       </li>
     </ul>
+    <!--
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
+        More Features
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="./login.html">Login</a>
+        <a class="dropdown-item" href="#">Sign Up</a>
+        <a class="dropdown-item" href="#">Settings</a>
+      </div>
+    </div>
+    -->
   </nav>
 
-  <div id="whole">    
+  <div id="whole">
     <p id="subhead">What do you want to use?</p>
+    <div id="searchBar"><input placeholder="Search Ingredient"></div>
 
     <div class="iconsDivs">
-      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables"/>
+      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
       <div id="vegDiv">
         <div class="vegies">
           <p id="carrot">Carrot</p>
@@ -55,12 +80,12 @@
         </div>
         <div class="vegies">
           <p id="tomato">Tomato</p>
-        </div>      
+        </div>
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="fruitIcon" class="icons" src="icon/banana.png" alt="Vegetables"/>
+      <img id="fruitIcon" class="icons" src="icon/banana.png" alt="Vegetables" />
       <div id="fruitDiv">
         <div class="fruits">
           <p id="banana">Banana</p>
@@ -70,12 +95,12 @@
         </div>
         <div class="fruits">
           <p id="grapes">Grapes</p>
-        </div>      
+        </div>
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="breadIcon" class="icons" src="icon/toast.png" alt="Bread"/>
+      <img id="breadIcon" class="icons" src="icon/toast.png" alt="Bread" />
       <div id="breadDiv">
         <div class="bread">
           <p id="toast">Toast</p>
@@ -84,13 +109,13 @@
           <p id="flatbread">Flat Bread</p>
         </div>
         <div class="bread">
-            <p id="bagguette">Baguette</p>
-        </div>      
+          <p id="bagguette">Baguette</p>
+        </div>
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="meatIcon" class="icons" src="icon/steak.png" alt="Bread"/>
+      <img id="meatIcon" class="icons" src="icon/steak.png" alt="Bread" />
       <div id="meatDiv">
         <div class="meat">
           <p id="beef">Beef</p>
@@ -99,131 +124,136 @@
           <p id="chicken">Chicken</p>
         </div>
         <div class="meat">
-            <p id="pork">Pork</p>
-        </div>      
+          <p id="pork">Pork</p>
+        </div>
       </div>
     </div>
 
     <div class="iconsDivs">
-    <img id="dairyIcon" class="icons" src="icon/egg.png" alt="Bread"/>
-    <div id="dairyDiv">
-      <div class="dairy">
-        <p id="milk">Milk</p>
+      <img id="dairyIcon" class="icons" src="icon/egg.png" alt="Bread" />
+      <div id="dairyDiv">
+        <div class="dairy">
+          <p id="milk">Milk</p>
+        </div>
+        <div class="dairy">
+          <p id="cheese">Cheese</p>
+        </div>
+        <div class="dairy">
+          <p id="butter">Butter</p>
+        </div>
       </div>
-      <div class="dairy">
-        <p id="cheese">Cheese</p>
-      </div>
-      <div class="dairy">
-        <p id="butter">Butter</p>
-      </div>      
     </div>
-  </div>
 
     <div id="basket">
       <p>Basket</p>
-      <img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
+      <!--<img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
       <img id="blettuce" class="dhide" src="icon/lettuce.png" alt="broken" />
       <img id="bcheese" class="dhide" src="icon/cheese%20(1).png" alt="broken" />
       <img id="bbanana" class="dhide" src="icon/banana.png" alt="broken" />
       <img id = "btomato" class = "dhide" src = "icon/tomato.png" alt = "broken"/>
-      <img id = "bbread" class = "dhide" src = "icon/toast.png" alt = "broken"/>
+      <img id = "bbread" class = "dhide" src = "icon/toast.png" alt = "broken"/>-->
+      <div id="bdiv0" class="basketItem"><p></p></div>
+      <div id="bdiv1" class="basketItem"><p></p></div>
+      <div id="bdiv2" class="basketItem"><p></p></div>
+      <div id="bdiv3" class="basketItem"><p></p></div>
+      <div id="bdiv4" class="basketItem"><p></p></div>
       <img id="arrow" src="icon/whitearrow.png" />
     </div>
 
     <div id="footer">
       <div id="bcitdiv">
-      <a href = "https://www.bcit.ca/" target="blank">
-        <img src = "logos/192px-BCITwordmark.svg.png" id = "bcit"/>
-      </a>
-      </div>  
+        <a href="https://www.bcit.ca/" target="blank">
+          <img src="logos/192px-BCITwordmark.svg.png" id="bcit" />
+        </a>
+      </div>
       <div id="loveFooddiv">
-      <a href="https://www.lovefoodhatewaste.com/" target="blank">
-      <img src = "logos/logo_og.png" id = "loveFood"/>
-      </a>
+        <a href="https://www.lovefoodhatewaste.com/" target="blank">
+          <img src="logos/logo_og.png" id="loveFood" />
+        </a>
       </div>
       <div id="metroVandiv">
-      <a href="http://www.metrovancouver.org/" target="blank">
-      <img src = "logos/metro-vancouver-logo-colour-illustrator-file.png" id = "metro"/>
-      </a>
+        <a href="http://www.metrovancouver.org/" target="blank">
+          <img src="logos/metro-vancouver-logo-colour-illustrator-file.png" id="metro" />
+        </a>
       </div>
     </div>
 
-    </div>
-    <!--#################################################################################
+  </div>
+  <!--#################################################################################
       #############################Recipe page starts####################################
       ###################################################################################-->
-  <div id = "menu" style="display: none">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="recipes">
-            <a href='#'><p class="recipeID"></p></a>
-            <img class = "images" style="z-index: -1">
-            <div class = "toggle">
-            <p class = "information"  style="display:none">Information</p>
-            <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients"  style="display:none">Ingredients</p>
-            <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions"  style="display:none">Instruction</p>
-            <p class = "recipeIns" style="display:none"></p>
+      <div id = "menu" style="display: none">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="recipes">
+              <a href='#'><p class="recipeID"></p></a>
+              <img class = "images" style="z-index: -1">
+              <div class = "toggle">
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+              </div>
+            </div>
+            <div class="recipes">
+              <a href='#'><p class="recipeID"></p></a>
+              <img class = "images"> 
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+            </div>
+            <div class="recipes">
+              <a href='#'><p class="recipeID"></p></a>
+              <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+            </div>
+            <div class="recipes">
+              <a href='#'><p class="recipeID"></p></a>
+              <img class = "images"> 
+              <p class = "information"  style="display:none">Information</p>
+               <p class = "recipeStats" style="display:none"></p>
+               <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+            </div>
+            <div class="recipes">
+              <a href='#'><p class="recipeID"></p></a>
+              <img class = "images">
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+            </div>
+            <div class="recipes">
+              <a href='#'><p class="recipeID"></p></a>
+              <img class = "images">
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
             </div>
           </div>
-          <div class="recipes">
-            <a href='#'><p class="recipeID"></p></a>
-            <img class = "images"> 
-            <p class = "information"  style="display:none">Information</p>
-            <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients"  style="display:none">Ingredients</p>
-            <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions"  style="display:none">Instruction</p>
-            <p class = "recipeIns" style="display:none"></p>
-          </div>
-          <div class="recipes">
-            <a href='#'><p class="recipeID"></p></a>
-            <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
-            <p class = "information"  style="display:none">Information</p>
-            <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients"  style="display:none">Ingredients</p>
-            <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions"  style="display:none">Instruction</p>
-            <p class = "recipeIns" style="display:none"></p>
-          </div>
-          <div class="recipes">
-            <a href='#'><p class="recipeID"></p></a>
-            <img class = "images"> 
-            <p class = "information"  style="display:none">Information</p>
-             <p class = "recipeStats" style="display:none"></p>
-             <p class = "ingredients"  style="display:none">Ingredients</p>
-            <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions"  style="display:none">Instruction</p>
-            <p class = "recipeIns" style="display:none"></p>
-          </div>
-          <div class="recipes">
-            <a href='#'><p class="recipeID"></p></a>
-            <img class = "images">
-            <p class = "information"  style="display:none">Information</p>
-            <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients"  style="display:none">Ingredients</p>
-            <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions"  style="display:none">Instruction</p>
-            <p class = "recipeIns" style="display:none"></p>
-          </div>
-          <div class="recipes">
-            <a href='#'><p class="recipeID"></p></a>
-            <img class = "images">
-            <p class = "information"  style="display:none">Information</p>
-            <p class = "recipeStats" style="display:none"></p>
-            <p class = "ingredients"  style="display:none">Ingredients</p>
-            <p class = "ingredientAPI" style="display:none"></p>
-            <p class = "instructions"  style="display:none">Instruction</p>
-            <p class = "recipeIns" style="display:none"></p>
-          </div>
         </div>
-      </div>
-  </div>
-<!--############################################################################################################
+    </div>
+  <!--############################################################################################################
       ######################################Recipe page ends####################################################
       ##########################################################################################################-->
-  
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <script>
@@ -232,71 +262,170 @@
 
       var ingredients = ["", "", "", "", ""];
       var count = 0;
+      var basketCount = 0;
 
-      $("#vegIcon").click(function (){
+      /*$('#vegDiv').on('click', '*', function() {
+        var idVeg = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idVeg);
+        basketCount++;
+        console.log(idVeg);
+      });
+      $('#fruitDiv').on('click', '*', function() {
+        var idFruit = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idFruit);
+        basketCount++;
+        console.log(idFruit);
+      });
+      $('#breadDiv').on('click', '*', function() {
+        var idBread = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idBread);
+        basketCount++;
+        console.log(idBread);
+      });
+
+      $('#dairyDiv').on('click', '*', function() {
+        var idDairy = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text();
+        console.log(basketCount);
+        console.log(idDairy);
+        basketCount++;
+        console.log(basketCount);
+      });
+      
+      $('#meatDiv').on("click", '*', function() {
+        
+        var idMeat = $(this).text();
+        $("#bdiv" + basketCount + "").children("p").text(idMeat);
+        console.log(basketCount);
+        console.log(idMeat);
+        basketCount++;
+        console.log(basketCount);
+        
+      });*/
+
+      $('#searchBar > input').keyup( function(e) {
+        if(e.keyCode == 13 && count < 5){
+          var sb = $(this).val();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(sb);
+          $("#arrow").show(500);
+          console.log(sb);
+          ingredients[count] = sb;
+          count++;
+          $(this).val("");
+        }
+      });
+
+      $('#vegDiv > div > p').click(function() {
+        if(count < 5){
+          var idVeg = $(this).text();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idVeg);
+          $("#arrow").show(500);
+          ingredients[count] = idVeg;
+          count++;
+        }
+      });
+
+      $('#fruitDiv > div > p').click(function() {
+        if(count < 5){
+          var idFruit = $(this).text();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idFruit);
+          $("#arrow").show(500);
+          ingredients[count] = idFruit;
+          count++;
+        }
+      });
+
+      $('#breadDiv > div > p').click(function() {
+        if(count < 5){
+          var idBread = $(this).text();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idBread);
+          $("#arrow").show(500);
+          ingredients[count] = idBread;
+          count++;
+        }
+      });     
+
+      $("#meatDiv > div > p").click( function() {
+        if(count < 5){
+          var idMeat = $(this).text();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idMeat);
+          $("#arrow").show(500);
+          ingredients[count] = idMeat;
+          count++;    
+        }    
+      });
+
+      $("#dairyDiv > div > p").click(function() {
+        if(count < 5){
+          var idDairy = $(this).text();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").children("p").text(idDairy);
+          $("#arrow").show(500);
+          ingredients[count] = idDairy;
+          count++;
+        }
+      });
+			
+			$("#search").click(function (){
+        $("#searchBar").slideToggle();
+      });
+
+      $("#vegIcon").click(function () {
         $("#vegDiv").slideToggle();
       });
-      $("#fruitIcon").click(function (){
+      $("#fruitIcon").click(function () {
         $("#fruitDiv").slideToggle();
       });
-      $("#breadIcon").click(function (){
+      $("#breadIcon").click(function () {
         $("#breadDiv").slideToggle();
       });
-      $("#meatIcon").click(function (){
+      $("#meatIcon").click(function () {
         $("#meatDiv").slideToggle();
       });
-      $("#dairyIcon").click(function (){
+      $("#dairyIcon").click(function () {
         $("#dairyDiv").slideToggle();
-      });
+      }); 
 
-      $("#carrot").click(function () {
-        $("#bcarrot").show(500);
-        $("#carrot").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "carrot";
-        count++;
-      });
-      $("#lettuce").click(function () {
-        $("#blettuce").show(500);
-        $("#lettuce").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "lettuce";
-        count++;
-      });
-      $("#cheese").click(function () {
-        $("#bcheese").show(500);
-        $("#cheese").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "cheese";
-        count++;
-      });
-      $("#banana").click(function () {
-        $("#bbanana").show(500);
-        $("#banana").css("filter", "grayscale(100%)");
-        $("#arrow").show(500);
-        ingredients[count] = "banana";
-        count++;
-      });
-      $("#tomato").click(function() {
-              $("#btomato").show(500);
-              $("#tomato").css("filter" , "grayscale(100%)");
-              $("#arrow").show(500);
-              ingredients[count] = "tomato";
-              count++;
-            console.log(ingredients + count);
-          });
-       $("#bread").click(function() {
-              $("#bbread").show(500);
-              $("#bread").css("filter" , "grayscale(100%)");
-              $("#arrow").show(500);
-              ingredients[count] = "bread";
-              count++;
-            console.log(ingredients + count);
-          });
+
+
         /*****************************************/
         /*********removal functionality **********/
         /*****************************************/
-        $("#bcarrot").click(function() {
+			$("#basket > div").click(function() {
+				var ids = $(this).attr("id");
+				$(this).hide();
+				var remove = $(this).children("p").text("");
+				
+				for(let i = 0; i < ingredients.length;i++) {
+          if (ingredients[i] == remove){
+            ingredients[i]="";
+            var removedIndex = i;
+            console.log(removedIndex);
+          }
+        }
+        for (var i = ingredients.length - 1; i > removedIndex; i--) {
+          console.log(ingredients[i] + count);
+          if (ingredients[i] != "") {
+            ingredients[removedIndex] = ingredients[i];
+            ingredients[i] = "";
+            break;
+          }
+        }
+				
+				count--;
+				if (count == 0) {
+					$("#arrow").slideUp();
+				} 
+
+				console.log(ids);
+			});
+			
+       /* $("#bcarrot").click(function() {
               count--;
               $("#bcarrot").hide(500);
               $("#carrot").css("filter" , "");
@@ -427,7 +556,7 @@
               }
               removeArrow();
             console.log(ingredients);
-          });
+          });*/
           var removeArrow = function(){
             var isEmpty = true;
             for (let i = 0 ; i < ingredients.length; i++){
@@ -447,11 +576,6 @@
         /*****************************************/
 
 
-        /*****************************************/
-        /*********recipe page starts**************/
-        /*****************************************/
-      
-      
       $("#arrow").click(function () {
         $("#whole").hide(500);
         $("#menu").show(500);
