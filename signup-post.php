@@ -4,15 +4,15 @@
     $data = array("status" => "fail", "msg" => "$methodType");
 
     // DB Login
-    $servername = "db736774578.db.1and1.com";
-    $dblogin = "dbo736774578";
-    $adminpass = "159753Rb$";
-    $dbname = "db736774578";
+    // $servername = "db736774578.db.1and1.com";
+    // $dblogin = "dbo736774578";
+    // $adminpass = "159753Rb$";
+    // $dbname = "db736774578";
 
-    // $servername = "localhost";
-    // $dblogin = "root";
-    // $adminpass = "root";
-    // $dbname = "tapncook";
+    $servername = "localhost";
+    $dblogin = "root";
+    $adminpass = "root";
+    $dbname = "tapncook";
 
     if ($methodType === 'POST') {
 
@@ -36,10 +36,10 @@
         
                     //$sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
                     $sql = "INSERT INTO user (user_name, password) VALUES (:lName, :lPass)";
-                    $check = "SELECT * FROM user WHERE user.user_name = ? AND user.password = ?";
+                    $check = "SELECT * FROM user WHERE user.user_name = ?";
 
                     $stmt = $conn->prepare($check);
-                    $stmt->execute(array($login, $pass));
+                    $stmt->execute(array($login));
                     $count = $stmt->rowCount();
         
                     if($count == 0) {
