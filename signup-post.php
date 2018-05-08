@@ -1,9 +1,5 @@
 <?php
-    // get the session
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-
+    
     $methodType = $_SERVER['REQUEST_METHOD'];
     $data = array("status" => "fail", "msg" => "$methodType");
 
@@ -12,6 +8,11 @@
     $dblogin = "dbo736774578";
     $adminpass = "159753Rb$";
     $dbname = "db736774578";
+
+    // $servername = "localhost";
+    // $dblogin = "root";
+    // $adminpass = "root";
+    // $dbname = "tapncook";
 
     if ($methodType === 'POST') {
 
@@ -25,6 +26,7 @@
                 // get the data from the post and store in variables
                 $login = $_POST["username"];
                 $pwd = $_POST["password"];
+                $pass = md5($pwd);
 
                 try {
                     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $adminpass);
@@ -33,26 +35,21 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
                     //$sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
-                    $sql = "INSERT INTO user (user_name, password) VALUES ('$login', '$pwd')";
+                    $sql = "INSERT INTO user (user_name, password) VALUES ('$login', '$pass')";
+                    $check = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pass'";
 
-                    $statement = $conn->prepare($sql);
-                    $statement->execute();
-                    $count = $statement->rowCount();
+                    $stmt = $conn->prepare($check);
+                    $stmt->execute();
+                    $count = $stmt->rowCount();
         
-                    if($count > 0) {
+                    if($count == 0) {
                         // sucess
-                        //$_SESSION['username'] = $login;
-                        //$_SESSION['password'] = $pwd;
-                        //$_SESSION['high_score'] = $hs;
-                        // $_SESSION['lastname'] = "Ferguson";
-                        // $_SESSION['email'] = "arron_ferguson@bcit.ca";
-                        $_SESSION['loggedin'] = true;
-    
-                        $sid= session_id();
+                        $statement = $conn->prepare($sql);
+                        $statement->execute();
                         $data = array("msg" => "Success", "sid" => $sid);
     
                     } else {
-                        $data = array("msg" => "User name and/or password not correct.");
+                        $data = array("msg" => "User is already in database.");
                     }
         
                 } catch(PDOException $e) {
