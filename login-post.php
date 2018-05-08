@@ -33,10 +33,10 @@
                     // set the PDO error mode to exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-                    $sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pass'";
+                    $sql = "SELECT * FROM user WHERE user.user_name = ? AND user.password = ?";
 
                     $statement = $conn->prepare($sql);
-                    $statement->execute();
+                    $statement->execute(array($login, $pass));
                     $count = $statement->rowCount();
         
                     if($count > 0) {
@@ -55,7 +55,7 @@
                     }
         
                 } catch(PDOException $e) {
-                    $data = array("errorlol", $e->getMessage());
+                    $data = array("error", $e->getMessage());
                 }
 
             } else {

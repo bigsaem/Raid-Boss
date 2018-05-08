@@ -35,17 +35,17 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
                     //$sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
-                    $sql = "INSERT INTO user (user_name, password) VALUES ('$login', '$pass')";
-                    $check = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pass'";
+                    $sql = "INSERT INTO user (user_name, password) VALUES (:lName, :lPass)";
+                    $check = "SELECT * FROM user WHERE user.user_name = ? AND user.password = ?";
 
                     $stmt = $conn->prepare($check);
-                    $stmt->execute();
+                    $stmt->execute(array($login, $pass));
                     $count = $stmt->rowCount();
         
                     if($count == 0) {
                         // sucess
                         $statement = $conn->prepare($sql);
-                        $statement->execute();
+                        $statement->execute(array(":lName" => $login, ":lPass" => $pass));
                         $data = array("msg" => "Success", "sid" => $sid);
     
                     } else {
@@ -53,7 +53,7 @@
                     }
         
                 } catch(PDOException $e) {
-                    $data = array("errorlol", $e->getMessage());
+                    $data = array("error", $e->getMessage());
                 }
 
             } else {
