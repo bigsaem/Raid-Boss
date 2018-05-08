@@ -3,7 +3,7 @@
 <head>
   <title> TapNCook </title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="./TapNCook.css" />
+  <link rel="stylesheet" type="text/css" href="./TapNCook.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
@@ -146,18 +146,12 @@
 
     <div id="basket">
       <p>Basket</p>
-      <!--<img id="bcarrot" class="dhide" src="icon/carrot.png" alt="broken" />
-      <img id="blettuce" class="dhide" src="icon/lettuce.png" alt="broken" />
-      <img id="bcheese" class="dhide" src="icon/cheese%20(1).png" alt="broken" />
-      <img id="bbanana" class="dhide" src="icon/banana.png" alt="broken" />
-      <img id = "btomato" class = "dhide" src = "icon/tomato.png" alt = "broken"/>
-      <img id = "bbread" class = "dhide" src = "icon/toast.png" alt = "broken"/>-->
-      <div id="bdiv0" class="basketItem"><p></p></div>
-      <div id="bdiv1" class="basketItem"><p></p></div>
-      <div id="bdiv2" class="basketItem"><p></p></div>
-      <div id="bdiv3" class="basketItem"><p></p></div>
-      <div id="bdiv4" class="basketItem"><p></p></div>
-      <img id="arrow" src="icon/whitearrow.png" />
+        <p id="bdiv0" class="basketItem"></p>
+        <p id="bdiv1" class="basketItem"></p>
+        <p id="bdiv2" class="basketItem"></p>
+        <p id="bdiv3" class="basketItem"></p>
+        <p id="bdiv4" class="basketItem"></p>
+        <img id="arrow" src="icon/whitearrow.png"/>
     </div>
 
     <div id="footer">
@@ -304,10 +298,16 @@
       });*/
 
       $('#searchBar > input').keyup( function(e) {
-        if(e.keyCode == 13 && count < 5){
+        var sameSearch = false;
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).val()){
+            sameSearch = true;
+          }
+        }
+        if(e.keyCode == 13 && count < 5 && sameSearch == false){
           var sb = $(this).val();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").children("p").text(sb);
+          $("#bdiv" + count + "").text(sb);
           $("#arrow").show(500);
           console.log(sb);
           ingredients[count] = sb;
@@ -317,56 +317,91 @@
       });
 
       $('#vegDiv > div > p').click(function() {
-        if(count < 5){
+        var sameVeg = false;
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).text()){
+            sameVeg = true;
+          }
+        }
+        if(count < 5 && sameVeg == false){
           var idVeg = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").children("p").text(idVeg);
+          $("#bdiv" + count + "").text(idVeg);
           $("#arrow").show(500);
           ingredients[count] = idVeg;
+          console.log(ingredients);
           count++;
         }
       });
 
       $('#fruitDiv > div > p').click(function() {
-        if(count < 5){
+        var sameFruit = false;
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).text()){
+            sameFruit = true;
+          }
+        }
+        if(count < 5 && sameFruit == false){
           var idFruit = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").children("p").text(idFruit);
+          $("#bdiv" + count + "").text(idFruit);
           $("#arrow").show(500);
           ingredients[count] = idFruit;
+          console.log(ingredients);
           count++;
         }
       });
 
       $('#breadDiv > div > p').click(function() {
-        if(count < 5){
+        var sameBread = false;
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).text()){
+            sameBread = true;
+          }
+        }
+        if(count < 5 && sameBread == false){
           var idBread = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").children("p").text(idBread);
+          $("#bdiv" + count + "").text(idBread);
           $("#arrow").show(500);
           ingredients[count] = idBread;
+          console.log(ingredients);
           count++;
         }
       });     
 
       $("#meatDiv > div > p").click( function() {
-        if(count < 5){
+        var sameMeat = false;
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).text()){
+            sameMeat = true;
+          }
+        }
+        if(count < 5 && sameMeat == false){
           var idMeat = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").children("p").text(idMeat);
+          $("#bdiv" + count + "").text(idMeat);
           $("#arrow").show(500);
           ingredients[count] = idMeat;
+          console.log(ingredients);
           count++;    
         }    
       });
 
       $("#dairyDiv > div > p").click(function() {
-        if(count < 5){
+        var sameDairy = false;
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).text()){
+            sameDairy = true;
+          }
+        }
+        if(count < 5 && sameDairy == false){
           var idDairy = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").children("p").text(idDairy);
+          $("#bdiv" + count + "").text(idDairy);
           $("#arrow").show(500);
           ingredients[count] = idDairy;
+          console.log(ingredients);
           count++;
         }
       });
@@ -396,23 +431,26 @@
         /*****************************************/
         /*********removal functionality **********/
         /*****************************************/
-			$("#basket > div").click(function() {
-				var ids = $(this).attr("id");
+			$(".basketItem").click(function() {
+				var ids = $(this).text();
+        console.log(ids);
 				$(this).hide();
-				var remove = $(this).children("p").text("");
+        console.log(ingredients);
 				
-				for(let i = 0; i < ingredients.length;i++) {
-          if (ingredients[i] == remove){
+				
+				for(let i = 0; i < ingredients.length-1;i++) {
+          if (ingredients[i] == ids){
             ingredients[i]="";
             var removedIndex = i;
-            console.log(removedIndex);
+            console.log(ingredients);
+            console.log("removed index: " + removedIndex);
           }
         }
         for (var i = ingredients.length - 1; i > removedIndex; i--) {
-          console.log(ingredients[i] + count);
           if (ingredients[i] != "") {
             ingredients[removedIndex] = ingredients[i];
             ingredients[i] = "";
+            console.log(ingredients);
             break;
           }
         }
@@ -557,7 +595,7 @@
               removeArrow();
             console.log(ingredients);
           });*/
-          var removeArrow = function(){
+          /*var removeArrow = function(){
             var isEmpty = true;
             for (let i = 0 ; i < ingredients.length; i++){
               if (ingredients[i] != "") {
@@ -570,7 +608,7 @@
             if(isEmpty == true){
                 $("#arrow").hide(500);
               }
-          }
+          }*/
         /*****************************************/
         /*********removal functionality end*******/
         /*****************************************/
