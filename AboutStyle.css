@@ -75,8 +75,10 @@ li {
 }
 
 #metro{
-  width:280px;
-  padding-top: 18px;
+  margin-top: 0.5px;
+  margin-bottom:0.5px;
+  padding-top:0.5px;
+  width:75px;
 }
 
 
