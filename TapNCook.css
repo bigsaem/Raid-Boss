@@ -1,12 +1,31 @@
-header{
-    text-align: center;
-    /* I think this color is the best*/
-    background-image: url(icon/green.png);
-    font-size:50pt;
-    color:white;
-    padding: 1px;
-    font-family: 'Lily Script One', cursive;
-  }
+#header {
+  text-align: center;
+  /* I think this color is the best*/
+  /*background-image: url(icon/green.png);*/
+  background-color: rgb(5, 178, 82);
+  color:white;
+  padding: 1px;
+  font-family: 'Lily Script One', cursive;
+}
+
+#header p {
+font-size:25pt;
+display: inline-block;
+background-color: rgb(5, 178, 82);
+margin-right: -25px;
+}
+
+#header #search {
+float: right;
+width: 55px;
+margin-right: 25px;
+}
+
+#header #menuDiv {
+float: left;
+width: 55px;
+margin-left: 25px;
+}
   
   .icons {
     display: inline-block;
@@ -41,7 +60,7 @@ header{
   body{
     font-family: 'PT Sans', sans-serif;
     background-color:lightpink;
-      background: linear-gradient(to right, lightpink, white, lightpink);
+    background: linear-gradient(to right, lightpink, white, lightpink);
     margin:0;
     
     
@@ -57,19 +76,44 @@ header{
   }
   
   #basket {
-    background-color: yellow;
-    margin-top: 1px;
-  
+    float: left;
+    background-color: lightsalmon;
+    margin-top: 1px;  
+		width: 100%;
   }
+  
+  .basketItem {
+    /*display: inline-block;*/
+    font-size: 20pt;
+    background-color: burlywood;
+    float: left;	
+    display:none;
+    border-style: solid;
+    border-color: cornsilk;
+    border-radius: 2px;
+    width: 16%;
+    vertical-align: middle;
+  }
+  
   
   #basket img {
     width: 10%;
     display: none;
   }
+
+  /*.basketItem p {
+    background-color: burlywood;
+		font-size: 15px;
+		text-align: center;
+    display: inline-block;
+    float: left; 
+		height: 100%;
+  }*/
   
   #arrow {
     float: right;
     display: none;
+    margin: 0;
   }
   
   /***********************************/
@@ -123,6 +167,7 @@ header{
   
   #whole {
     text-align: center;
+
   }
   #subhead {
     font-family: 'Oleo Script Swash Caps', cursive;
@@ -162,7 +207,6 @@ header{
     color: black;
     background-color: white;
   }
-  
   /* Categories */
   
   #vegDiv {
@@ -198,7 +242,6 @@ header{
     float: left;
     clear: left;
   }
-  
   .fruits p {
     background-color: rgba(0, 0, 0, 0);
     text-align: center;
@@ -266,10 +309,56 @@ header{
   }
   
   .iconsDivs {
-    display: inline-block;
+    display: inline-table;
     margin: 0-auto;
     width: 40%;
     
   }
+  .basketItem {
+    background-color: burlywood;
+    float: left;
+    text-align: center;
+    height: 100%;
+    vertical-align: middle;
+    
+  }
+  
+  #bcarrot {
+    display: none; 
+  }
+  
+  .basketItem p {
+    background-color: burlywood;
+    text-align: center;
+    border-color: cornsilk;
+    border-radius: 5px;
+    float: left;
+    
+  
+  }
+  
+  #blettuce {
+    display: none;
+  }
+  
+  #blettuce p {
+    background-color: burlywood;
+    border-style: solid;
+    border-color: cornsilk;
+    border-radius: 5px;
+    float: left;
+  }
+
+  #searchBar {
+    display: none;
+  }
+ 
+
+
+
+
+
+
+  
   
   

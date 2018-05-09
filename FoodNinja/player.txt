@@ -1,0 +1,21 @@
+CREATE DATABASE foodninja;
+
+USE foodninja;
+
+CREATE TABLE Players (
+        ID int NOT NULL AUTO_INCREMENT,
+	Player varchar(255),
+	HighScore int NOT NULL,
+	Primary Key(ID)
+	
+);
+
+
+INSERT INTO Players (ID, Player, HighScore)
+VALUES ('5', 'perry', '888');
+
+INSERT INTO Players (ID, Player, HighScore)
+VALUES ('28', 'kelvin', '3');
+
+INSERT INTO Players (ID, Player, HighScore)
+VALUES ('35', 'sam', '20');
