@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "gyronorm",
+        "scope": null,
+        "escapedName": "gyronorm",
+        "name": "gyronorm",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/dorukeker"
+    ]
+  ],
+  "_from": "gyronorm",
+  "_id": "gyronorm@2.0.6",
+  "_inBundle": false,
+  "_inCache": true,
+  "_integrity": "sha1-w9vKoBCQh/6nU3j3hTi+/c1TzuI=",
+  "_location": "/gyronorm",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "dorukeker",
+    "email": "doruk@dorukeker.com"
+  },
+  "_npmVersion": "2.13.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "gyronorm",
+    "name": "gyronorm",
+    "escapedName": "gyronorm",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gyronorm/-/gyronorm-2.0.6.tgz",
+  "_shasum": "c3dbcaa0109087fea75378f78538befdcd53cee2",
+  "_shrinkwrap": null,
+  "_spec": "gyronorm",
+  "_where": "C:\\Users\\Perry",
+  "authors": [
+    "Doruk Eker"
+  ],
+  "bugs": {
+    "url": "https://github.com/dorukeker/gyronorm.js/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Accesses the gyroscope and accelerometer data from the web browser and combines them in one JS object.",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.6.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "e75e67f173b553c8aa6090ecc4058c560360f086",
+    "tarball": "https://registry.npmjs.org/gyronorm/-/gyronorm-2.0.4.tgz"
+  },
+  "gitHead": "d997efd4a18afd5a7110ab0525674f839867f77e",
+  "homepage": "https://github.com/dorukeker/gyronorm.js",
+  "keywords": [
+    "devicemotion",
+    "deviceorientation"
+  ],
+  "license": "MIT",
+  "main": "lib/gyronorm.js",
+  "maintainers": [
+    {
+      "name": "amberlamps1",
+      "email": "alexander.behrens.84@gmail.com"
+    },
+    {
+      "name": "dorukeker",
+      "email": "doruk@dorukeker.com"
+    }
+  ],
+  "name": "gyronorm",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorukeker/gyronorm.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.6"
+}
