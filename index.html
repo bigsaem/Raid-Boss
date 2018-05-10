@@ -19,9 +19,24 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-  <div id="header">
+    <!-- Nav Bar -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="./index.html">Home</a>
+      <a class="nav-link" href="./AboutUs.html">About Us</a>
+      <a href="./AffiliatedApps.html">Affiliated Apps</a>
+      <a href="./login.html">Login</a>
+      <a href="./signup.html">Sign Up</a>
+      <a href="./bait.html">Don't Click</a>
+    </div>
+    <div id="cover" onclick="closeNav()">
+    </div>
+    <!-- nav bar ends-->
+  
+  <div id="header"> 
 		<div id="menuDiv">
-      <img id="menuIcon" src="icon/Menu.png" alt="Menu">
+        <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+      <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
     </div>
 		<p>Tap'N CooK</p>
 		<div id="search">
@@ -29,35 +44,38 @@
     </div>
   </div>
   
-  <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="./index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./AboutUs.html">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./AffiliatedApps.html">Affiliated Apps</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./login.html">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./signup.html">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./bait.html">Don't Click</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./FoodNinja/FoodNinja.html">Really, Don't Click</a>
-      </li>
-    </ul>
+
     <!--
     <div class="dropdown">
       <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
         More Features
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="./login.html">Login</a>
+        <a class="dropdown-item" href="#">Sign Up</a>
+        <a class="dropdown-item" href="#">Settings</a>
+      </div>
+    </div>
+    -->
+ 
+
+  <div id="whole">
+    <p id="subhead">What do you want to use?</p>
+    <div id="searchBar"><input placeholder="Search Ingredient"></div>
+
+    <div class="iconsDivs">
+      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
+      <div id="vegDiv">
+        <div class="vegies">
+          <p id="carrot">Carrot</p>
+        </div>
+        <div class="vegies">
+          <p id="lettuce">Lettuce</p>
+        </div>
+        <div class="vegies">
+          <p id="tomato">Tomato</p>
+        </div>
+      </div>
     </div>
 
     <div class="iconsDivs">
@@ -126,33 +144,6 @@
         <p id="bdiv1" class="basketItem"></p>
         <p id="bdiv2" class="basketItem"></p>
         <p id="bdiv3" class="basketItem"></p>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="./login.html">Login</a>
-        <a class="dropdown-item" href="#">Sign Up</a>
-        <a class="dropdown-item" href="#">Settings</a>
-      </div>
-    </div>
-    -->
-  </nav>
-
-  <div id="whole">
-    <p id="subhead">What do you want to use?</p>
-    <div id="searchBar"><input placeholder="Search Ingredient"></div>
-
-    <div class="iconsDivs">
-      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
-      <div id="vegDiv">
-        <div class="vegies">
-          <p id="carrot">Carrot</p>
-        </div>
-        <div class="vegies">
-          <p id="lettuce">Lettuce</p>
-        </div>
-        <div class="vegies">
-          <p id="tomato">Tomato</p>
-        </div>
-      </div>
         <p id="bdiv4" class="basketItem"></p>
         <img id="arrow" src="icon/whitearrow.png"/>
     </div>
@@ -256,58 +247,25 @@
   <script>
     /*<![CDATA[*/
     $(document).ready(function () {
-
+      
+        
+      
       var ingredients = ["", "", "", "", ""];
       var count = 0;
       var basketCount = 0;
-
-      /*$('#vegDiv').on('click', '*', function() {
-        var idVeg = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idVeg);
-        basketCount++;
-        console.log(idVeg);
-      });
-      $('#fruitDiv').on('click', '*', function() {
-        var idFruit = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idFruit);
-        basketCount++;
-        console.log(idFruit);
-      });
-      $('#breadDiv').on('click', '*', function() {
-        var idBread = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idBread);
-        basketCount++;
-        console.log(idBread);
-      });
-
-      $('#dairyDiv').on('click', '*', function() {
-        var idDairy = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text();
-        console.log(basketCount);
-        console.log(idDairy);
-        basketCount++;
-        console.log(basketCount);
-      });
       
-      $('#meatDiv').on("click", '*', function() {
-        
-        var idMeat = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idMeat);
-        console.log(basketCount);
-        console.log(idMeat);
-        basketCount++;
-        console.log(basketCount);
-        
-      });*/
-
+      //if the input text (ingredients input) is pressed, do this
       $('#searchBar > input').keyup( function(e) {
-        var sameSearch = false;
+
+        //checks if the user entered a duplicate , if so, do nothing and return
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).val()){
-            sameSearch = true;
+            return;
           }
         }
-        if(e.keyCode == 13 && count < 5 && sameSearch == false){
+
+        //if not duplicate, and the # of inputted ingredients is less than 5, add it to the basket
+        if(e.keyCode == 13 && count < 5){
           var sb = $(this).val();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(sb);
@@ -317,16 +275,22 @@
           count++;
           $(this).val("");
         }
+        
+        //if # of inputted ingredient is 5, go to easter egg game
+        if (e.keyCode == 13 && count == 5){
+          console.log("triggered easter egg!");
+          window.location.href = 'http://tapncook.ca/foodninja.html';
+        }
       });
 
       $('#vegDiv > div > p').click(function() {
-        var sameVeg = false;
+        
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameVeg = true;
+            return;
           }
         }
-        if(count < 5 && sameVeg == false){
+        if(count < 5){
           var idVeg = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idVeg);
@@ -338,13 +302,12 @@
       });
 
       $('#fruitDiv > div > p').click(function() {
-        var sameFruit = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameFruit = true;
+            return;
           }
         }
-        if(count < 5 && sameFruit == false){
+        if(count < 5){
           var idFruit = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idFruit);
@@ -356,13 +319,12 @@
       });
 
       $('#breadDiv > div > p').click(function() {
-        var sameBread = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameBread = true;
+            return;
           }
         }
-        if(count < 5 && sameBread == false){
+        if(count < 5){
           var idBread = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idBread);
@@ -374,13 +336,12 @@
       });     
 
       $("#meatDiv > div > p").click( function() {
-        var sameMeat = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameMeat = true;
+            return;
           }
         }
-        if(count < 5 && sameMeat == false){
+        if(count < 5){
           var idMeat = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idMeat);
@@ -392,13 +353,12 @@
       });
 
       $("#dairyDiv > div > p").click(function() {
-        var sameDairy = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameDairy = true;
+            return;
           }
         }
-        if(count < 5 && sameDairy == false){
+        if(count < 5){
           var idDairy = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idDairy);
@@ -908,6 +868,18 @@
       
       
     });
+    /************************************************/
+    /*****************Nav bar function***************/
+    /************************************************/
+    function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+            document.getElementById("cover").style.display = "block";
+        }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("cover").style.display = "none";
+    }
 
     /*]]>*/
   </script>

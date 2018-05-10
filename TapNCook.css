@@ -1,3 +1,57 @@
+/* side bar */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(238, 98, 4, 0.829);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
+#cover{
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  display: none;
+}
+
+
+/* header */
 #header {
   text-align: center;
   /* I think this color is the best*/
@@ -79,7 +133,9 @@ margin-left: 25px;
     float: left;
     background-color: lightsalmon;
     margin-top: 1px;  
-		width: 100%;
+    width: 100%;
+
+    
   }
   
   .basketItem {
@@ -124,6 +180,7 @@ margin-left: 25px;
     background-color:black;
     float: left;
     height: 120px;
+    
   }
   
   #bcitdiv{
