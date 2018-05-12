@@ -35,7 +35,7 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
                     //$sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
-                    $sql = "INSERT INTO user (user_name, password) VALUES (:lName, :lPass)";
+                    $sql = "INSERT INTO user (user_name, password, session) VALUES (:lName, :lPass, :lSess)";
                     $check = "SELECT * FROM user WHERE user.user_name = ?";
 
                     $stmt = $conn->prepare($check);
@@ -44,10 +44,14 @@
         
                     if($count == 0) {
                         // sucess
+                        if (session_status() == PHP_SESSION_NONE) {
+                            session_start();
+                        }
+                        $sid = session_id();
                         $statement = $conn->prepare($sql);
-                        $statement->execute(array(":lName" => $login, ":lPass" => $pass));
+                        $statement->execute(array(":lName" => $login, ":lPass" => $pass, ":lSess" => $sid));
                         $data = array("msg" => "Success", "sid" => $sid);
-    
+
                     } else {
                         $data = array("msg" => "User is already in database.");
                     }

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="signup.css" />
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="leaderboard.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <header>
+    <header id="loginHeader">
         Tap'N CooK
     </header>
 
@@ -39,27 +39,21 @@
                 <a class="nav-link" href="./signup.html">Sign Up</a>
             </li>
             <li class="nav-item">
-				<a class="nav-link" href="./leaderboard.html">Leaderboards</a>
+                <a class="nav-link" href="./leaderboard.html">Leaderboards</a>
             </li>
         </ul>
     </nav>
-    <p id="signupBanner">Sign Up</p>
+    <p id="leaderBanner" style="text-align: center; background: firebrick; padding: 10px 0px">Leaderboard</p>
     </br>
-    <form id="signupListForm">
-        <div class="form-group w-50 mx-auto">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Food Reuse Leaderboard</h5>
+            <p class="card-text">These users are the champions of reducing food waste! Keep it up!</p>
         </div>
-        <div class="form-group w-50 mx-auto">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-        </div>
-        <div class="w-50 mx-auto">
-            <input type="submit" id="submit" value="Submit" />
-        </div>
-    </form>
-    </br>
-    <p id="p1" style="text-align: center"></p>
+        <div id="leaderTable"></div>
+    </div>
+
     </br>
     <div id="footer">
         <div id="bcitdiv">
@@ -79,48 +73,21 @@
         </div>
     </div>
 
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
     </script>
     <script>
         $(document).ready(function () {
-
-            $("#signupListForm").submit(function (e) {
-                e.preventDefault();
-                var formData = ConvertFormToJSON("#signupListForm");
-                console.log("Data from form (to be sent): ", formData);
-
-                $.ajax({
-                    url: "signup-post.php",
-                    type: "POST",
-                    dataType: "JSON",
-                    data: formData,
-                    success: function (data) {
-                        console.log("Data returned from server: ", data);
-                        var listData = data.msg;
-                        // for (var key in data) {
-                        //     listData += data[key] + " ";
-                        // }
-                        $("#p1").text(listData);
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        $("#p1").text(jqXHR.statusText);
-                    }
-
-                });
-
+            $.ajax({
+                url: "GetLeaderboard.php",
+                dataType: "html",
+                type: "GET",
+                success: function (data) {
+                    $("#leaderTable").append(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $("#p1").text(jqXHR.statusText);
+                }
             });
-
-            // Converts form to JSON
-            function ConvertFormToJSON(form) {
-                var array = $(form).serializeArray();
-                var json = {};
-                jQuery.each(array, function () {
-                    json[this.name] = this.value || '';
-                });
-                return json;
-            }
-
         });
     </script>
 </body>

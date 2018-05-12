@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title> TapNCook </title>
   <meta charset="utf-8" />
@@ -19,33 +20,33 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <!-- Nav Bar -->
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="./index.html">Home</a>
-      <a class="nav-link" href="./AboutUs.html">About Us</a>
-      <a href="./AffiliatedApps.html">Affiliated Apps</a>
-      <a href="./login.html">Login</a>
-      <a href="./signup.html">Sign Up</a>
-      <a href="./bait.html">Don't Click</a>
-    </div>
-    <div id="cover" onclick="closeNav()">
-    </div>
-    <!-- nav bar ends-->
-  
-  <div id="header"> 
-		<div id="menuDiv">
-        <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+  <!-- Nav Bar -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="./index.html">Home</a>
+    <a class="nav-link" href="./AboutUs.html">About Us</a>
+    <a href="./AffiliatedApps.html">Affiliated Apps</a>
+    <a href="./login.html">Login</a>
+    <a href="./signup.html">Sign Up</a>
+    <a href="./bait.html">Don't Click</a>
+  </div>
+  <div id="cover" onclick="closeNav()">
+  </div>
+  <!-- nav bar ends-->
+
+  <div id="header">
+    <div id="menuDiv">
+      <span id=m enuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
       <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
     </div>
-		<p>Tap'N CooK</p>
-		<div id="search">
+    <p>Tap'N CooK</p>
+    <div id="search">
       <img id="searchIcon" src="icon/Mag.png" alt="Search">
     </div>
   </div>
-  
 
-    <!--
+
+  <!--
     <div class="dropdown">
       <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
         More Features
@@ -57,11 +58,13 @@
       </div>
     </div>
     -->
- 
+
 
   <div id="whole">
     <p id="subhead">What do you want to use?</p>
-    <div id="searchBar"><input placeholder="Search Ingredient"></div>
+    <div id="searchBar">
+      <input placeholder="Search Ingredient">
+    </div>
 
     <div class="iconsDivs">
       <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
@@ -140,12 +143,12 @@
 
     <div id="basket">
       <p>Basket</p>
-        <p id="bdiv0" class="basketItem"></p>
-        <p id="bdiv1" class="basketItem"></p>
-        <p id="bdiv2" class="basketItem"></p>
-        <p id="bdiv3" class="basketItem"></p>
-        <p id="bdiv4" class="basketItem"></p>
-        <img id="arrow" src="icon/whitearrow.png"/>
+      <p id="bdiv0" class="basketItem"></p>
+      <p id="bdiv1" class="basketItem"></p>
+      <p id="bdiv2" class="basketItem"></p>
+      <p id="bdiv3" class="basketItem"></p>
+      <p id="bdiv4" class="basketItem"></p>
+      <img id="arrow" class="clickCounter" src="icon/whitearrow.png" />
     </div>
 
     <div id="footer">
@@ -170,74 +173,87 @@
   <!--#################################################################################
       #############################Recipe page starts####################################
       ###################################################################################-->
-      <div id = "menu" style="display: none">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images" style="z-index: -1">
-              <div class = "toggle">
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-              </div>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> 
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> 
-              <p class = "information"  style="display:none">Information</p>
-               <p class = "recipeStats" style="display:none"></p>
-               <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images">
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images">
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
+  <div id="menu" style="display: none">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="recipes">
+          <a href='#'>
+            <p class="recipeID"></p>
+          </a>
+          <img class="images" style="z-index: -1">
+          <div class="toggle">
+            <p class="information" style="display:none">Information</p>
+            <p class="recipeStats" style="display:none"></p>
+            <p class="ingredients" style="display:none">Ingredients</p>
+            <p class="ingredientAPI" style="display:none"></p>
+            <p class="instructions" style="display:none">Instruction</p>
+            <p class="recipeIns" style="display:none"></p>
           </div>
         </div>
+        <div class="recipes">
+          <a href='#'>
+            <p class="recipeID"></p>
+          </a>
+          <img class="images">
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <a href='#'>
+            <p class="recipeID"></p>
+          </a>
+          <img class="images">
+          <!-- src= "stuff" alt="something went wrong!"> -->
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <a href='#'>
+            <p class="recipeID"></p>
+          </a>
+          <img class="images">
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <a href='#'>
+            <p class="recipeID"></p>
+          </a>
+          <img class="images">
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <a href='#'>
+            <p class="recipeID"></p>
+          </a>
+          <img class="images">
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+      </div>
     </div>
+  </div>
   <!--############################################################################################################
       ######################################Recipe page ends####################################################
       ##########################################################################################################-->
@@ -247,27 +263,27 @@
   <script>
     /*<![CDATA[*/
     $(document).ready(function () {
-      
-        
-      
+
+
+
       var ingredients = ["", "", "", "", ""];
       var count = 0;
       var basketCount = 0;
-      
+
       //if the input text (ingredients input) is pressed, do this
-      $('#searchBar > input').keyup( function(e) {
+      $('#searchBar > input').keyup(function (e) {
 
         //checks if the user entered a duplicate , if so, do nothing and return
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).val()){
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).val()) {
             return;
           }
         }
 
         //if not duplicate, and the # of inputted ingredients is less than 5, add it to the basket
-        if(e.keyCode == 13 && count < 5){
+        if (e.keyCode == 13 && count < 5) {
           var sb = $(this).val();
-					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(sb);
           $("#arrow").show(500);
           console.log(sb);
@@ -275,24 +291,24 @@
           count++;
           $(this).val("");
         }
-        
+
         //if # of inputted ingredient is 5, go to easter egg game
-        if (e.keyCode == 13 && count == 5){
+        if (e.keyCode == 13 && count == 5) {
           console.log("triggered easter egg!");
           window.location.href = 'http://tapncook.ca/foodninja.html';
         }
       });
 
-      $('#vegDiv > div > p').click(function() {
-        
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).text()){
+      $('#vegDiv > div > p').click(function () {
+
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).text()) {
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idVeg = $(this).text();
-					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idVeg);
           $("#arrow").show(500);
           ingredients[count] = idVeg;
@@ -301,15 +317,15 @@
         }
       });
 
-      $('#fruitDiv > div > p').click(function() {
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).text()){
+      $('#fruitDiv > div > p').click(function () {
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).text()) {
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idFruit = $(this).text();
-					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idFruit);
           $("#arrow").show(500);
           ingredients[count] = idFruit;
@@ -318,49 +334,49 @@
         }
       });
 
-      $('#breadDiv > div > p').click(function() {
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).text()){
+      $('#breadDiv > div > p').click(function () {
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).text()) {
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idBread = $(this).text();
-					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idBread);
           $("#arrow").show(500);
           ingredients[count] = idBread;
           console.log(ingredients);
           count++;
         }
-      });     
+      });
 
-      $("#meatDiv > div > p").click( function() {
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).text()){
+      $("#meatDiv > div > p").click(function () {
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).text()) {
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idMeat = $(this).text();
-					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idMeat);
           $("#arrow").show(500);
           ingredients[count] = idMeat;
           console.log(ingredients);
-          count++;    
-        }    
+          count++;
+        }
       });
 
-      $("#dairyDiv > div > p").click(function() {
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).text()){
+      $("#dairyDiv > div > p").click(function () {
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).text()) {
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idDairy = $(this).text();
-					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idDairy);
           $("#arrow").show(500);
           ingredients[count] = idDairy;
@@ -368,8 +384,8 @@
           count++;
         }
       });
-			
-			$("#search").click(function (){
+
+      $("#search").click(function () {
         $("#searchBar").slideToggle();
       });
 
@@ -387,23 +403,23 @@
       });
       $("#dairyIcon").click(function () {
         $("#dairyDiv").slideToggle();
-      }); 
+      });
 
 
 
-        /*****************************************/
-        /*********removal functionality **********/
-        /*****************************************/
-			$(".basketItem").click(function() {
-				var ids = $(this).text();
+      /*****************************************/
+      /*********removal functionality **********/
+      /*****************************************/
+      $(".basketItem").click(function () {
+        var ids = $(this).text();
         console.log(ids);
-				$(this).hide();
+        $(this).hide();
         console.log(ingredients);
-				
-				
-				for(let i = 0; i < ingredients.length-1;i++) {
-          if (ingredients[i] == ids){
-            ingredients[i]="";
+
+
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == ids) {
+            ingredients[i] = "";
             var removedIndex = i;
             console.log(ingredients);
             console.log("removed index: " + removedIndex);
@@ -417,170 +433,188 @@
             break;
           }
         }
-				
-				count--;
-				if (count == 0) {
-					$("#arrow").slideUp();
-				} 
 
-				console.log(ids);
-			});
-			
-       /* $("#bcarrot").click(function() {
-              count--;
-              $("#bcarrot").hide(500);
-              $("#carrot").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "carrot"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              console.log(ingredients);
-              removeArrow();
-          });
-          $("#blettuce").click(function() {
-            count--;
-              $("#blettuce").hide(500);
-              $("#lettuce").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "lettuce"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#bcheese").click(function() {
-            count--;
-              $("#bcheese").hide(500);
-              $("#cheese").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "cheese"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#bbanana").click(function() {
-            count--;
-              $("#bbanana").hide(500);
-              $("#banana").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "banana"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#btomato").click(function() {
-            count--;
-              $("#btomato").hide(500);
-              $("#tomato").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "tomato"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#bbread").click(function() {
-            count--;
-              $("#bbread").hide(500);
-              $("#bread").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "bread"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });*/
-          /*var removeArrow = function(){
-            var isEmpty = true;
-            for (let i = 0 ; i < ingredients.length; i++){
-              if (ingredients[i] != "") {
-                isEmpty = false;
-                break;
-              } else {
-                isEmpty = true;
-              }
-            }
-            if(isEmpty == true){
-                $("#arrow").hide(500);
-              }
-          }*/
-        /*****************************************/
-        /*********removal functionality end*******/
-        /*****************************************/
+        count--;
+        if (count == 0) {
+          $("#arrow").slideUp();
+        }
+
+        console.log(ids);
+      });
+
+      ///////////////////////////////////////////////
+      //         Counter Function                  //
+      ///////////////////////////////////////////////
+
+      $(".clickCounter").click(function () {
+        $.ajax({
+          url: "counter.php",
+          dataType: "json",
+          type: "GET",
+          success: function (data) {
+            console.log(data);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+          }
+        });
+      });
+
+      /* $("#bcarrot").click(function() {
+             count--;
+             $("#bcarrot").hide(500);
+             $("#carrot").css("filter" , "");
+             for(let i = 0; i < ingredients.length;i++) {
+               if (ingredients[i] == "carrot"){
+                 ingredients[i]="";
+                 var removedIndex = i;
+                 console.log(removedIndex);
+               }
+             }
+             for(var i = ingredients.length - 1; i > removedIndex;i--) {
+               console.log(ingredients[i] + count);
+               if (ingredients[i] != ""){
+                 ingredients[removedIndex] = ingredients[i];
+                 ingredients[i] = "";
+                 break;
+               }
+             }
+             console.log(ingredients);
+             removeArrow();
+         });
+         $("#blettuce").click(function() {
+           count--;
+             $("#blettuce").hide(500);
+             $("#lettuce").css("filter" , "");
+             for(let i = 0; i < ingredients.length;i++) {
+               if (ingredients[i] == "lettuce"){
+                 ingredients[i]="";
+                 var removedIndex = i;
+                 console.log(removedIndex);
+               }
+             }
+             for(var i = ingredients.length - 1; i > removedIndex;i--) {
+               console.log(ingredients[i] + count);
+               if (ingredients[i] != ""){
+                 ingredients[removedIndex] = ingredients[i];
+                 ingredients[i] = "";
+                 break;
+               }
+             }
+             removeArrow();
+           console.log(ingredients);
+         });
+         $("#bcheese").click(function() {
+           count--;
+             $("#bcheese").hide(500);
+             $("#cheese").css("filter" , "");
+             for(let i = 0; i < ingredients.length;i++) {
+               if (ingredients[i] == "cheese"){
+                 ingredients[i]="";
+                 var removedIndex = i;
+                 console.log(removedIndex);
+               }
+             }
+             for(var i = ingredients.length - 1; i > removedIndex;i--) {
+               console.log(ingredients[i] + count);
+               if (ingredients[i] != ""){
+                 ingredients[removedIndex] = ingredients[i];
+                 ingredients[i] = "";
+                 break;
+               }
+             }
+             removeArrow();
+           console.log(ingredients);
+         });
+         $("#bbanana").click(function() {
+           count--;
+             $("#bbanana").hide(500);
+             $("#banana").css("filter" , "");
+             for(let i = 0; i < ingredients.length;i++) {
+               if (ingredients[i] == "banana"){
+                 ingredients[i]="";
+                 var removedIndex = i;
+                 console.log(removedIndex);
+               }
+             }
+             for(var i = ingredients.length - 1; i > removedIndex;i--) {
+               console.log(ingredients[i] + count);
+               if (ingredients[i] != ""){
+                 ingredients[removedIndex] = ingredients[i];
+                 ingredients[i] = "";
+                 break;
+               }
+             }
+             removeArrow();
+           console.log(ingredients);
+         });
+         $("#btomato").click(function() {
+           count--;
+             $("#btomato").hide(500);
+             $("#tomato").css("filter" , "");
+             for(let i = 0; i < ingredients.length;i++) {
+               if (ingredients[i] == "tomato"){
+                 ingredients[i]="";
+                 var removedIndex = i;
+                 console.log(removedIndex);
+               }
+             }
+             for(var i = ingredients.length - 1; i > removedIndex;i--) {
+               console.log(ingredients[i] + count);
+               if (ingredients[i] != ""){
+                 ingredients[removedIndex] = ingredients[i];
+                 ingredients[i] = "";
+                 break;
+               }
+             }
+             removeArrow();
+           console.log(ingredients);
+         });
+         $("#bbread").click(function() {
+           count--;
+             $("#bbread").hide(500);
+             $("#bread").css("filter" , "");
+             for(let i = 0; i < ingredients.length;i++) {
+               if (ingredients[i] == "bread"){
+                 ingredients[i]="";
+                 var removedIndex = i;
+                 console.log(removedIndex);
+               }
+             }
+             for(var i = ingredients.length - 1; i > removedIndex;i--) {
+               console.log(ingredients[i] + count);
+               if (ingredients[i] != ""){
+                 ingredients[removedIndex] = ingredients[i];
+                 ingredients[i] = "";
+                 break;
+               }
+             }
+             removeArrow();
+           console.log(ingredients);
+         });*/
+      /*var removeArrow = function(){
+        var isEmpty = true;
+        for (let i = 0 ; i < ingredients.length; i++){
+          if (ingredients[i] != "") {
+            isEmpty = false;
+            break;
+          } else {
+            isEmpty = true;
+          }
+        }
+        if(isEmpty == true){
+            $("#arrow").hide(500);
+          }
+      }*/
+      /*****************************************/
+      /*********removal functionality end*******/
+      /*****************************************/
 
 
       $("#arrow").click(function () {
         $("#whole").hide(500);
         $("#menu").show(500);
-        
+
         $.ajax({
           url: "GetRecipeID.php",
           dataType: "json",
@@ -599,8 +633,8 @@
               }
               x++;
             });
-            
-            x=0;
+
+            x = 0;
             //Loops through all the recipeID classes, and sets the recipe title for each.
             $('.recipeID').each(function (i, $this) {
               if ((items["body"][x]) != null) {
@@ -610,7 +644,7 @@
               x++;
             });
 
-            
+
 
             x = 0;
 
@@ -630,7 +664,7 @@
             $('.information').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
-                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') + "_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -651,14 +685,14 @@
             });
 
             x = 0;
-            
+
             //Loops through all the recipeNumber classes (paragraph element), and changes the class name
             //to the recipe id for future reference
             $('.ingredients').each(function (i, $this) {
-              
+
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
-                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') + "_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -672,17 +706,17 @@
               x++;
             });
 
-            x=0;
+            x = 0;
 
             $('.instructions').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
-                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') + "_" + items["body"][x]["id"]);
               }
               x++;
             });
 
-            x=0;
+            x = 0;
 
             $('.recipeIns').each(function (i, $this) {
               if ((items["body"][x]) != null) {
@@ -691,8 +725,8 @@
               x++;
             });
 
-            x=0;
-            
+            x = 0;
+
 
           },
           error: function (jqXHR, textStatus, errorThrown) {
@@ -705,7 +739,7 @@
       //prevent to put the same information into paragraphs.
       showmenu = [];
       $('.images').click(function (e) {
-        
+
         // don't allow the anchor to visit the link
         e.preventDefault();
         $('.information_' + $(this).attr('id')).toggle(200);
@@ -715,137 +749,141 @@
         $('.ing_' + $(this).attr('id')).hide(200);
         $('.rec_' + $(this).attr('id')).hide(200);
         //prevent to put the same information into paragraphs.
-        if(showmenu[""+ $(this).attr("id")] == null){
-          showmenu[""+ $(this).attr("id")] = true;
-        
-        console.log('clicked to get recipe info');
-        var clickedElement = this;
-        
-        $.ajax({
-          url: "GetRecipeInfo.php",
-          dataType: "json",
-          type: "GET",
-          data: {
-            output: 'json',
-            id: $(this).attr("id")
-          },
-          success: function (data) {
-            var dataBody = data["body"][0];
-            
-            
-            //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
-            //$("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
-            $("." + $(clickedElement).attr("id")).append('<b>Ingredients</b><br/>');
-            
-            var ingredientsNeeded = "";
-            if (data["body"][0] != undefined){
-              for (var i = 0; i < dataBody["steps"].length; i++) {
-                for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
-                  if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
-                    ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
-                  } else {
-                    console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+        if (showmenu["" + $(this).attr("id")] == null) {
+          showmenu["" + $(this).attr("id")] = true;
+
+          console.log('clicked to get recipe info');
+          var clickedElement = this;
+
+          $.ajax({
+            url: "GetRecipeInfo.php",
+            dataType: "json",
+            type: "GET",
+            data: {
+              output: 'json',
+              id: $(this).attr("id")
+            },
+            success: function (data) {
+              var dataBody = data["body"][0];
+
+
+              //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
+              //$("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
+              $("." + $(clickedElement).attr("id")).append('<b>Ingredients</b><br/>');
+
+              var ingredientsNeeded = "";
+              if (data["body"][0] != undefined) {
+                for (var i = 0; i < dataBody["steps"].length; i++) {
+                  for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
+                    if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
+                      ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
+                    } else {
+                      console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j][
+                        "name"
+                      ]);
+                    }
                   }
                 }
+              } else {
+                ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
+                console.log("databody not defined!");
               }
-            }
-            else {
-              ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
-              console.log("databody not defined!");
-            }
-            //Capitalize the first letter of each ingredient
-            console.log(ingredientsNeeded);
-            
-            $(".ing_" + $(clickedElement).attr("id")).append(ingredientsNeeded);
-            
-            var recipeTable = "<ol>";
+              //Capitalize the first letter of each ingredient
+              console.log(ingredientsNeeded);
 
-            //APPENDS THE RECIPE STEPS
-            if (data["body"][0] != undefined){
-              
-              for (var i = 0; i < dataBody["steps"].length; i++) {
-                recipeTable+= "<li>" + dataBody["steps"][i]["step"] + "</li><br/>";
+              $(".ing_" + $(clickedElement).attr("id")).append(ingredientsNeeded);
+
+              var recipeTable = "<ol>";
+
+              //APPENDS THE RECIPE STEPS
+              if (data["body"][0] != undefined) {
+
+                for (var i = 0; i < dataBody["steps"].length; i++) {
+                  recipeTable += "<li>" + dataBody["steps"][i]["step"] + "</li><br/>";
+                }
+                recipeTable += "</ol>";
               }
-              recipeTable += "</ol>";
+              $(".rec_" + $(clickedElement).attr("id")).append(recipeTable);
+
+              //////NEW CHANGESS (TIME FEATURE)  VIA NESTED AJAX CALL/////
+              $.ajax({
+                url: "GetRecipeAdditionalInfo.php",
+                dataType: "json",
+                type: "GET",
+                data: {
+                  id: $(clickedElement).attr("id")
+                },
+                success: function (response) {
+                  var info = response;
+                  //do stuff
+                  console.log("ready in " + info["body"]["readyInMinutes"] + " minutes");
+                  console.log("IS IT VEGETARIAN? " + info["body"]["vegetarian"]);
+                  console.log("is it vegan? " + info["body"]["vegan"]);
+                  console.log("is it gluten free? " + info["body"]["glutenFree"]);
+                  console.log("dairy free?  " + info["body"]["dairyFree"]);
+
+                  //I am appending it to the div with class ".stats_RECIPEID" 
+                  $(".stats_" + $(clickedElement).attr("id")).append("Estimated Time: " + info[
+                    "body"]["readyInMinutes"] + " minutes. </br>");
+
+                  var infoBody = info["body"];
+                  console.log("infobody vegetarian is:" + infoBody["vegetarian"]); //this returns a boolean value 
+
+                  if (infoBody["vegetarian"] === true) {
+                    console.log("is vegetarian");
+                    $(".stats_" + $(clickedElement).attr("id")).append("For Vegetarians! </br>");
+                  }
+                  if (infoBody["vegan"] === true) {
+                    $(".stats_" + $(clickedElement).attr("id")).append("For Vegans! </br>");
+                  }
+                  if (infoBody["glutenFree"] === true) {
+                    $(".stats_" + $(clickedElement).attr("id")).append("Gluten Free! </br>");
+                  }
+                  if (infoBody["dairyFree"] === true) {
+                    $(".stats_" + $(clickedElement).attr("id")).append("Dairy Free! </br>");
+                  }
+
+
+                  //If the information already is visible, hide it otherwise, show it.
+                  /*if (showMenu==false){
+                      $(".stats_" + $(clickedElement).attr("id")).show(500);
+                      $("." + $(clickedElement).attr("id")).show (500);
+                      showMenu = true;
+                    } else{
+                      $(".stats_" + $(clickedElement).attr("id")).hide(500);
+                      $("." + $(clickedElement).attr("id")).hide (500);
+                      $(".stats_" + $(clickedElement).attr("id")).empty();
+                      $("." + $(clickedElement).attr("id")).empty();
+                      showMenu = false;
+                    }*/
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                  console.log("ajax failed");
+                  console.log(textStatus + " " + errorThrown +
+                    jqXHR.responseText);
+                }
+
+              });
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              $("#p1").text(textStatus + " " + errorThrown +
+                jqXHR.responseText);
             }
-            $(".rec_" + $(clickedElement).attr("id")).append(recipeTable);
-      
-            //////NEW CHANGESS (TIME FEATURE)  VIA NESTED AJAX CALL/////
-      $.ajax({
-        url: "GetRecipeAdditionalInfo.php",
-        dataType: "json",
-        type: "GET",
-        data: { id: $(clickedElement).attr("id") },
-        success: function (response) {
-          var info = response;
-          //do stuff
-          console.log("ready in "+ info["body"]["readyInMinutes"] + " minutes");
-          console.log("IS IT VEGETARIAN? "+ info["body"]["vegetarian"]);
-          console.log("is it vegan? "+ info["body"]["vegan"]);
-          console.log("is it gluten free? "+ info["body"]["glutenFree"]);
-          console.log("dairy free?  "+ info["body"]["dairyFree"]);
-
-          //I am appending it to the div with class ".stats_RECIPEID" 
-          $(".stats_" + $(clickedElement).attr("id")).append("Estimated Time: " + info["body"]["readyInMinutes"] + " minutes. </br>");
-          
-          var infoBody = info["body"];
-          console.log("infobody vegetarian is:" + infoBody["vegetarian"]); //this returns a boolean value 
-
-          if (infoBody["vegetarian"] === true){
-            console.log("is vegetarian");
-            $(".stats_" + $(clickedElement).attr("id")).append("For Vegetarians! </br>");
-          }
-          if (infoBody["vegan"] === true){
-            $(".stats_" + $(clickedElement).attr("id")).append("For Vegans! </br>");
-          }
-          if (infoBody["glutenFree"] === true){
-            $(".stats_" + $(clickedElement).attr("id")).append("Gluten Free! </br>");
-          }
-          if (infoBody["dairyFree"] === true){
-            $(".stats_" + $(clickedElement).attr("id")).append("Dairy Free! </br>");
-          }
-
-
-          //If the information already is visible, hide it otherwise, show it.
-          /*if (showMenu==false){
-              $(".stats_" + $(clickedElement).attr("id")).show(500);
-              $("." + $(clickedElement).attr("id")).show (500);
-              showMenu = true;
-            } else{
-              $(".stats_" + $(clickedElement).attr("id")).hide(500);
-              $("." + $(clickedElement).attr("id")).hide (500);
-              $(".stats_" + $(clickedElement).attr("id")).empty();
-              $("." + $(clickedElement).attr("id")).empty();
-              showMenu = false;
-            }*/
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log("ajax failed");
-          console.log(textStatus + " " + errorThrown
-        + jqXHR.responseText);
-         }
-        
-      });
-
-          },
-          error: function (jqXHR, textStatus, errorThrown) {
-            $("#p1").text(textStatus + " " + errorThrown +
-              jqXHR.responseText);
-          }
-        });
-      }
+          });
+        }
       });
       //drop down bar functionality
-      $(".information").click(function(){
+      $(".information").click(function () {
         $(".stats_" + $(this).attr("id")).toggle(200);
       });
-      $(".ingredients").click(function(){
+      $(".ingredients").click(function () {
         $(".ing_" + $(this).attr("id")).toggle(200);
       });
-      $(".instructions").click(function(){
+      $(".instructions").click(function () {
         $(".rec_" + $(this).attr("id")).toggle(200);
       });
-      
+
       $(".ingredients").css("background-color", "orange");
       $(".instructions").css("background-color", "orange");
       $(".information").css("background-color", "orange");
@@ -855,30 +893,30 @@
       $(".recipeIns").css("text-align", "left");
       $(".recipeID").css("margin", "0 auto");
       $(".recipeID").css("background-color", "crimson");
-      
+
       $(".images").css("margin", "0 auto");
       $(".images").css("padding", "0");
-      $(".images").hover(function() {
-        $( this ).css("filter", "opacity(30%)");
-      }, function() {
-        $( this ).css("filter", "");
+      $(".images").hover(function () {
+        $(this).css("filter", "opacity(30%)");
+      }, function () {
+        $(this).css("filter", "");
       });
-      $(".col-sm-12").css("padding","0");
+      $(".col-sm-12").css("padding", "0");
       $(".recipes").css("border", "solid 3px crimson");
-      
-      
+
+
     });
     /************************************************/
     /*****************Nav bar function***************/
     /************************************************/
     function openNav() {
-            document.getElementById("mySidenav").style.width = "350px";
-            document.getElementById("cover").style.display = "block";
-        }
+      document.getElementById("mySidenav").style.width = "350px";
+      document.getElementById("cover").style.display = "block";
+    }
 
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("cover").style.display = "none";
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("cover").style.display = "none";
     }
 
     /*]]>*/
