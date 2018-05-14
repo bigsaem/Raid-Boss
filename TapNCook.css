@@ -21,16 +21,35 @@
   transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.sidenav .links:hover {
+  color: rgba(238, 98, 4, 0.829);
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.sidenav .links:active {
+  color: rgba(238, 98, 4, 0.829);
+  background: rgba(125, 125, 125, 1);
+  font-size: 35pt;
+  text-decoration: none;
 }
 
 .sidenav .closebtn {
   position: absolute;
+  text-decoration: none;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.sidenav .closebtn:active {
+  font-size: 50pt;
+}
+
+.sidenav .closebtn:active {
+  font-size: 50pt;
 }
 
 @media screen and (max-height: 450px) {
@@ -69,11 +88,7 @@ background-color: rgb(5, 178, 82);
 margin-right: -25px;
 }
 
-#header #search {
-float: right;
-width: 55px;
-margin-right: 25px;
-}
+
 
 #header #menuDiv {
 float: left;
@@ -85,12 +100,22 @@ margin-left: 25px;
     display: inline-block;
       border-style: solid;
       border-color: rgba(0, 0, 0, 0);
-      border-radius: 25px;
-    background-color: firebrick;
+      border-radius: 3px;
+    background-color: rgba(220, 0, 0, 1);
     width: 90%;
     margin: 20px;
       padding-left: 10px;
       padding-right: 10px;
+      box-shadow: 0px 0px 28px #884444;      
+  }
+
+  .icons:hover {
+    box-shadow: 0px 0px 28px #888888;
+  }
+
+  .icons:active {
+    width: 87%;
+    height: 87%;
   }
   
   #lastIcon {
@@ -113,15 +138,11 @@ margin-left: 25px;
   }
   body{
     font-family: 'PT Sans', sans-serif;
-    background-color:lightpink;
-    background: linear-gradient(to right, lightpink, white, lightpink);
-    margin:0;
-    
-    
+    margin:0;   
   }
   
   div > p{
-    background-color:firebrick;
+    background-color:rgba(240, 45, 45, 1);
     margin:0;
     padding:1%;
     text-align:center;
@@ -177,7 +198,7 @@ margin-left: 25px;
   /***********************************/
   #footer{
     width:100%;
-    background-color:black;
+    background-color:orangered;
     float: left;
     height: 120px;
     
@@ -216,12 +237,7 @@ margin-left: 25px;
   }
   /***********************************/
   /***********footer ends*************/
-  /***********************************/
-  
-  .icons:hover {
-      box-shadow: 0px 0px 28px #888888;
-  }
-  
+  /***********************************/  
   #whole {
     text-align: center;
 
@@ -349,7 +365,7 @@ margin-left: 25px;
   }
   
   .dairy {
-    background-color: rgba(200225, 200, 200, 0.5);
+    background-color: rgba(200, 200, 200, 0.5);
     border-style: hidden;
     border-radius: 20px;
     padding: 1%;
@@ -405,10 +421,75 @@ margin-left: 25px;
     border-radius: 5px;
     float: left;
   }
-
+/*******************************
+*******Search bar and icon*****
+******************************/
   #searchBar {
     display: none;
+    position: fixed;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
   }
+
+  #header #search {
+    float: right;
+    width: 55px;
+    margin-right: 25px;
+  }
+
+  #searchCover{
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    position: fixed;
+    display: none;
+  }
+
+  input[type=search] {
+    margin: 0 auto; 
+    background: none;
+    width: 75%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    
+    
+  }
+
+
+
+  input::placeholder {
+    border: 0px solid;
+    background: none;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  input[type=search]:active{
+    border: 0px;
+
+  }
+
+  input:focus{
+    outline-width: 0;
+  }
+
+  #search-title {
+    z-index: 2;
+    color: white;
+    font-size: 40pt;
+
+  }
+
  
 
 

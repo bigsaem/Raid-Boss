@@ -22,12 +22,12 @@
     <!-- Nav Bar -->
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="./index.html">Home</a>
-      <a class="nav-link" href="./AboutUs.html">About Us</a>
-      <a href="./AffiliatedApps.html">Affiliated Apps</a>
-      <a href="./login.html">Login</a>
-      <a href="./signup.html">Sign Up</a>
-      <a href="./bait.html">Don't Click</a>
+      <a class="links" href="./index.html">Home</a>
+      <a class="links" href="./AboutUs.html">About Us</a>
+      <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
+      <a class="links" href="./login.html">Login</a>
+      <a class="links" href="./signup.html">Sign Up</a>
+      <a class="links" href="./bait.html">Don't Click</a>
     </div>
     <div id="cover" onclick="closeNav()">
     </div>
@@ -61,7 +61,11 @@
 
   <div id="whole">
     <p id="subhead">What do you want to use?</p>
-    <div id="searchBar"><input placeholder="Search Ingredient"></div>
+    <div id="searchBar">
+      <span id="search-title">Search:</span>
+      <input type="search" id="search-input">
+    </div>
+    <div id="searchCover"></div>
 
     <div class="iconsDivs">
       <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
@@ -370,23 +374,35 @@
       });
 			
 			$("#search").click(function (){
-        $("#searchBar").slideToggle();
+        $("#searchBar").fadeIn(200);
+        $("#searchCover").fadeIn(200);
+        $("#search-title").fadeIn(200);
+        $("#search-input").focus();
+        $("#searchBar").css("display", "block");
+        $("#searchCover").css("display", "block");
+        $("#search-title").css("display", "inline");
+      });
+
+      $("#searchCover").click(function () {
+        $("#searchBar").css("display", "none");
+        $("#searchCover").css("display", "none");
+        $("#search-title").css("display", "none");
       });
 
       $("#vegIcon").click(function () {
-        $("#vegDiv").slideToggle();
+        $("#vegDiv").slideToggle(150);
       });
       $("#fruitIcon").click(function () {
-        $("#fruitDiv").slideToggle();
+        $("#fruitDiv").slideToggle(150);
       });
       $("#breadIcon").click(function () {
-        $("#breadDiv").slideToggle();
+        $("#breadDiv").slideToggle(150);
       });
       $("#meatIcon").click(function () {
-        $("#meatDiv").slideToggle();
+        $("#meatDiv").slideToggle(150);
       });
       $("#dairyIcon").click(function () {
-        $("#dairyDiv").slideToggle();
+        $("#dairyDiv").slideToggle(150);
       }); 
 
 
@@ -880,6 +896,8 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("cover").style.display = "none";
     }
+
+
 
     /*]]>*/
   </script>
