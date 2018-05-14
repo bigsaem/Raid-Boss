@@ -453,15 +453,13 @@ margin-left: 25px;
   input[type=search] {
     margin: 0 auto; 
     background: none;
-    width: 75%;
+    width: 85%;
     color: white;
     text-align: center;
     font-size: 30px;
     border-left: none;
     border-right: none;
-    border-top: none;
-    
-    
+    border-top: none;    
   }
 
 
@@ -476,11 +474,13 @@ margin-left: 25px;
 
   input[type=search]:active{
     border: 0px;
+    
 
   }
 
   input:focus{
     outline-width: 0;
+    
   }
 
   #search-title {
