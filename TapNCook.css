@@ -21,17 +21,33 @@
   transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.sidenav .links:hover {
+  color: rgba(238, 98, 4, 0.829);
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.sidenav .links:active {
+  color: rgba(238, 98, 4, 0.829);
+  background: rgba(125, 125, 125, 1);
+  font-size: 35pt;
+  text-decoration: none;
 }
 
 .sidenav .closebtn {
   position: absolute;
+  text-decoration: none;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
 }
+
+.sidenav .closebtn:active {
+  font-size: 50pt;
+}
+
 
 @media screen and (max-height: 450px) {
 .sidenav {padding-top: 15px;}
@@ -49,7 +65,7 @@
   position: fixed;
   display: none;
 }
-
+/* sidebar ends */
 
 /* header */
 #header {
@@ -73,11 +89,7 @@ background-color: rgb(5, 178, 82);
 margin-top: 5px;
 }
 
-#header #search {
-float: right;
-width: 55px;
-margin-right: 25px;
-}
+
 
 #header #menuDiv {
 float: left;
@@ -89,12 +101,22 @@ margin-left: 25px;
     display: inline-block;
       border-style: solid;
       border-color: rgba(0, 0, 0, 0);
-      border-radius: 25px;
-    background-color: firebrick;
+      border-radius: 3px;
+    background-color: rgba(220, 0, 0, 1);
     width: 90%;
     margin: 20px;
       padding-left: 10px;
       padding-right: 10px;
+      box-shadow: 0px 0px 28px #884444;      
+  }
+
+  .icons:hover {
+    box-shadow: 0px 0px 28px #888888;
+  }
+
+  .icons:active {
+    width: 87%;
+    height: 87%;
   }
   
   #lastIcon {
@@ -117,15 +139,11 @@ margin-left: 25px;
   }
   body{
     font-family: 'PT Sans', sans-serif;
-    background-color:lightpink;
-    background: linear-gradient(to right, lightpink, white, lightpink);
-    margin:0;
-    
-    
+    margin:0;   
   }
   
   div > p{
-    background-color:firebrick;
+    background-color:rgba(240, 45, 45, 1);
     margin:0;
     padding:1%;
     text-align:center;
@@ -159,15 +177,6 @@ margin-left: 25px;
     width: 10%;
     display: none;
   }
-
-  /*.basketItem p {
-    background-color: burlywood;
-		font-size: 15px;
-		text-align: center;
-    display: inline-block;
-    float: left; 
-		height: 100%;
-  }*/
   
   #arrow {
     float: right;
@@ -180,7 +189,7 @@ margin-left: 25px;
   /***********************************/
   #footer{
     width:100%;
-    background-color:black;
+    background-color:rgba(0,0,0,0.85);
     float: left;
     height: 120px;
     
@@ -219,12 +228,7 @@ margin-left: 25px;
   }
   /***********************************/
   /***********footer ends*************/
-  /***********************************/
-  
-  .icons:hover {
-      box-shadow: 0px 0px 28px #888888;
-  }
-  
+  /***********************************/  
   #whole {
     text-align: center;
 
@@ -249,52 +253,54 @@ margin-left: 25px;
   }
   
   /*RECIPES PAGE CSS */
-  .recipeID{
-    font-size: 20pt;
-  }
-  p {
-    font-size: 15pt;
+  .recipes p{
+    background-color: white;
+    color: black;
     font-weight: bold;
+  }
+  .recipeName{
+    font-size: 20pt;
+    background-color: black;
+    font-weight: bold;
+    color:white;
+    text-align: left;
+    padding-left:15px;
   }
   
   #menu{
     text-align: center;
   }
 
-  #row{
-    margin:0 auto;
-  }
   #menu div{
     margin: 0 auto;
   }
- 
-  .images {
-    cursor: pointer;
-  }
-  .information{
-    border: 1px solid black;
-  }
   
-  #wrapper::before {
+  .wrappers::before {
     display: block;
     position: relative;
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0, black 100%);
-    margin-bottom: -200px;
-    height: 200px;
+    margin-bottom: -50px;
+    height: 50px;
     width: 100%;
     content: '';
-    
   }
-  #wrapper::after {
+  .wrappers::after {
     display: block;
     position: relative;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, black 100%);
-    margin-top: -200px;
-    height: 200px;
+    margin-top: -50px;
+    height: 50px;
     width: 100%;
     content: '';
-    
   }
+  .recipes img{
+    margin : 0 auto;
+    padding : 0;
+  }
+  
+
+
+
 
   /* Categories */
   
@@ -380,7 +386,7 @@ margin-left: 25px;
   }
   
   .dairy {
-    background-color: rgba(200225, 200, 200, 0.5);
+    background-color: rgba(200, 200, 200, 0.5);
     border-style: hidden;
     border-radius: 20px;
     padding: 1%;
@@ -436,10 +442,75 @@ margin-left: 25px;
     border-radius: 5px;
     float: left;
   }
-
+/*******************************
+*******Search bar and icon*****
+******************************/
   #searchBar {
     display: none;
+    position: fixed;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
   }
+
+  #header #search {
+    float: right;
+    width: 55px;
+    margin-right: 25px;
+  }
+
+  #searchCover{
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    position: fixed;
+    display: none;
+  }
+
+  input[type=search] {
+    margin: 0 auto; 
+    background: none;
+    width: 85%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    border-left: none;
+    border-right: none;
+    border-top: none;    
+  }
+
+
+
+  input::placeholder {
+    border: 0px solid;
+    background: none;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  input[type=search]:active{
+    border: 0px;
+    
+
+  }
+
+  input:focus{
+    outline-width: 0;
+    
+  }
+
+  #search-title {
+    z-index: 2;
+    color: white;
+    font-size: 40pt;
+
+  }
+
  
 
 
