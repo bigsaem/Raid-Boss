@@ -43,8 +43,22 @@
       <img id="searchIcon" src="icon/Mag.png" alt="Search">
     </div>
   </div>
+  
 
-  <!-- the main div -->
+    <!--
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
+        More Features
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="./login.html">Login</a>
+        <a class="dropdown-item" href="#">Sign Up</a>
+        <a class="dropdown-item" href="#">Settings</a>
+      </div>
+    </div>
+    -->
+ 
+
   <div id="whole">
     <p id="subhead">What do you want to use?</p>
     <div id="searchBar"><input placeholder="Search Ingredient"></div>
@@ -156,69 +170,102 @@
   <!--#################################################################################
       #############################Recipe page starts####################################
       ###################################################################################-->
+
+      <style>
+      /*.images {
+        cursor: pointer;
+      }
+      .toggle > p {
+        color: red;
+        background: #f92;
+        border: 1px solid orange;
+      }*/
+        
+      </style>
+
+
       <div id = "menu" style="display: none">
         <div class="row" style="margin: 0 auto">
           <div class="col-sm-12">
+e
             <div class="recipes">
               <div id="wrapper"><img class = "images"></div>
               <p class="recipeID"></p>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
+              <div class = "toggle">
+                <p class = "information"  style="display:none">Information</p>
+                <p class = "recipeStats" style="display:none"></p>
+                <p class = "ingredients"  style="display:none">Ingredients</p>
+                <p class = "ingredientAPI" style="display:none"></p>
+                <p class = "instructions"  style="display:none">Instruction</p>
+                <p class = "recipeIns" style="display:none"></p>
+              </div>
             </div>
+
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> 
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
+              <div id="wrapper"><img class = "images"></div>
+              <p class="recipeID"></p>
+              <div class = "toggle">
+                <p class = "information"  style="display:none">Information</p>
+                <p class = "recipeStats" style="display:none"></p>
+                <p class = "ingredients"  style="display:none">Ingredients</p>
+                <p class = "ingredientAPI" style="display:none"></p>
+                <p class = "instructions"  style="display:none">Instruction</p>
+                <p class = "recipeIns" style="display:none"></p>
+              </div>
             </div>
+
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
+              <div id="wrapper"><img class = "images"></div>
+              <p class="recipeID"></p>
+              <div class = "toggle">
+                <p class = "information"  style="display:none">Information</p>
+                <p class = "recipeStats" style="display:none"></p>
+                <p class = "ingredients"  style="display:none">Ingredients</p>
+                <p class = "ingredientAPI" style="display:none"></p>
+                <p class = "instructions"  style="display:none">Instruction</p>
+                <p class = "recipeIns" style="display:none"></p>
+              </div>
             </div>
+
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> 
-              <p class = "information"  style="display:none">Information</p>
-               <p class = "recipeStats" style="display:none"></p>
-               <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
+              <div id="wrapper"><img class = "images"></div>
+              <p class="recipeID"></p>
+              <div class = "toggle">
+                <p class = "information"  style="display:none">Information</p>
+                <p class = "recipeStats" style="display:none"></p>
+                <p class = "ingredients"  style="display:none">Ingredients</p>
+                <p class = "ingredientAPI" style="display:none"></p>
+                <p class = "instructions"  style="display:none">Instruction</p>
+                <p class = "recipeIns" style="display:none"></p>
+              </div>
             </div>
+
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images">
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
+              <div id="wrapper"><img class = "images"></div>
+              <p class="recipeID"></p>
+              <div class = "toggle">
+                <p class = "information"  style="display:none">Information</p>
+                <p class = "recipeStats" style="display:none"></p>
+                <p class = "ingredients"  style="display:none">Ingredients</p>
+                <p class = "ingredientAPI" style="display:none"></p>
+                <p class = "instructions"  style="display:none">Instruction</p>
+                <p class = "recipeIns" style="display:none"></p>
+              </div>
             </div>
+
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images">
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
+              <div id="wrapper"><img class = "images"></div>
+              <p class="recipeID"></p>
+              <div class = "toggle">
+                <p class = "information"  style="display:none">Information</p>
+                <p class = "recipeStats" style="display:none"></p>
+                <p class = "ingredients"  style="display:none">Ingredients</p>
+                <p class = "ingredientAPI" style="display:none"></p>
+                <p class = "instructions"  style="display:none">Instruction</p>
+                <p class = "recipeIns" style="display:none"></p>
+              </div>
             </div>
+            
           </div>
         </div>
     </div>
@@ -678,29 +725,31 @@
       $(".instructions").click(function(){
         $(".rec_" + $(this).attr("id")).toggle(200);
       });
-      $(".ingredients").css("width", "100%");
-      $(".ingredients").css("background-color", "orange");
-      $(".instructions").css("background-color", "orange");
-      $(".information").css("background-color", "orange");
-      $(".information").css("border", "1px solid black");
-      $(".ingredients").css("border", "1px solid black");
-      $(".instructions").css("border", "1px solid black");
-      $(".recipeIns").css("text-align", "left");
-      //$(".recipeID").css("margin", "0 auto");
-      $(".recipeID").css("background-color", "black");
-      $(".recipeID").css("color", "white");
-      $(".recipeID").css("text-align", "left");
-      $(".recipeID").css("padding-left", "15px");
-      $(".recipeID").css("z-index", "1");
-      $(".images").css("margin", "0 auto");
-      $(".images").css("padding", "0");
-      $(".images").css("z-index", "-2");
+      // $(".ingredients").css("width", "100%");
+      // $(".ingredients").css("background-color", "orange");
+      // $(".instructions").css("background-color", "orange");
+      // $(".information").css("background-color", "orange");
+      // $(".information").css("border", "1px solid black");
+      // $(".ingredients").css("border", "1px solid black");
+      // $(".instructions").css("border", "1px solid black");
+      // $(".recipeIns").css("text-align", "left");
+      // //$(".recipeID").css("margin", "0 auto");
+      // $(".recipeID").css("background-color", "rgba(229, 115, 39,0.6)");
+      // $(".recipeID").css("color", "white");
+      // $(".recipeID").css("text-align", "left");
+      // $(".recipeID").css("padding-left", "15px");
+      // $(".recipeID").css("margin-top", "-150px");
+      // $(".recipeID").css("height", "150px");
+      // $(".recipeID").css("z-index", "1");
+      // $(".images").css("margin", "0 auto");
+      // $(".images").css("padding", "0");
+      // $(".images").css("z-index", "-2");
 
-      $(".images").hover(function() {
-        $( this ).css("filter", "opacity(30%)");
-      }, function() {
-        $( this ).css("filter", "");
-      });
+      // $(".images").hover(function() {
+      //   $( this ).css("filter", "opacity(30%)");
+      // }, function() {
+      //   $( this ).css("filter", "");
+      // });
       $(".col-sm-12").css("padding","0");
       $(".recipes").css("border", "solid 3px crimson");
       
