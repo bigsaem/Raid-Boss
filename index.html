@@ -19,45 +19,53 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-  <div id="header">
-		<div id="menuDiv">
-      <img id="menuIcon" src="icon/Menu.png" alt="Menu">
+    <!-- Nav Bar -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a class="links" href="./index.html">Home</a>
+      <a class="links" href="./AboutUs.html">About Us</a>
+      <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
+      <a class="links" href="./login.html">Login</a>
+      <a class="links" href="./signup.html">Sign Up</a>
+      <a class="links" href="./bait.html">Don't Click</a>
     </div>
-		<p>Tap'N CooK</p>
+    <div id="cover" onclick="closeNav()">
+    </div>
+    <!-- nav bar ends-->
+  
+  <div id="header"> 
+		<div id="menuDiv">
+        <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+      <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
+    </div>
+		<a href="./index.html" style="text-decoration : none;"><p>Tap'N CooK</p></a>
 		<div id="search">
       <img id="searchIcon" src="icon/Mag.png" alt="Search">
     </div>
   </div>
-  
-  <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="./index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./AboutUs.html">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./AffiliatedApps.html">Affiliated Apps</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./login.html">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./signup.html">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./bait.html">Don't Click</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./FoodNinja/FoodNinja.html">Really, Don't Click</a>
-      </li>
-    </ul>
-    <!--
-    <div class="dropdown">
-      <button type="button" class="btn btn-primary dropdown-toggle bg-secondary" data-toggle="dropdown">
-        More Features
+
+  <!-- the main div -->
+  <div id="whole">
+    <p id="subhead">What do you want to use?</p>
+    <div id="searchBar">
+      <span id="search-title">Search:</span>
+      <input type="search" id="search-input">
+    </div>
+    <div id="searchCover"></div>
+
+    <div class="iconsDivs">
+      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
+      <div id="vegDiv">
+        <div class="vegies">
+          <p id="carrot">Carrot</p>
+        </div>
+        <div class="vegies">
+          <p id="lettuce">Lettuce</p>
+        </div>
+        <div class="vegies">
+          <p id="tomato">Tomato</p>
+        </div>
+      </div>
     </div>
 
     <div class="iconsDivs">
@@ -126,33 +134,6 @@
         <p id="bdiv1" class="basketItem"></p>
         <p id="bdiv2" class="basketItem"></p>
         <p id="bdiv3" class="basketItem"></p>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="./login.html">Login</a>
-        <a class="dropdown-item" href="#">Sign Up</a>
-        <a class="dropdown-item" href="#">Settings</a>
-      </div>
-    </div>
-    -->
-  </nav>
-
-  <div id="whole">
-    <p id="subhead">What do you want to use?</p>
-    <div id="searchBar"><input placeholder="Search Ingredient"></div>
-
-    <div class="iconsDivs">
-      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
-      <div id="vegDiv">
-        <div class="vegies">
-          <p id="carrot">Carrot</p>
-        </div>
-        <div class="vegies">
-          <p id="lettuce">Lettuce</p>
-        </div>
-        <div class="vegies">
-          <p id="tomato">Tomato</p>
-        </div>
-      </div>
         <p id="bdiv4" class="basketItem"></p>
         <img id="arrow" src="icon/whitearrow.png"/>
     </div>
@@ -180,23 +161,11 @@
       #############################Recipe page starts####################################
       ###################################################################################-->
       <div id = "menu" style="display: none">
-        <div class="row">
+        <div class="row" style="margin: 0 auto">
           <div class="col-sm-12">
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images" style="z-index: -1">
-              <div class = "toggle">
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-              </div>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> 
+              <div class="wrappers"><img class = "images"></div>
+              <div class="recipeName"></div>
               <p class = "information"  style="display:none">Information</p>
               <p class = "recipeStats" style="display:none"></p>
               <p class = "ingredients"  style="display:none">Ingredients</p>
@@ -205,8 +174,8 @@
               <p class = "recipeIns" style="display:none"></p>
             </div>
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> <!-- src= "stuff" alt="something went wrong!"> -->
+              <div class="wrappers"><img class = "images"></div>
+              <div class="recipeName"></div>
               <p class = "information"  style="display:none">Information</p>
               <p class = "recipeStats" style="display:none"></p>
               <p class = "ingredients"  style="display:none">Ingredients</p>
@@ -215,18 +184,8 @@
               <p class = "recipeIns" style="display:none"></p>
             </div>
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images"> 
-              <p class = "information"  style="display:none">Information</p>
-               <p class = "recipeStats" style="display:none"></p>
-               <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images">
+              <div class="wrappers"><img class = "images"></div>
+              <div class="recipeName"></div>
               <p class = "information"  style="display:none">Information</p>
               <p class = "recipeStats" style="display:none"></p>
               <p class = "ingredients"  style="display:none">Ingredients</p>
@@ -235,8 +194,28 @@
               <p class = "recipeIns" style="display:none"></p>
             </div>
             <div class="recipes">
-              <a href='#'><p class="recipeID"></p></a>
-              <img class = "images">
+              <div class="wrappers"><img class = "images"></div>
+              <div class="recipeName"></div>
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+            </div>
+            <div class="recipes">
+              <div class="wrappers"><img class = "images"></div>
+              <div class="recipeName"></div>
+              <p class = "information"  style="display:none">Information</p>
+              <p class = "recipeStats" style="display:none"></p>
+              <p class = "ingredients"  style="display:none">Ingredients</p>
+              <p class = "ingredientAPI" style="display:none"></p>
+              <p class = "instructions"  style="display:none">Instruction</p>
+              <p class = "recipeIns" style="display:none"></p>
+            </div>
+            <div class="recipes">
+              <div class="wrappers"><img class = "images"></div>
+              <div class="recipeName"></div>
               <p class = "information"  style="display:none">Information</p>
               <p class = "recipeStats" style="display:none"></p>
               <p class = "ingredients"  style="display:none">Ingredients</p>
@@ -256,58 +235,27 @@
   <script>
     /*<![CDATA[*/
     $(document).ready(function () {
-
+      
+        
+      
       var ingredients = ["", "", "", "", ""];
       var count = 0;
       var basketCount = 0;
 
-      /*$('#vegDiv').on('click', '*', function() {
-        var idVeg = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idVeg);
-        basketCount++;
-        console.log(idVeg);
-      });
-      $('#fruitDiv').on('click', '*', function() {
-        var idFruit = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idFruit);
-        basketCount++;
-        console.log(idFruit);
-      });
-      $('#breadDiv').on('click', '*', function() {
-        var idBread = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idBread);
-        basketCount++;
-        console.log(idBread);
-      });
-
-      $('#dairyDiv').on('click', '*', function() {
-        var idDairy = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text();
-        console.log(basketCount);
-        console.log(idDairy);
-        basketCount++;
-        console.log(basketCount);
-      });
       
-      $('#meatDiv').on("click", '*', function() {
-        
-        var idMeat = $(this).text();
-        $("#bdiv" + basketCount + "").children("p").text(idMeat);
-        console.log(basketCount);
-        console.log(idMeat);
-        basketCount++;
-        console.log(basketCount);
-        
-      });*/
+      //if the input text (ingredients input) is pressed, do this
 
       $('#searchBar > input').keyup( function(e) {
-        var sameSearch = false;
+
+        //checks if the user entered a duplicate , if so, do nothing and return
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).val()){
-            sameSearch = true;
+            return;
           }
         }
-        if(e.keyCode == 13 && count < 5 && sameSearch == false){
+
+        //if not duplicate, and the # of inputted ingredients is less than 5, add it to the basket
+        if(e.keyCode == 13 && count < 5){
           var sb = $(this).val();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(sb);
@@ -317,16 +265,22 @@
           count++;
           $(this).val("");
         }
+        
+        //if # of inputted ingredient is 5, go to easter egg game
+        if (e.keyCode == 13 && count == 5){
+          console.log("triggered easter egg!");
+          window.location.href = 'http://tapncook.ca/foodninja.html';
+        }
       });
 
       $('#vegDiv > div > p').click(function() {
-        var sameVeg = false;
+        
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameVeg = true;
+            return;
           }
         }
-        if(count < 5 && sameVeg == false){
+        if(count < 5){
           var idVeg = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idVeg);
@@ -338,13 +292,12 @@
       });
 
       $('#fruitDiv > div > p').click(function() {
-        var sameFruit = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameFruit = true;
+            return;
           }
         }
-        if(count < 5 && sameFruit == false){
+        if(count < 5){
           var idFruit = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idFruit);
@@ -356,13 +309,12 @@
       });
 
       $('#breadDiv > div > p').click(function() {
-        var sameBread = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameBread = true;
+            return;
           }
         }
-        if(count < 5 && sameBread == false){
+        if(count < 5){
           var idBread = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idBread);
@@ -374,13 +326,12 @@
       });     
 
       $("#meatDiv > div > p").click( function() {
-        var sameMeat = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameMeat = true;
+            return;
           }
         }
-        if(count < 5 && sameMeat == false){
+        if(count < 5){
           var idMeat = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idMeat);
@@ -392,13 +343,12 @@
       });
 
       $("#dairyDiv > div > p").click(function() {
-        var sameDairy = false;
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
-            sameDairy = true;
+            return;
           }
         }
-        if(count < 5 && sameDairy == false){
+        if(count < 5){
           var idDairy = $(this).text();
 					$("#bdiv" + count + "").show();
           $("#bdiv" + count + "").text(idDairy);
@@ -410,23 +360,35 @@
       });
 			
 			$("#search").click(function (){
-        $("#searchBar").slideToggle();
+        $("#searchBar").fadeIn(200);
+        $("#searchCover").fadeIn(200);
+        $("#search-title").fadeIn(200);
+        $("#search-input").focus();
+        $("#searchBar").css("display", "block");
+        $("#searchCover").css("display", "block");
+        $("#search-title").css("display", "inline");
+      });
+
+      $("#searchCover").click(function () {
+        $("#searchBar").css("display", "none");
+        $("#searchCover").css("display", "none");
+        $("#search-title").css("display", "none");
       });
 
       $("#vegIcon").click(function () {
-        $("#vegDiv").slideToggle();
+        $("#vegDiv").slideToggle(150);
       });
       $("#fruitIcon").click(function () {
-        $("#fruitDiv").slideToggle();
+        $("#fruitDiv").slideToggle(150);
       });
       $("#breadIcon").click(function () {
-        $("#breadDiv").slideToggle();
+        $("#breadDiv").slideToggle(150);
       });
       $("#meatIcon").click(function () {
-        $("#meatDiv").slideToggle();
+        $("#meatDiv").slideToggle(150);
       });
       $("#dairyIcon").click(function () {
-        $("#dairyDiv").slideToggle();
+        $("#dairyDiv").slideToggle(150);
       }); 
 
 
@@ -466,152 +428,7 @@
 				console.log(ids);
 			});
 			
-       /* $("#bcarrot").click(function() {
-              count--;
-              $("#bcarrot").hide(500);
-              $("#carrot").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "carrot"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              console.log(ingredients);
-              removeArrow();
-          });
-          $("#blettuce").click(function() {
-            count--;
-              $("#blettuce").hide(500);
-              $("#lettuce").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "lettuce"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#bcheese").click(function() {
-            count--;
-              $("#bcheese").hide(500);
-              $("#cheese").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "cheese"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#bbanana").click(function() {
-            count--;
-              $("#bbanana").hide(500);
-              $("#banana").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "banana"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#btomato").click(function() {
-            count--;
-              $("#btomato").hide(500);
-              $("#tomato").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "tomato"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });
-          $("#bbread").click(function() {
-            count--;
-              $("#bbread").hide(500);
-              $("#bread").css("filter" , "");
-              for(let i = 0; i < ingredients.length;i++) {
-                if (ingredients[i] == "bread"){
-                  ingredients[i]="";
-                  var removedIndex = i;
-                  console.log(removedIndex);
-                }
-              }
-              for(var i = ingredients.length - 1; i > removedIndex;i--) {
-                console.log(ingredients[i] + count);
-                if (ingredients[i] != ""){
-                  ingredients[removedIndex] = ingredients[i];
-                  ingredients[i] = "";
-                  break;
-                }
-              }
-              removeArrow();
-            console.log(ingredients);
-          });*/
-          /*var removeArrow = function(){
-            var isEmpty = true;
-            for (let i = 0 ; i < ingredients.length; i++){
-              if (ingredients[i] != "") {
-                isEmpty = false;
-                break;
-              } else {
-                isEmpty = true;
-              }
-            }
-            if(isEmpty == true){
-                $("#arrow").hide(500);
-              }
-          }*/
+      
         /*****************************************/
         /*********removal functionality end*******/
         /*****************************************/
@@ -642,10 +459,10 @@
             
             x=0;
             //Loops through all the recipeID classes, and sets the recipe title for each.
-            $('.recipeID').each(function (i, $this) {
+            $('.recipeName').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).text(items["body"][x]["title"] /*+ " and ID: " + items["body"][x]["id"]*/ );
-                $(this).attr('id', items["body"][x]["id"]);
+                $(this).attr('id', "name_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -666,6 +483,14 @@
 
             x = 0;
 
+            $('.wrappers').each(function (i, $this) {
+              if ((items["body"][x]) != null) {
+                $(this).attr('id', items["body"][x]["id"]);
+              }
+              x++;
+            });
+
+            x = 0;
             //assign id number to information dropdown bar
             $('.information').each(function (i, $this) {
               if ((items["body"][x]) != null) {
@@ -744,7 +569,7 @@
 
       //prevent to put the same information into paragraphs.
       showmenu = [];
-      $('.images').click(function (e) {
+      $('.wrappers').click(function (e) {
         
         // don't allow the anchor to visit the link
         e.preventDefault();
@@ -844,20 +669,6 @@
           if (infoBody["dairyFree"] === true){
             $(".stats_" + $(clickedElement).attr("id")).append("Dairy Free! </br>");
           }
-
-
-          //If the information already is visible, hide it otherwise, show it.
-          /*if (showMenu==false){
-              $(".stats_" + $(clickedElement).attr("id")).show(500);
-              $("." + $(clickedElement).attr("id")).show (500);
-              showMenu = true;
-            } else{
-              $(".stats_" + $(clickedElement).attr("id")).hide(500);
-              $("." + $(clickedElement).attr("id")).hide (500);
-              $(".stats_" + $(clickedElement).attr("id")).empty();
-              $("." + $(clickedElement).attr("id")).empty();
-              showMenu = false;
-            }*/
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("ajax failed");
@@ -885,29 +696,63 @@
       $(".instructions").click(function(){
         $(".rec_" + $(this).attr("id")).toggle(200);
       });
-      
-      $(".ingredients").css("background-color", "orange");
-      $(".instructions").css("background-color", "orange");
-      $(".information").css("background-color", "orange");
-      $(".information").css("border", "1px solid black");
-      $(".ingredients").css("border", "1px solid black");
-      $(".instructions").css("border", "1px solid black");
-      $(".recipeIns").css("text-align", "left");
-      $(".recipeID").css("margin", "0 auto");
-      $(".recipeID").css("background-color", "crimson");
-      
-      $(".images").css("margin", "0 auto");
-      $(".images").css("padding", "0");
-      $(".images").hover(function() {
-        $( this ).css("filter", "opacity(30%)");
-      }, function() {
+
+      //recipe hovering effect
+      $(".wrappers").hover(function() {
+        $( this ).css("filter", "opacity(80%)");
+      },function() {
         $( this ).css("filter", "");
       });
-      $(".col-sm-12").css("padding","0");
-      $(".recipes").css("border", "solid 3px crimson");
+
+      //recipe click effect
+      $(".wrappers").mousedown(function() {
+        $( this ).css("filter", "opacity(90%)");
+        $(this).css("width", "95%");
+        console.log("#"+$(this).attr("id"));
+        $("#name_"+ $(this).attr("id")).css("width", "95%");
+      }) .mouseup(function() {
+        $( this ).css("filter", "");
+        $(this).css("width", "100%");
+        $("#name_"+$(this).attr("id")).css("width", "100%");
+      });
+
+      //recipe touch effect (cannot use :active cause we need to move recipe title paragraph as well)
+      $(".wrappers").bind('touchstart', function() {
+        $( this ).css("filter", "opacity(90%)");
+        $(this).css("width", "95%");
+        console.log("#"+$(this).attr("id"));
+        $("#name_"+ $(this).attr("id")).css("width", "95%");
+      }) .bind('touchend', function() {
+        $( this ).css("filter", "");
+        $(this).css("width", "100%");
+        $("#name_"+$(this).attr("id")).css("width", "100%");
+      });
       
+
+      $(".col-sm-12").css("padding","0");
+      $(".recipes").css("border", "solid 1px crimson");
       
     });
+    /************************************************/
+    /*****************Nav bar function***************/
+    /************************************************/
+    function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+            document.getElementById("cover").style.display = "block";
+        }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("cover").style.display = "none";
+    }
+    /*************recipe page style ****************/
+    $(".recipeIns").css("text-align", "left");
+    $(".ingredients").css("background-color", "orange");
+    $(".instructions").css("background-color", "orange");
+    $(".information").css("background-color", "orange");
+    $(".information").css("border", "1px solid  black");
+    $(".ingredients").css("border", "1px solid  black");
+    $(".instructions").css("border", "1px solid black");
 
     /*]]>*/
   </script>
