@@ -40,27 +40,28 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-	<header id="headAU">
-		<p>Tap'N CooK</p>
+	<header id="header">
+      <div id="menuDiv">
+          <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
+      </div>
+      <a href="./index.html" style="text-decoration : none;"><p>Tap'N CooK</p></a>
+    <div id="header_rightside"></div>
 	</header>
 
 	<!-- Nav Bar -->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			<ul class="navbar-nav">
-			  <li class="nav-item">
-				<a class="nav-link" href="./index.html">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="./AboutUs.html">About Us</a>
-			  </li>
-			  <li class="nav-item">
-				  <a class="nav-link" href="./AffiliatedApps.html">Affiliated Apps</a>
-				</li>
-			  <li class="nav-item">
-				<a class="nav-link" href="./FoodNinjaTest.html">Don't Click</a>
-			  </li>
-			</ul>
-		  </nav>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="links" href="./index.html">Home</a>
+    <a class="links" href="./AboutUs.html">About Us</a>
+    <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
+    <a class="links" href="./login.html">Login</a>
+    <a class="links" href="./signup.html">Sign Up</a>
+    <a class="links" href="./bait.html">Don't Click</a>
+  </div>
+  <div id="cover" onclick="closeNav()">
+  </div>
+  <!-- nav bar ends-->
     
 	<div id="whole">
         <img src = "aboutUsImg/headerDark2.png"/>
@@ -88,13 +89,7 @@
         <img src = "icon/steak.png"/>
         <img src = "icon/egg.png"/>
         <img src = "icon/lettuce.png"/>
-        
       </div>
-      
-      
-        
-		
-			
     </div>
     <div id = "advantage">
       <p id = "advAdv"><b>Who We Are</b></p>
@@ -175,7 +170,19 @@
       </a>
       </div>
     </div>
-
+    <script>
+    /************************************************/
+    /*****************Nav bar function***************/
+    /************************************************/
+    function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+            document.getElementById("cover").style.display = "block";
+        }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("cover").style.display = "none";
+    }
+    </script>
 </body>
 
 </html>
