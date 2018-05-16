@@ -1,24 +1,105 @@
-
-
-
-
-header{
+/* header */
+#header {
   text-align: center;
-  background-image: url(icon/green.png);
-  font-size:72pt;
+  /* I think this color is the best*/
+  /*background-image: url(icon/green.png);*/
+  background-color: rgb(5, 178, 82);
   color:white;
   padding: 1px;
   font-family: 'Lily Script One', cursive;
 }
+#header a:link, #header a:visited {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+#header p {
+font-size:35pt;
+display: inline-block;
+background-color: rgb(5, 178, 82);
+margin-top: 5px;
+margin-left: -55px;
+}
+
+#header #menuDiv {
+float: left;
+width: 55px;
+margin-left: 25px;
+}
+
+/* side bar */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(238, 98, 4, 0.829);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .links:hover {
+  color: rgba(238, 98, 4, 0.829);
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.sidenav .links:active {
+  color: rgba(238, 98, 4, 0.829);
+  background: rgba(125, 125, 125, 1);
+  font-size: 35pt;
+  text-decoration: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav .closebtn:active {
+  font-size: 50pt;
+}
 
 
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
 
+#cover{
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  display: none;
+}
+/* sidebar ends */
 
-
-
-
-
-
+#header_rightside{
+  float:right;
+  width:55px;
+}
 
 #whole{
   font-family: 'PT Sans Caption', sans-serif;
@@ -118,20 +199,7 @@ li {
 	flex-shrink: 0;
 }
 
-/*#AU {
-    text-align: center;
-	background-color:crimson;
-	color: white;
-	font-size: 14pt;
-	padding: 2px;
-}
-#AU > p {
-	text-align: center;
-	font-size: 14pt;
-}
-#AU ol {
-  text-align: center;
-}*/
+
 .title {
 	background-color: rgba(255, 255, 255, 0.25);
 	border-style: hidden;
@@ -283,54 +351,6 @@ li {
   
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen  and (min-width : 1000px){
   header{
   text-align: center;
@@ -340,49 +360,79 @@ li {
   padding: 1px;
   font-family: 'Lily Script One', cursive;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*#AU {
-    text-align: center;
-	background-color:crimson;
-	color: white;
-	font-size: 14pt;
-	padding: 2px;
+#header #menuDiv {
+  float: left;
+  width: 55px;
+  margin-left: 25px;
+  }
+/* side bar */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(238, 98, 4, 0.829);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
-#AU > p {
-	text-align: center;
-	font-size: 14pt;
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: white;
+  display: block;
+  transition: 0.3s;
 }
-#AU ol {
-  text-align: center;
-}*/
+
+.sidenav .links:hover {
+  color: rgba(238, 98, 4, 0.829);
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.sidenav .links:active {
+  color: rgba(238, 98, 4, 0.829);
+  background: rgba(125, 125, 125, 1);
+  font-size: 35pt;
+  text-decoration: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav .closebtn:active {
+  font-size: 50pt;
+}
 
 
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
 
+#cover{
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  display: none;
+}
+/* sidebar ends */
 #aboutUs{
   font-size:66pt;
   padding-top:100px;
@@ -529,8 +579,6 @@ li {
   display:inline-block;
   
 }
-
-  
 }
 /*
 .slideDiv{
