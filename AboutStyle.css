@@ -288,6 +288,7 @@ li {
     width:30%;
     margin-left:0%;
     clip-path: circle(40% at 50% 50%);
+    margin-bottom:2%;
 
   }
 #img3 {
@@ -301,6 +302,7 @@ li {
     margin-left:20%;
     margin-right:0%;
     clip-path: circle(40% at 50% 50%);
+    
 
   }
 #img5 {
@@ -350,6 +352,82 @@ li {
   display:inline-block;
   
 }
+#contactUs{
+  
+  height:60%;
+  margin: 0 auto;
+  background-color:rgb(240, 240, 240);
+}
+
+#contactUsTitle{
+  font-family: 'Lily Script One', cursive;
+  font-size:36pt;
+  text-align: center;
+}
+
+
+#CUText{
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size:12pt;
+  width:45%;
+  float:right;
+  
+}
+
+#contactUsContainer{
+  background-color: white;
+  border-radius: 10px;
+  height:70%;
+  margin-left:2%;
+  margin-right:2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen  and (min-width : 1000px){
   header{
