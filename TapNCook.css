@@ -81,6 +81,23 @@
   font-family: 'Lily Script One', cursive;
 }
 
+#loginNav {
+  background-color: rgb(5, 178, 82);
+  padding: 10px;
+}
+
+#userInfo {
+  background-color: rgb(5, 178, 82);
+  color:white;
+  font-size: 18pt;
+  display: inline-block;
+}
+
+#logoutButton {
+  display: none;
+  float: right;
+}
+
 #header p {
 font-size:25pt;
 display: inline-block;

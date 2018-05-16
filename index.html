@@ -28,7 +28,7 @@
       <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
       <a class="links" href="./login.html">Login</a>
       <a class="links" href="./signup.html">Sign Up</a>
-      <a class="links" href="./bait.html">Don't Click</a>
+      <a class="links" href="./leaderboard.html">Leaderboard</a>
     </div>
     <div id="cover" onclick="closeNav()">
     </div>
@@ -43,6 +43,10 @@
     <div id="search">
       <img id="searchIcon" src="icon/Mag.png" alt="Search">
     </div>
+  </div>
+  <div id="loginNav">
+    <div id="userInfo"></div>
+    <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
   </div>
 
 
@@ -473,6 +477,42 @@
           }
         });
       });
+
+      ///////////////////////////////////////////////
+      //         Retrieve User Info                //
+      ///////////////////////////////////////////////
+
+        $.ajax({
+          url: "userInfo.php",
+          dataType: "json",
+          type: "GET",
+          success: function (data) {
+            $("#userInfo").prepend(data.msg);
+            $("#logoutButton").css("display", "inline-block");
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log("error");
+          }
+        });
+
+      ///////////////////////////////////////////////
+      //         Logout Button                     //
+      ///////////////////////////////////////////////
+
+      $("#logoutButton").click(function () {
+        $.ajax({
+          url: "logout.php",
+          dataType: "json",
+          type: "GET",
+          success: function (data) {
+            $("#userInfo").html(data.msg);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+          }
+        });
+      });
+
 
       /* $("#bcarrot").click(function() {
              count--;
