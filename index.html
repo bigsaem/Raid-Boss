@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title> TapNCook </title>
+  <link rel="Title Icon" href="icon/Logo1.png"/>
   <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="./TapNCook.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
@@ -19,30 +21,37 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <!-- Nav Bar -->
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a class="links" href="./index.html">Home</a>
-      <a class="links" href="./AboutUs.html">About Us</a>
-      <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
-      <a class="links" href="./login.html">Login</a>
-      <a class="links" href="./signup.html">Sign Up</a>
-      <a class="links" href="./foodNinja.html">Don't Click</a>
-    </div>
-    <div id="cover" onclick="closeNav()">
-    </div>
-    <!-- nav bar ends-->
-  
-  <div id="header"> 
-		<div id="menuDiv">
-        <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+  <!-- Nav Bar -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="links" href="./index.html">Home</a>
+    <a class="links" href="./AboutUs.html">About Us</a>
+    <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
+    <a class="links" href="./login.html">Login</a>
+    <a class="links" href="./signup.html">Sign Up</a>
+    <a class="links" href="./leaderboard.html">Leaderboard</a>
+  </div>
+  <div id="cover" onclick="closeNav()">
+  </div>
+  <!-- nav bar ends-->
+
+  <div id="header">
+    <div id="menuDiv">
+      <span id=m enuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
       <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
     </div>
-		<a href="./index.html" style="text-decoration : none;"><p>Tap'N CooK</p></a>
-		<div id="search">
+    <a href="./index.html" style="text-decoration : none;">
+      <p>Tap'N CooK</p>
+    </a>
+    <div id="search">
       <img id="searchIcon" src="icon/Mag.png" alt="Search">
     </div>
   </div>
+  <div id="loginNav">
+    <div id="userInfo"><img src="./icons/profile.png" alt="profile"/></div>
+    <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
+  </div>
+
 
   <!-- the main div -->
   <div id="whole">
@@ -56,86 +65,76 @@
     <div class="iconsDivs">
       <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
       <div id="vegDiv">
-        <div class="vegies">
-          <p id="carrot">Carrot</p>
-        </div>
-        <div class="vegies">
-          <p id="lettuce">Lettuce</p>
-        </div>
-        <div class="vegies">
-          <p id="tomato">Tomato</p>
-        </div>
+          <p>Carrot</p><br/> 
+          <p>Lettuce</p><br/> 
+          <p>Tomato</p><br/> 
+          <p>Celery</p><br/> 
+          <p>Onion</p><br/> 
+          <p>Potato</p><br/> 
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="fruitIcon" class="icons" src="icon/banana.png" alt="Vegetables" />
+      <img id="fruitIcon" class="icons" src="icon/apple.png" alt="Vegetables" />
       <div id="fruitDiv">
-        <div class="fruits">
-          <p id="banana">Banana</p>
-        </div>
-        <div class="fruits">
-          <p id="apple">Apple</p>
-        </div>
-        <div class="fruits">
-          <p id="grapes">Grapes</p>
-        </div>
+          <p>Banana</p><br/> 
+          <p>Apple</p><br/> 
+          <p>Grapes</p><br/> 
+          <p>Orange</p><br/>
+          <p>Blueberry</p><br/>
+          <p>Strawberry</p><br/>
       </div>
     </div>
 
     <div class="iconsDivs">
       <img id="breadIcon" class="icons" src="icon/toast.png" alt="Bread" />
       <div id="breadDiv">
-        <div class="bread">
-          <p id="toast">Toast</p>
-        </div>
-        <div class="bread">
-          <p id="flatbread">Flat Bread</p>
-        </div>
-        <div class="bread">
-          <p id="bagguette">Baguette</p>
-        </div>
+          <p>Toast</p><br/> 
+          <p>Flat Bread</p><br/> 
+          <p>Baguette</p><br/> 
+          <p>Tortilla</p><br/> 
+          <p>Naan</p><br/> 
+          <p>Buns</p><br/> 
       </div>
     </div>
 
     <div class="iconsDivs">
       <img id="meatIcon" class="icons" src="icon/steak.png" alt="Bread" />
-      <div id="meatDiv">
-        <div class="meat">
-          <p id="beef">Beef</p>
-        </div>
-        <div class="meat">
-          <p id="chicken">Chicken</p>
-        </div>
-        <div class="meat">
-          <p id="pork">Pork</p>
-        </div>
+      <div id="meatDiv">        
+          <p>Beef</p><br/> 
+          <p>Chicken</p><br/> 
+          <p>Pork</p><br/> 
+          <p>Turkey</p><br/> 
+          <p>Shrimp</p><br/> 
+          <p>Salmon</p><br/> 
+        
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="dairyIcon" class="icons" src="icon/egg.png" alt="Bread" />
-      <div id="dairyDiv">
-        <div class="dairy">
-          <p id="milk">Milk</p>
-        </div>
-        <div class="dairy">
-          <p id="cheese">Cheese</p>
-        </div>
-        <div class="dairy">
-          <p id="butter">Butter</p>
-        </div>
+      <img id="dairyIcon" class="icons" src="icon/dairy.png" alt="Bread" />
+      <div id="dairyDiv">        
+          <p>Milk</p><br/>                
+          <p>Cheese</p><br/>                  
+          <p>Butter</p><br/>
+          <p>Cream</p><br/>
+          <p>Yogurt</p><br/>
+          <p>Eggs</p><br/>
+          
+        
       </div>
     </div>
 
     <div id="basket">
-      <p>Basket</p>
-        <p id="bdiv0" class="basketItem"></p>
-        <p id="bdiv1" class="basketItem"></p>
-        <p id="bdiv2" class="basketItem"></p>
-        <p id="bdiv3" class="basketItem"></p>
-        <p id="bdiv4" class="basketItem"></p>
-        <img id="arrow" src="icon/whitearrow.png"/>
+      <div id="basket-title"><p>Basket</p></div>
+      <div id="inc">
+        <div id="bdiv0" class="basketItem"><p>Test</p></div>
+        <div id="bdiv1" class="basketItem"><p>Test</p></div>
+        <div id="bdiv2" class="basketItem"><p>Test</p></div>
+        <div id="bdiv3" class="basketItem"><p>Test</p></div>
+        <div id="bdiv4" class="basketItem"><p>Test</p></div>
+        <img id="arrow" class="clickCounter" src="icon/whitearrow.png"/>
+      </div>
     </div>
 
     <div id="footer">
@@ -160,72 +159,147 @@
   <!--#################################################################################
       #############################Recipe page starts####################################
       ###################################################################################-->
-      <div id = "menu" style="display: none">
-        <div class="row" style="margin: 0 auto">
-          <div class="col-sm-12">
-            <div class="recipes">
-              <div class="wrappers"><img class = "images"></div>
-              <div class="recipeName"></div>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <div class="wrappers"><img class = "images"></div>
-              <div class="recipeName"></div>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <div class="wrappers"><img class = "images"></div>
-              <div class="recipeName"></div>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <div class="wrappers"><img class = "images"></div>
-              <div class="recipeName"></div>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <div class="wrappers"><img class = "images"></div>
-              <div class="recipeName"></div>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
-            <div class="recipes">
-              <div class="wrappers"><img class = "images"></div>
-              <div class="recipeName"></div>
-              <p class = "information"  style="display:none">Information</p>
-              <p class = "recipeStats" style="display:none"></p>
-              <p class = "ingredients"  style="display:none">Ingredients</p>
-              <p class = "ingredientAPI" style="display:none"></p>
-              <p class = "instructions"  style="display:none">Instruction</p>
-              <p class = "recipeIns" style="display:none"></p>
-            </div>
+  <div id="menu" style="display: none">
+    <div class="row" style="margin: 0 auto">
+      <div class="col-sm-12">
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images">
           </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
         </div>
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images">
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images">
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images">
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images">
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images">
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+      </div>
     </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images">
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images">
+      <!-- src= "stuff" alt="something went wrong!"> -->
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images">
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images">
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images">
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+  </div>
+  </div>
+  </div>
   <!--############################################################################################################
       ######################################Recipe page ends####################################################
       ##########################################################################################################-->
@@ -235,9 +309,9 @@
   <script>
     /*<![CDATA[*/
     $(document).ready(function () {
-      
-        
-      
+
+
+
       var ingredients = ["", "", "", "", ""];
       var count = 0;
       var basketCount = 0;
@@ -245,105 +319,116 @@
       //if the input text (ingredients input) is pressed, do this
       $('#searchBar > input').keyup( function(e) {
         //checks if the user entered a duplicate , if so, do nothing and return
-        for (let i = 0; i<ingredients.length-1;i++){
-          if(ingredients[i]==$(this).val()){
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == $(this).val()) {
             return;
           }
         }
         //if not duplicate, and the # of inputted ingredients is less than 5, add it to the basket
-        if(e.keyCode == 13 && count < 5){
+        if (e.keyCode == 13 && count < 5) {
           var sb = $(this).val();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(sb);
+          $("#bdiv" + count + "> p").text(sb);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           console.log(sb);
           ingredients[count] = sb;
           count++;
           $(this).val("");
         }
-        
+
         //if # of inputted ingredient is 5, go to easter egg game
-        if (e.keyCode == 13 && count == 5){
+        if (e.keyCode == 13 && count == 5) {
           console.log("triggered easter egg!");
-          window.location.href = 'http://tapncook.ca/foodninja.html';
+          window.location.href = 'http://tapncook.ca/FoodNinja/foodninja.html';
         }
       });
-      $('#vegDiv > div > p').click(function() {
+
+      $('#vegDiv > p').click(function() {
         
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idVeg = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idVeg);
+          $("#bdiv" + count + " > p").text(idVeg);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idVeg;
           console.log(ingredients);
           count++;
         }
       });
-      $('#fruitDiv > div > p').click(function() {
+
+      $('#fruitDiv > p').click(function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idFruit = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idFruit);
+          $("#bdiv" + count + " > p").text(idFruit);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idFruit;
           console.log(ingredients);
           count++;
         }
       });
-      $('#breadDiv > div > p').click(function() {
+
+      $('#breadDiv > p').click(function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idBread = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idBread);
+          $("#bdiv" + count + " > p").text(idBread);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idBread;
           console.log(ingredients);
           count++;
         }
       });     
-      $("#meatDiv > div > p").click( function() {
+
+      $("#meatDiv > p").click( function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idMeat = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idMeat);
+          $("#bdiv" + count + " > p").text(idMeat);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idMeat;
           console.log(ingredients);
-          count++;    
-        }    
+          count++;
+        }
       });
-      $("#dairyDiv > div > p").click(function() {
+
+      $("#dairyDiv > p").click(function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
           }
         }
-        if(count < 5){
+        if (count < 5) {
           var idDairy = $(this).text();
 					$("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idDairy);
+          $("#bdiv" + count + " > p").text(idDairy);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idDairy;
           console.log(ingredients);
           count++;
@@ -385,13 +470,13 @@
 			$(".basketItem").click(function() {
 				var ids = $(this).text();
         console.log(ids);
-				$(this).hide();
+        $(this).hide();
         console.log(ingredients);
-				
-				
-				for(let i = 0; i < ingredients.length-1;i++) {
-          if (ingredients[i] == ids){
-            ingredients[i]="";
+
+
+        for (let i = 0; i < ingredients.length - 1; i++) {
+          if (ingredients[i] == ids) {
+            ingredients[i] = "";
             var removedIndex = i;
             console.log(ingredients);
             console.log("removed index: " + removedIndex);
@@ -405,22 +490,80 @@
             break;
           }
         }
-				
-				count--;
-				if (count == 0) {
-					$("#arrow").slideUp();
-				} 
-				console.log(ids);
-			});
-			
-      
-        /*****************************************/
-        /*********removal functionality end*******/
-        /*****************************************/
+
+        count--;
+        if (count == 0) {
+          $("#arrow").slideUp();
+        }
+
+        console.log(ids);
+      });
+
+
+      /*****************************************/
+      /*********removal functionality end*******/
+      /*****************************************/
+
+      ///////////////////////////////////////////////
+      //         Counter Function                  //
+      ///////////////////////////////////////////////
+
+      $(".clickCounter").click(function () {
+        $.ajax({
+          url: "./php/counter.php",
+          dataType: "json",
+          type: "GET",
+          success: function (data) {
+            console.log(data);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+          }
+        });
+      });
+
+      ///////////////////////////////////////////////
+      //         Retrieve User Info                //
+      ///////////////////////////////////////////////
+
+      $.ajax({
+        url: "./php/userInfo.php",
+        dataType: "json",
+        type: "GET",
+        success: function (data) {
+          $("#userInfo").after(data.msg);
+          $("#loginNav").css("display", "block");
+          $("#userInfo").css("display", "inline-block");
+          $("#logoutButton").css("display", "inline-block");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log("error");
+        }
+      });
+
+      ///////////////////////////////////////////////
+      //         Logout Button                     //
+      ///////////////////////////////////////////////
+
+      $("#logoutButton").click(function () {
+        $.ajax({
+          url: "./php/logout.php",
+          dataType: "json",
+          type: "GET",
+          success: function (data) {
+            $("#loginNav").html(data.msg);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            $("#p1").text(jqXHR.statusText);
+          }
+        });
+      });
+
+
       $("#arrow").click(function () {
         $("#whole").hide(500);
         $("#menu").show(500);
-        
+
         $.ajax({
           url: "GetRecipeID.php",
           dataType: "json",
@@ -438,8 +581,8 @@
               }
               x++;
             });
-            
-            x=0;
+
+            x = 0;
             //Loops through all the recipeID classes, and sets the recipe title for each.
             $('.recipeName').each(function (i, $this) {
               if ((items["body"][x]) != null) {
@@ -471,7 +614,7 @@
             $('.information').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
-                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') + "_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -489,14 +632,14 @@
               x++;
             });
             x = 0;
-            
+
             //Loops through all the recipeNumber classes (paragraph element), and changes the class name
             //to the recipe id for future reference
             $('.ingredients').each(function (i, $this) {
-              
+
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
-                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') + "_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -511,7 +654,7 @@
             $('.instructions').each(function (i, $this) {
               if ((items["body"][x]) != null) {
                 $(this).attr('id', items["body"][x]["id"]);
-                $(this).attr('class', $(this).attr('class') +"_" + items["body"][x]["id"]);
+                $(this).attr('class', $(this).attr('class') + "_" + items["body"][x]["id"]);
               }
               x++;
             });
@@ -534,7 +677,7 @@
       //prevent to put the same information into paragraphs.
       showmenu = [];
       $('.wrappers').click(function (e) {
-        
+
         // don't allow the anchor to visit the link
         e.preventDefault();
         $('.information_' + $(this).attr('id')).toggle(200);
@@ -544,39 +687,41 @@
         $('.ing_' + $(this).attr('id')).hide(200);
         $('.rec_' + $(this).attr('id')).hide(200);
         //prevent to put the same information into paragraphs.
-        if(showmenu[""+ $(this).attr("id")] == null){
-          showmenu[""+ $(this).attr("id")] = true;
-        
-        console.log('clicked to get recipe info');
-        var clickedElement = this;
-        
-        $.ajax({
-          url: "GetRecipeInfo.php",
-          dataType: "json",
-          type: "GET",
-          data: {
-            output: 'json',
-            id: $(this).attr("id")
-          },
-          success: function (data) {
-            var dataBody = data["body"][0];
-            
-            
-            //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
-            //$("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
-            $("." + $(clickedElement).attr("id")).append('<b>Ingredients</b><br/>');
-            
-            var ingredientsNeeded = "";
-            if (data["body"][0] != undefined){
-              for (var i = 0; i < dataBody["steps"].length; i++) {
-                for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
-                  if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
-                    ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
-                  } else {
-                    console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+        if (showmenu["" + $(this).attr("id")] == null) {
+          showmenu["" + $(this).attr("id")] = true;
+
+          console.log('clicked to get recipe info');
+          var clickedElement = this;
+
+          $.ajax({
+            url: "GetRecipeInfo.php",
+            dataType: "json",
+            type: "GET",
+            data: {
+              output: 'json',
+              id: $(this).attr("id")
+            },
+            success: function (data) {
+              var dataBody = data["body"][0];
+
+
+              //APPENDS THE INGREDIENTS LIST TO THE PARAGRAPH ELEMENT WITH CLASS NAME = RECIPE ID, WITHOUT ADDING DUPLICATE INGREDIENTS
+              //$("." + $(clickedElement).attr("id")).append("<b>Ingredients needed:</b> ");
+              $("." + $(clickedElement).attr("id")).append('<b>Ingredients</b><br/>');
+
+              var ingredientsNeeded = "";
+              if (data["body"][0] != undefined) {
+                for (var i = 0; i < dataBody["steps"].length; i++) {
+                  for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
+                    if (ingredientsNeeded.indexOf(dataBody["steps"][i]["ingredients"][j]["name"]) == -1) {
+                      ingredientsNeeded += (dataBody["steps"][i]["ingredients"][j]["name"] + ", ");
+                    } else {
+                      console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j][
+                        "name"
+                      ]);
+                    }
                   }
                 }
-              }
             }
             else {
               ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
@@ -647,42 +792,42 @@
       }
       });
       //drop down bar functionality
-      $(".information").click(function(){
+      $(".information").click(function () {
         $(".stats_" + $(this).attr("id")).toggle(200);
       });
-      $(".ingredients").click(function(){
+      $(".ingredients").click(function () {
         $(".ing_" + $(this).attr("id")).toggle(200);
       });
-      $(".instructions").click(function(){
+      $(".instructions").click(function () {
         $(".rec_" + $(this).attr("id")).toggle(200);
       });
       //recipe hovering effect
-      $(".wrappers").hover(function() {
-        $( this ).css("filter", "opacity(80%)");
-      },function() {
-        $( this ).css("filter", "");
+      $(".wrappers").hover(function () {
+        $(this).css("filter", "opacity(80%)");
+      }, function () {
+        $(this).css("filter", "");
       });
       //recipe click effect
-      $(".wrappers").mousedown(function() {
-        $( this ).css("filter", "opacity(90%)");
+      $(".wrappers").mousedown(function () {
+        $(this).css("filter", "opacity(90%)");
         $(this).css("width", "95%");
-        console.log("#"+$(this).attr("id"));
-        $("#name_"+ $(this).attr("id")).css("width", "95%");
-      }) .mouseup(function() {
-        $( this ).css("filter", "");
+        console.log("#" + $(this).attr("id"));
+        $("#name_" + $(this).attr("id")).css("width", "95%");
+      }).mouseup(function () {
+        $(this).css("filter", "");
         $(this).css("width", "100%");
-        $("#name_"+$(this).attr("id")).css("width", "100%");
+        $("#name_" + $(this).attr("id")).css("width", "100%");
       });
       //recipe touch effect (cannot use :active cause we need to move recipe title paragraph as well)
-      $(".wrappers").bind('touchstart', function() {
-        $( this ).css("filter", "opacity(90%)");
+      $(".wrappers").bind('touchstart', function () {
+        $(this).css("filter", "opacity(90%)");
         $(this).css("width", "95%");
-        console.log("#"+$(this).attr("id"));
-        $("#name_"+ $(this).attr("id")).css("width", "95%");
-      }) .bind('touchend', function() {
-        $( this ).css("filter", "");
+        console.log("#" + $(this).attr("id"));
+        $("#name_" + $(this).attr("id")).css("width", "95%");
+      }).bind('touchend', function () {
+        $(this).css("filter", "");
         $(this).css("width", "100%");
-        $("#name_"+$(this).attr("id")).css("width", "100%");
+        $("#name_" + $(this).attr("id")).css("width", "100%");
       });
       
       $(".col-sm-12").css("padding","0");
@@ -696,8 +841,8 @@
             document.getElementById("cover").style.display = "block";
         }
     function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("cover").style.display = "none";
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("cover").style.display = "none";
     }
     /*************recipe page style ****************/
     $(".recipeIns").css("text-align", "left");

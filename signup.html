@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="signup.css" />
+    <link rel="stylesheet" type="text/css" href="./css/signup.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
@@ -24,37 +24,56 @@
         <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
         <a class="links" href="./login.html">Login</a>
         <a class="links" href="./signup.html">Sign Up</a>
-        <a class="links" href="./bait.html">Don't Click</a>
+        <a class="links" href="./leaderboard.html">Leaderboard</a>
     </div>
-    <div id="cover" onclick="closeNav()">
-    </div>
+    <div id="cover" onclick="closeNav()"></div>
     <!-- nav bar ends-->
-        
-    <div id="header"> 
+
+    <!-- tapncook header -->
+    <div id="header">
         <div id="menuDiv">
-        <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+            <span id=m enuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
         </div>
-        <a href="./index.html" style="text-decoration : none;"><p>Tap'N CooK</p></a>
+        <a href="./index.html" style="text-decoration : none;">
+            <p>Tap'N CooK</p>
+        </a>
+    </div>
+
+    <!-- login bar -->
+    <div id="loginNav">
+        <div id="userInfo">
+            <img src="./icons/profile.png" alt="profile" />
+        </div>
+        <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
     </div>
 
     <p id="subhead">Sign Up</p>
+
     </br>
-    <form id="signupListForm">
-        <div class="form-group w-50 mx-auto">
+
+    <!-- signup form -->
+    <form id="signupListForm" class="shadow-lg p-5 bg-warning text-white rounded w-75 mx-auto">
+        <div class="form-group w-90 mx-auto">
             <label for="username">Username:</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
         </div>
-        <div class="form-group w-50 mx-auto">
+        <div class="form-group w-90 mx-auto">
             <label for="password">Password:</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
         </div>
-        <div class="w-50 mx-auto">
-            <input type="submit" id="submit" value="Submit" />
+        <div class="w-50">
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </form>
+
     </br>
-    <p id="p1" style="text-align: center"></p>
+
+    <!-- success notification -->
+    <div role="alert" id="p1"></div>
+
     </br>
+
+    <!-- logo footer -->
     <div id="footer">
         <div id="bcitdiv">
             <a href="https://www.bcit.ca/" target="blank">
@@ -73,61 +92,10 @@
         </div>
     </div>
 
+    <!-- script -->
+    <script src="./js/navanduserbar.js"></script>
+    <script src="./js/signupPost.js"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-    </script>
-    <script>
-        $(document).ready(function () {
-
-            $("#signupListForm").submit(function (e) {
-                e.preventDefault();
-                var formData = ConvertFormToJSON("#signupListForm");
-                console.log("Data from form (to be sent): ", formData);
-
-                $.ajax({
-                    url: "signup-post.php",
-                    type: "POST",
-                    dataType: "JSON",
-                    data: formData,
-                    success: function (data) {
-                        console.log("Data returned from server: ", data);
-                        var listData = data.msg;
-                        // for (var key in data) {
-                        //     listData += data[key] + " ";
-                        // }
-                        $("#p1").text(listData);
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        $("#p1").text(jqXHR.statusText);
-                    }
-
-                });
-
-            });
-
-            // Converts form to JSON
-            function ConvertFormToJSON(form) {
-                var array = $(form).serializeArray();
-                var json = {};
-                jQuery.each(array, function () {
-                    json[this.name] = this.value || '';
-                });
-                return json;
-            }
-
-        });
-        /************************************************/
-        /*****************Nav bar function***************/
-        /************************************************/
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "350px";
-            document.getElementById("cover").style.display = "block";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("cover").style.display = "none";
-        }
-    </script>
 </body>
 
 </html>
