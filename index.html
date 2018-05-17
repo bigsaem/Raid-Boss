@@ -47,7 +47,7 @@
     </div>
   </div>
   <div id="loginNav">
-    <div id="userInfo"></div>
+    <div id="userInfo"><img src="./icons/profile.png" alt="profile"/></div>
     <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
   </div>
 
@@ -508,7 +508,7 @@
 
       $(".clickCounter").click(function () {
         $.ajax({
-          url: "counter.php",
+          url: "./php/counter.php",
           dataType: "json",
           type: "GET",
           success: function (data) {
@@ -525,11 +525,13 @@
       ///////////////////////////////////////////////
 
       $.ajax({
-        url: "userInfo.php",
+        url: "./php/userInfo.php",
         dataType: "json",
         type: "GET",
         success: function (data) {
-          $("#userInfo").prepend(data.msg);
+          $("#userInfo").after(data.msg);
+          $("#loginNav").css("display", "block");
+          $("#userInfo").css("display", "inline-block");
           $("#logoutButton").css("display", "inline-block");
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -543,11 +545,11 @@
 
       $("#logoutButton").click(function () {
         $.ajax({
-          url: "logout.php",
+          url: "./php/logout.php",
           dataType: "json",
           type: "GET",
           success: function (data) {
-            $("#userInfo").html(data.msg);
+            $("#loginNav").html(data.msg);
           },
           error: function (jqXHR, textStatus, errorThrown) {
             $("#p1").text(jqXHR.statusText);

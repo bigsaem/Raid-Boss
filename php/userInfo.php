@@ -1,12 +1,17 @@
 <?php
     session_start();
-
+    
     $methodType = $_SERVER['REQUEST_METHOD'];
-    $data = array("msg" => "$methodType");
 
     if ($methodType === 'GET') {
-        session_destroy();
-        $data = array("msg" => "Logged out");
+
+        // retrieves username from SESSION
+        $uName = $_SESSION["username"];
+
+        // checks if username exists
+        if ($uName != NULL) {
+        $data = array("msg" => "$uName");
+        }
 
     } else {
         $data = array("msg" => "Error: only GET allowed");

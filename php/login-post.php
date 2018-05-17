@@ -3,11 +3,12 @@
     $data = array("status" => "fail", "msg" => "$methodType");
 
     // DB Login
-    // $servername = "db736774578.db.1and1.com";
-    // $dblogin = "dbo736774578";
-    // $adminpass = "159753Rb$";
-    // $dbname = "db736774578";
+    $servername = "db736774578.db.1and1.com";
+    $dblogin = "dbo736774578";
+    $adminpass = "159753Rb$";
+    $dbname = "db736774578";
 
+    // localhost testing
     $servername = "localhost";
     $dblogin = "root";
     $adminpass = "root";
@@ -55,11 +56,7 @@
                         session_start();
                         // assign session variables
                         $_SESSION["username"] = $login;
-                        //$_SESSION['counter'] = $counter; 
-                        //$_SESSION['loggedin'] = true;
-    
-                        $sid= session_id();
-                        $data = array("msg" => "Success", "sid" => $sid, "username" => $login);
+                        $data = array("msg" => "Success");
     
                     } else {
                         $data = array("msg" => "Username and/or password not correct.");
