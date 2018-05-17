@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="./css/signup.css" />
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="./css/leaderboard.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Bootstrap stuff!-->
+    <!-- Bootstrap/jQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
@@ -26,13 +26,14 @@
         <a class="links" href="./signup.html">Sign Up</a>
         <a class="links" href="./leaderboard.html">Leaderboard</a>
     </div>
-    <div id="cover" onclick="closeNav()"></div>
+    <div id="cover" onclick="closeNav()">
+    </div>
     <!-- nav bar ends-->
 
     <!-- tapncook header -->
     <div id="header">
         <div id="menuDiv">
-            <span id=m enuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+            <span id="menuIcon" style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
         </div>
         <a href="./index.html" style="text-decoration : none;">
             <p>Tap'N CooK</p>
@@ -47,33 +48,22 @@
         <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
     </div>
 
-    <p id="subhead">Sign Up</p>
+    <div id="subhead">Leaderboard</div>
 
     </br>
 
-    <!-- signup form -->
-    <form id="signupListForm">
-        <div class="form-group w-50 mx-auto">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+    <!-- leaderboard table -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Food Reuse Leaderboard</h5>
+            <p class="card-text">These users are the champions of reducing food waste! Keep it up!</p>
         </div>
-        <div class="form-group w-50 mx-auto">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-        </div>
-        <div class="w-50 mx-auto">
-            <input type="submit" id="submit" value="Submit" />
-        </div>
-    </form>
+        <div id="leaderTable"></div>
+    </div>
 
     </br>
 
-    <!-- success notification -->
-    <p id="p1" style="text-align: center"></p>
-
-    </br>
-
-    <!-- logo footer -->
+    <!-- icon footer -->
     <div id="footer">
         <div id="bcitdiv">
             <a href="https://www.bcit.ca/" target="blank">
@@ -92,10 +82,10 @@
         </div>
     </div>
 
-    <!-- script -->
+    <!-- scripts -->
     <script src="./js/navanduserbar.js"></script>
-    <script src="./js/signupPost.js"></script>
-
+    <script src="./js/leaderboardGet.js"></script>
+    
 </body>
 
 </html>

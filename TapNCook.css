@@ -48,9 +48,6 @@
   font-size: 50pt;
 }
 
-.sidenav .closebtn:active {
-  font-size: 50pt;
-}
 
 @media screen and (max-height: 450px) {
 .sidenav {padding-top: 15px;}
@@ -68,7 +65,7 @@
   position: fixed;
   display: none;
 }
-
+/* sidebar ends */
 
 /* header */
 #header {
@@ -81,11 +78,36 @@
   font-family: 'Lily Script One', cursive;
 }
 
+#loginNav {
+  background-color: rgb(5, 178, 82);
+  padding: 10px;
+  color:white;
+  display: none;
+}
+
+#userInfo {
+  background-color: rgb(5, 178, 82);
+  color:white;
+  font-size: 18pt;
+  display: none;
+  padding-right: 10px;
+}
+
+#logoutButton {
+  display: none;
+  float: right;
+}
+
+#header a:link, #header a:visited {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
 #header p {
-font-size:25pt;
+font-size:35pt;
 display: inline-block;
 background-color: rgb(5, 178, 82);
-margin-right: -25px;
+margin-top: 5px;
 }
 
 
@@ -148,17 +170,53 @@ margin-left: 25px;
     text-align:center;
     font-size:20pt;
     color:white;
+<<<<<<< HEAD
+=======
+  }
+  
+  #basket {
+    float: left;
+    background-color: lightsalmon;
+    margin-top: 1px;  
+    width: 100%;
+
+    
+  }
+  
+  .basketItem {
+    font-size: 20pt;
+    background-color: burlywood;
+    float: left;	
+    display:none;
+    border-style: solid;
+    border-color: cornsilk;
+    border-radius: 2px;
+    width: 16%;
+>>>>>>> 89c4a51da68fb94b902cee41d5ff1859c36a9d68
     vertical-align: middle;
   }
   
   
+<<<<<<< HEAD
+=======
+  #basket img {
+    width: 10%;
+    display: none;
+  }
+  
+  #arrow {
+    float: right;
+    display: none;
+    margin: 0;
+  }
+>>>>>>> 89c4a51da68fb94b902cee41d5ff1859c36a9d68
   
   /***********************************/
   /***********footer start************/
   /***********************************/
   #footer{
     width:100%;
-    background-color:orangered;
+    background-color:rgba(0,0,0,0.85);
     float: left;
     height: 120px;
     
@@ -222,24 +280,55 @@ margin-left: 25px;
   }
   
   /*RECIPES PAGE CSS */
-  .recipeID{
-    font-size: 20pt;
-  }
-  p {
-    font-size: 15pt;
+  .recipes p{
+    background-color: white;
+    color: black;
     font-weight: bold;
+  }
+  .recipeName{
+    font-size: 20pt;
+    background-color: black;
+    font-weight: bold;
+    color:white;
+    text-align: left;
+    padding-left:15px;
   }
   
   #menu{
     text-align: center;
   }
+
   #menu div{
     margin: 0 auto;
   }
-  #menu p{
-    color: black;
-    background-color: white;
+  
+  .wrappers::before {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0, black 100%);
+    margin-bottom: -50px;
+    height: 50px;
+    width: 100%;
+    content: '';
   }
+  .wrappers::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, black 100%);
+    margin-top: -50px;
+    height: 50px;
+    width: 100%;
+    content: '';
+  }
+  .recipes img{
+    margin : 0 auto;
+    padding : 0;
+  }
+  
+
+
+
+
   /* Categories */
   
   #vegDiv {
