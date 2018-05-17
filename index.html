@@ -3,6 +3,7 @@
 
 <head>
   <title> TapNCook </title>
+  <link rel="Title Icon" href="icon/Logo1.png"/>
   <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="./TapNCook.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
@@ -64,86 +65,76 @@
     <div class="iconsDivs">
       <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
       <div id="vegDiv">
-        <div class="vegies">
-          <p id="carrot">Carrot</p>
-        </div>
-        <div class="vegies">
-          <p id="lettuce">Lettuce</p>
-        </div>
-        <div class="vegies">
-          <p id="tomato">Tomato</p>
-        </div>
+          <p>Carrot</p><br/> 
+          <p>Lettuce</p><br/> 
+          <p>Tomato</p><br/> 
+          <p>Celery</p><br/> 
+          <p>Onion</p><br/> 
+          <p>Potato</p><br/> 
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="fruitIcon" class="icons" src="icon/banana.png" alt="Vegetables" />
+      <img id="fruitIcon" class="icons" src="icon/apple.png" alt="Vegetables" />
       <div id="fruitDiv">
-        <div class="fruits">
-          <p id="banana">Banana</p>
-        </div>
-        <div class="fruits">
-          <p id="apple">Apple</p>
-        </div>
-        <div class="fruits">
-          <p id="grapes">Grapes</p>
-        </div>
+          <p>Banana</p><br/> 
+          <p>Apple</p><br/> 
+          <p>Grapes</p><br/> 
+          <p>Orange</p><br/>
+          <p>Blueberry</p><br/>
+          <p>Strawberry</p><br/>
       </div>
     </div>
 
     <div class="iconsDivs">
       <img id="breadIcon" class="icons" src="icon/toast.png" alt="Bread" />
       <div id="breadDiv">
-        <div class="bread">
-          <p id="toast">Toast</p>
-        </div>
-        <div class="bread">
-          <p id="flatbread">Flat Bread</p>
-        </div>
-        <div class="bread">
-          <p id="bagguette">Baguette</p>
-        </div>
+          <p>Toast</p><br/> 
+          <p>Flat Bread</p><br/> 
+          <p>Baguette</p><br/> 
+          <p>Tortilla</p><br/> 
+          <p>Naan</p><br/> 
+          <p>Buns</p><br/> 
       </div>
     </div>
 
     <div class="iconsDivs">
       <img id="meatIcon" class="icons" src="icon/steak.png" alt="Bread" />
-      <div id="meatDiv">
-        <div class="meat">
-          <p id="beef">Beef</p>
-        </div>
-        <div class="meat">
-          <p id="chicken">Chicken</p>
-        </div>
-        <div class="meat">
-          <p id="pork">Pork</p>
-        </div>
+      <div id="meatDiv">        
+          <p>Beef</p><br/> 
+          <p>Chicken</p><br/> 
+          <p>Pork</p><br/> 
+          <p>Turkey</p><br/> 
+          <p>Shrimp</p><br/> 
+          <p>Salmon</p><br/> 
+        
       </div>
     </div>
 
     <div class="iconsDivs">
-      <img id="dairyIcon" class="icons" src="icon/egg.png" alt="Bread" />
-      <div id="dairyDiv">
-        <div class="dairy">
-          <p id="milk">Milk</p>
-        </div>
-        <div class="dairy">
-          <p id="cheese">Cheese</p>
-        </div>
-        <div class="dairy">
-          <p id="butter">Butter</p>
-        </div>
+      <img id="dairyIcon" class="icons" src="icon/dairy.png" alt="Bread" />
+      <div id="dairyDiv">        
+          <p>Milk</p><br/>                
+          <p>Cheese</p><br/>                  
+          <p>Butter</p><br/>
+          <p>Cream</p><br/>
+          <p>Yogurt</p><br/>
+          <p>Eggs</p><br/>
+          
+        
       </div>
     </div>
 
     <div id="basket">
-      <p>Basket</p>
-      <p id="bdiv0" class="basketItem"></p>
-      <p id="bdiv1" class="basketItem"></p>
-      <p id="bdiv2" class="basketItem"></p>
-      <p id="bdiv3" class="basketItem"></p>
-      <p id="bdiv4" class="basketItem"></p>
-      <img id="arrow" class="clickCounter" src="icon/whitearrow.png" />
+      <div id="basket-title"><p>Basket</p></div>
+      <div id="inc">
+        <div id="bdiv0" class="basketItem"><p>Test</p></div>
+        <div id="bdiv1" class="basketItem"><p>Test</p></div>
+        <div id="bdiv2" class="basketItem"><p>Test</p></div>
+        <div id="bdiv3" class="basketItem"><p>Test</p></div>
+        <div id="bdiv4" class="basketItem"><p>Test</p></div>
+        <img id="arrow" src="icon/whitearrow.png"/>
+      </div>
     </div>
 
     <div id="footer">
@@ -336,9 +327,10 @@
         //if not duplicate, and the # of inputted ingredients is less than 5, add it to the basket
         if (e.keyCode == 13 && count < 5) {
           var sb = $(this).val();
-          $("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(sb);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + "> p").text(sb);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           console.log(sb);
           ingredients[count] = sb;
           count++;
@@ -351,7 +343,8 @@
           window.location.href = 'http://tapncook.ca/foodninja.html';
         }
       });
-      $('#vegDiv > div > p').click(function() {
+
+      $('#vegDiv > p').click(function() {
         
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
@@ -360,15 +353,17 @@
         }
         if (count < 5) {
           var idVeg = $(this).text();
-          $("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idVeg);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + " > p").text(idVeg);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idVeg;
           console.log(ingredients);
           count++;
         }
       });
-      $('#fruitDiv > div > p').click(function() {
+
+      $('#fruitDiv > p').click(function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
@@ -376,15 +371,17 @@
         }
         if (count < 5) {
           var idFruit = $(this).text();
-          $("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idFruit);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + " > p").text(idFruit);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idFruit;
           console.log(ingredients);
           count++;
         }
       });
-      $('#breadDiv > div > p').click(function() {
+
+      $('#breadDiv > p').click(function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
@@ -392,15 +389,17 @@
         }
         if (count < 5) {
           var idBread = $(this).text();
-          $("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idBread);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + " > p").text(idBread);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idBread;
           console.log(ingredients);
           count++;
         }
       });     
-      $("#meatDiv > div > p").click( function() {
+
+      $("#meatDiv > p").click( function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
@@ -408,15 +407,17 @@
         }
         if (count < 5) {
           var idMeat = $(this).text();
-          $("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idMeat);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + " > p").text(idMeat);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idMeat;
           console.log(ingredients);
           count++;
         }
       });
-      $("#dairyDiv > div > p").click(function() {
+
+      $("#dairyDiv > p").click(function() {
         for (let i = 0; i<ingredients.length-1;i++){
           if(ingredients[i]==$(this).text()){
             return;
@@ -424,9 +425,10 @@
         }
         if (count < 5) {
           var idDairy = $(this).text();
-          $("#bdiv" + count + "").show();
-          $("#bdiv" + count + "").text(idDairy);
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + " > p").text(idDairy);
           $("#arrow").show(500);
+          $("#inc").css("display", "flex");
           ingredients[count] = idDairy;
           console.log(ingredients);
           count++;
