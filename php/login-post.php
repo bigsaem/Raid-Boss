@@ -9,10 +9,10 @@
     $dbname = "db736774578";
 
     // localhost testing
-    $servername = "localhost";
-    $dblogin = "root";
-    $adminpass = "root";
-    $dbname = "tapncook";
+    // $servername = "localhost";
+    // $dblogin = "root";
+    // $adminpass = "root";
+    // $dbname = "tapncook";
 
     // Checks if method is a POST
     if ($methodType === 'POST') {

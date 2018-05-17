@@ -7,10 +7,10 @@
     $dbname = "db736774578";
 
     // localhost testing
-    $servername = "localhost";
-    $dblogin = "root";
-    $pwd = "root";
-    $dbname = "tapncook";
+    // $servername = "localhost";
+    // $dblogin = "root";
+    // $pwd = "root";
+    // $dbname = "tapncook";
 
     $methodType = $_SERVER['REQUEST_METHOD'];
     $data = array("msg" => "$methodType");
