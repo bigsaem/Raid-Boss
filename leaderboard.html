@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="./css/leaderboard.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Bootstrap/jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Nav Bar -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="links" href="./index.html">Home</a>
+        <a class="links" href="./AboutUs.html">About Us</a>
+        <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
+        <a class="links" href="./login.html">Login</a>
+        <a class="links" href="./signup.html">Sign Up</a>
+        <a class="links" href="./leaderboard.html">Leaderboard</a>
+    </div>
+    <div id="cover" onclick="closeNav()">
+    </div>
+    <!-- nav bar ends-->
+
+    <!-- tapncook header -->
+    <div id="header">
+        <div id="menuDiv">
+            <span id="menuIcon" style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        </div>
+        <a href="./index.html" style="text-decoration : none;">
+            <p>Tap'N CooK</p>
+        </a>
+    </div>
+
+    <!-- login bar -->
+    <div id="loginNav">
+        <div id="userInfo">
+            <img src="./icons/profile.png" alt="profile" />
+        </div>
+        <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
+    </div>
+
+    <div id="subhead">Leaderboard</div>
+
+    </br>
+
+    <!-- leaderboard table -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Food Reuse Leaderboard</h5>
+            <p class="card-text">These users are the champions of reducing food waste! Keep it up!</p>
+        </div>
+        <div id="leaderTable"></div>
+    </div>
+
+    </br>
+
+    <!-- icon footer -->
+    <div id="footer">
+        <div id="bcitdiv">
+            <a href="https://www.bcit.ca/" target="blank">
+                <img src="logos/192px-BCITwordmark.svg.png" id="bcit" />
+            </a>
+        </div>
+        <div id="loveFooddiv">
+            <a href="https://www.lovefoodhatewaste.com/" target="blank">
+                <img src="logos/logo_og.png" id="loveFood" />
+            </a>
+        </div>
+        <div id="metroVandiv">
+            <a href="http://www.metrovancouver.org/" target="blank">
+                <img src="logos/metro-vancouver-logo-colour-illustrator-file.png" id="metro" />
+            </a>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="./js/navanduserbar.js"></script>
+    <script src="./js/leaderboardGet.js"></script>
+    
+</body>
+
+</html>
