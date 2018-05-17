@@ -91,7 +91,6 @@
   #header #menuDiv {
   float: left;
   width: 55px;
-  margin-left: 25px;
   }
 
   /* body */
@@ -133,11 +132,15 @@ html, body {
   .recipe_title {
     font-size: 3.05em;
   }
+}*/
+@media (min-width: 0px) {
+  #menuDiv{
+    margin-left:25px;
+  }
 }
-@media (min-width: 900px) {
-  .recipe_title {
-    font-size: 3.25em;
-    margin: 0 0 0.3em;
+/*@media (min-width: 1200px) {
+  #menuDiv{
+    margin-left:10%;
   }
 } */
 

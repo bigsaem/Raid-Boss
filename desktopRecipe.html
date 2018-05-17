@@ -54,12 +54,10 @@
                                 <a class="img-card">
                                         <img class ="recipe_image" src="./icon/banana.png" />
                                       </a>
-                            <div class="content">
+                            <div class="card-content">
                                 <p class="recipe_title">
                                 </p>
-                                <p class="">
-                                    Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                </p>
+                                <p class="recipe_ingredient"></p>
                             </div>
                             <div class="card-read-more">
                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
@@ -76,9 +74,7 @@
                             <div class="card-content">
                                 <p class="recipe_title">
                                   </p>
-                                <p class="">
-                                    Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                </p>
+                                <p class="recipe_ingredient"></p>
                             </div>
                             <div class="card-read-more">
                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
@@ -95,9 +91,7 @@
                             <div class="card-content">
                                 <p class="recipe_title">
                                   </p>
-                                <p class="">
-                                    Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                </p>
+                                <p class="recipe_ingredient"></p>
                             </div>
                             <div class="card-read-more">
                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
@@ -114,9 +108,7 @@
                             <div class="card-content">
                                 <p class="recipe_title">
                                   </p>
-                                <p class="">
-                                    Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                </p>
+                                <p class="recipe_ingredient"></p>
                             </div>
                             <div class="card-read-more">
                                 <a class="btn btn-link btn-block">
@@ -133,9 +125,7 @@
                             <div class="card-content">
                                 <p class="recipe_title">
                                   </p>
-                                <p class="">
-                                    Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                </p>
+                                <p class="recipe_ingredient"></p>
                             </div>
                             <div class="card-read-more">
                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
@@ -152,9 +142,7 @@
                             <div class="card-content">
                                 <p class="recipe_title">
                                   </p>
-                                <p class="">
-                                    Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                </p>
+                                <p class="recipe_ingredient"></p>
                             </div>
                             <div class="card-read-more">
                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
@@ -201,7 +189,7 @@
        $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
        $('.modal-title').text($(this).attr('text'));
       });
-
+      var counter = 0;
       var ingredients = ["turkey", "", "", "", ""];
         $.ajax({
           url: "GetRecipeID.php",
@@ -213,17 +201,27 @@
           },
           success: function (data) {
             var items = data;
-           console.log(data);
+            console.log(items);
            //assigning unique id and attribute for each card
            var x = 0;
+           $(".recipe_ingredient").each(function(){
+                if(items["body"][x] !=null) {
+                    $(this).attr('id', 'ingredient_' + items['body'][x]['id']);
+                }
+            });
+            x = 0;
+
             $(".card").each(function(){
                 if ((items["body"][x]) != null) {
                     $(this).attr('id', items["body"][x]["id"]);
+                    //console.log($(this).attr('id'));
                 }
                 x++;
+                counter++;
+                console.log(counter);
             });
-            
             x = 0;
+
             $(".recipe_image").each(function(){
                 if ((items["body"][x]) != null) {
                     $(this).attr('id', items["body"][x]["id"]);
@@ -236,22 +234,113 @@
             x = 0;
             $(".recipe_title").each(function(){
                 if ((items["body"][x]) != null) {
-                    $(this).attr('id', items["body"][x]["id"]);
+                    $(this).attr('id', 'title_' + items["body"][x]["id"]);
                     $(this).text(items["body"][x]["title"]);
                 }
                 x++;
             });
 
-
-
-
+            while(true){
+            console.log("---" + counter);
+                if (counter == 6){
+                    $(".card").each(function(){
+                        var individual_card = $(this);
+                        $.ajax({
+                            url: "GetRecipeInfo.php",
+                            dataType: "json",
+                            type: "GET",
+                            data: {
+                                output: 'json',
+                                id: $(this).attr("id")
+                            },
+                            success: function (data) {
+                                //console.log("this id " + $(individual_card).attr('id'));
+                                var dataBody = data["body"][0];
+                                var ingredientsNeeded = new Array();
+                                /*console.log(dataBody);
+                                console.log("--------------------");*/
+                                if (data["body"][0] != undefined){
+                                    for (var i = 0; i < dataBody["steps"].length; i++) {
+                                        for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
+                                            if (!ingredientsNeeded.includes(dataBody["steps"][i]["ingredients"][j]["name"])) {
+                                                ingredientsNeeded.push(dataBody["steps"][i]["ingredients"][j]["name"]);
+                                            } else {
+                                                console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+                                            }
+                                        }
+                                    }
+                                }
+                                else {
+                                ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
+                                //console.log("databody not defined!");
+                                }
+                                console.log(ingredientsNeeded); 
+                                $("#ingredient_" + $(individual_card).attr('id')).text(ingredientsNeeded);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                $("#header").text(textStatus + " " + errorThrown +
+                                jqXHR.responseText);
+                                }
+                            });
+                        }); return;
+                    }
+            }
           },
           error: function (jqXHR, textStatus, errorThrown) {
             $("#header").text(textStatus + " " + errorThrown +
               jqXHR.responseText);
           }
         });
+        console.log(counter); 
+        // recipe instruction & ingredient is imported from here
+    
+
+        /*while(true){
+            console.log(counter);
+            if (counter == 6){
+                $(".card").each(function(){
+                    $.ajax({
+                        url: "GetRecipeInfo.php",
+                        dataType: "json",
+                        type: "GET",
+                        data: {
+                            output: 'json',
+                            id: $(this).attr("id")
+                        },
+                        success: function (data) {
+                            //console.log("this id " + $(individual_card).attr('id'));
+                            var dataBody = data["body"][0];
+                            var ingredientsNeeded = new Array();
+                            /*console.log(dataBody);
+                            console.log("--------------------");*//*
+                            if (data["body"][0] != undefined){
+                                for (var i = 0; i < dataBody["steps"].length; i++) {
+                                    for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
+                                        if (!ingredientsNeeded.includes(dataBody["steps"][i]["ingredients"][j]["name"])) {
+                                            ingredientsNeeded.push(dataBody["steps"][i]["ingredients"][j]["name"]);
+                                        } else {
+                                            console.log("duplicate ingredient: " + dataBody["steps"][i]["ingredients"][j]["name"]);
+                                        }
+                                    }
+                                }
+                            }
+                            else {
+                            ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
+                            //console.log("databody not defined!");
+                            }
+                            console.log(ingredientsNeeded); 
+                            $("#ingredient_" + $(this).attr('id')).text(ingredientsNeeded);
+                            },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            $("#header").text(textStatus + " " + errorThrown +
+                            jqXHR.responseText);
+                            }
+                    });
+                }); return;
+            }
+        }*/
     });
+        console.log($(".card").attr('id'));
   </script>
 </body>
 </html>
