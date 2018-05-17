@@ -4,15 +4,16 @@
     $data = array("status" => "fail", "msg" => "$methodType");
 
     // DB Login
-    // $servername = "db736774578.db.1and1.com";
-    // $dblogin = "dbo736774578";
-    // $adminpass = "159753Rb$";
-    // $dbname = "db736774578";
+    $servername = "db736774578.db.1and1.com";
+    $dblogin = "dbo736774578";
+    $adminpass = "159753Rb$";
+    $dbname = "db736774578";
 
-    $servername = "localhost";
-    $dblogin = "root";
-    $adminpass = "root";
-    $dbname = "tapncook";
+    // localhost testing
+    // $servername = "localhost";
+    // $dblogin = "root";
+    // $adminpass = "root";
+    // $dbname = "tapncook";
 
     if ($methodType === 'POST') {
 
@@ -30,12 +31,11 @@
 
                 try {
                     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $adminpass);
-        
                     // set the PDO error mode to exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-                    //$sql = "SELECT * FROM user WHERE user.user_name = '$login' AND user.password = '$pwd'";
+                    // inserts user into DB
                     $sql = "INSERT INTO user (user_name, password) VALUES (:lName, :lPass)";
+                    // checks if user is already in DB
                     $check = "SELECT * FROM user WHERE user.user_name = ?";
 
                     $stmt = $conn->prepare($check);
@@ -44,10 +44,14 @@
         
                     if($count == 0) {
                         // sucess
+                        if (session_status() == PHP_SESSION_NONE) {
+                            session_start();
+                        }
+                        $_SESSION["username"] = $login;
                         $statement = $conn->prepare($sql);
                         $statement->execute(array(":lName" => $login, ":lPass" => $pass));
-                        $data = array("msg" => "Success", "sid" => $sid);
-    
+                        $data = array("msg" => "Success");
+
                     } else {
                         $data = array("msg" => "User is already in database.");
                     }

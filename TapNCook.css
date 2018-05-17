@@ -77,6 +77,27 @@
   padding: 1px;
   font-family: 'Lily Script One', cursive;
 }
+
+#loginNav {
+  background-color: rgb(5, 178, 82);
+  padding: 10px;
+  color:white;
+  display: none;
+}
+
+#userInfo {
+  background-color: rgb(5, 178, 82);
+  color:white;
+  font-size: 18pt;
+  display: none;
+  padding-right: 10px;
+}
+
+#logoutButton {
+  display: none;
+  float: right;
+}
+
 #header a:link, #header a:visited {
   text-decoration: none;
   color: white;
