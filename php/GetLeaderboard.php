@@ -9,7 +9,7 @@
     // localhost testing
     // $servername = "localhost";
     // $dblogin = "root";
-    // $pwd = "root";
+    // $adminpass = "root";
     // $dbname = "tapncook";
 
     $methodType = $_SERVER['REQUEST_METHOD'];
@@ -18,7 +18,7 @@
     if ($methodType === 'GET') {
 
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $pwd);
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dblogin, $adminpass);
 
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
