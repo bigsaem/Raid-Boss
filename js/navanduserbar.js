@@ -27,7 +27,7 @@ $.ajax({
             $("#loginNav").css("display", "block");
             $("#userInfo").css("display", "inline-block");
             $("#logoutButton").css("display", "inline-block");
-            }
+        }
     },
     error: function (jqXHR, textStatus, errorThrown) {
         console.log("user info could not be retrieved");
