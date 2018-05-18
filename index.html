@@ -48,7 +48,7 @@
     </div>
   </div>
   <div id="loginNav">
-    <div id="userInfo"><img src="./icons/profile.png" alt="profile"/></div>
+    <div id="userInfo"><img src="./icon/profile.png" alt="profile"/></div>
     <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
   </div>
 
@@ -469,16 +469,14 @@
         /*****************************************/
 			$(".basketItem").click(function() {
 				var ids = $(this).text();
-        console.log(ids);
+        console.log("removing " + ids);
         $(this).hide();
-        console.log(ingredients);
 
-
-        for (let i = 0; i < ingredients.length - 1; i++) {
+        for (let i = 0; i < ingredients.length; i++) {
           if (ingredients[i] == ids) {
             ingredients[i] = "";
             var removedIndex = i;
-            console.log(ingredients);
+            console.log(removedIndex);
             console.log("removed index: " + removedIndex);
           }
         }
@@ -486,10 +484,9 @@
           if (ingredients[i] != "") {
             ingredients[removedIndex] = ingredients[i];
             ingredients[i] = "";
-            console.log(ingredients);
             break;
           }
-        }
+        } console.log(ingredients);
 
         count--;
         if (count == 0) {
