@@ -22,9 +22,12 @@ $.ajax({
     dataType: "json",
     type: "GET",
     success: function (data) {
-        $("#userInfo").after(data.msg);
-        $("#userInfo").css("display", "inline-block");
-        $("#logoutButton").css("display", "inline-block");
+        if (data.msg != null) {
+            $("#userInfo").after(data.msg);
+            $("#loginNav").css("display", "block");
+            $("#userInfo").css("display", "inline-block");
+            $("#logoutButton").css("display", "inline-block");
+            }
     },
     error: function (jqXHR, textStatus, errorThrown) {
         console.log("user info could not be retrieved");
