@@ -24,9 +24,9 @@ var leaderboard = {
         });
         title.anchor.set(0.5, 0.5);
 
-        goBack = game.add.text(450, 450, 'Return to Menu', {
+        goBack = game.add.text(450, 500, 'Return to Menu', {
             fontSize: '32px',
-            fill: '#00FFFF',
+            fill: '#FDFFB5',
         });
         goBack.inputEnabled = true;
 

@@ -37,7 +37,7 @@ $methodType = $_SERVER['REQUEST_METHOD'];
             //
         
         //THIS PART
-          $sql = "SELECT * FROM players ORDER BY highscore DESC"; 
+          $sql = "SELECT TOP 10 * FROM players ORDER BY highscore DESC"; 
 
          $statement = $conn->prepare($sql);
          $statement->execute();  
@@ -53,7 +53,7 @@ $methodType = $_SERVER['REQUEST_METHOD'];
                  //echo $spaces1;
                  for ($i = 0; $i < $spaces1; $i++){
                     echo " ";
-                    echo 1;
+                  //  echo 1;
                  }
                  
              }

@@ -211,3 +211,7 @@ li {
   color: white;
   font-size: 12px;
 }
+
+#p1 {
+  display: none;
+}
