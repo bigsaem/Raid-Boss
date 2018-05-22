@@ -170,8 +170,6 @@ margin-left: 25px;
     text-align:center;
     font-size:20pt;
     color:white;
-<<<<<<< HEAD
-=======
   }
   
   #basket {
@@ -192,13 +190,10 @@ margin-left: 25px;
     border-color: cornsilk;
     border-radius: 2px;
     width: 16%;
->>>>>>> 89c4a51da68fb94b902cee41d5ff1859c36a9d68
     vertical-align: middle;
   }
   
   
-<<<<<<< HEAD
-=======
   #basket img {
     width: 10%;
     display: none;
@@ -209,7 +204,6 @@ margin-left: 25px;
     display: none;
     margin: 0;
   }
->>>>>>> 89c4a51da68fb94b902cee41d5ff1859c36a9d68
   
   /***********************************/
   /***********footer start************/
