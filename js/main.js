@@ -4,7 +4,7 @@ $(document).ready(function () {
     var count = 0;
     var basketCount = 0;
 
-    //if the input text (ingredients input) is pressed, do this
+    /*Function that adds the user-entered ingredient to the ingredients array*/
     $('#searchBar > input').keyup(function (e) {
         //checks if the user entered a duplicate , if so, do nothing and return
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -25,13 +25,14 @@ $(document).ready(function () {
             $(this).val("");
         }
 
-        //if # of inputted ingredient is 5, go to easter egg game
+        //if # of inputted ingredient is 5, redirect user to easter egg game
         if (e.keyCode == 13 && count == 5) {
             console.log("triggered easter egg!");
             window.location.href = 'http://tapncook.ca/FoodNinja/foodninja.html';
         }
     });
 
+    /*Event that adds the veggie to the ingredients list on click. */
     $('#vegDiv > p').click(function () {
 
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -51,6 +52,7 @@ $(document).ready(function () {
         }
     });
 
+     /*Event that adds the fruit to the ingredients list on click. */
     $('#fruitDiv > p').click(function () {
         for (let i = 0; i < ingredients.length - 1; i++) {
             if (ingredients[i] == $(this).text()) {
@@ -69,6 +71,7 @@ $(document).ready(function () {
         }
     });
 
+     /*Event that adds the bread to the ingredients list on click. */
     $('#breadDiv > p').click(function () {
         for (let i = 0; i < ingredients.length - 1; i++) {
             if (ingredients[i] == $(this).text()) {
@@ -87,6 +90,7 @@ $(document).ready(function () {
         }
     });
 
+     /*Event that adds the meat to the ingredients list on click. */
     $("#meatDiv > p").click(function () {
         for (let i = 0; i < ingredients.length - 1; i++) {
             if (ingredients[i] == $(this).text()) {
@@ -105,6 +109,7 @@ $(document).ready(function () {
         }
     });
 
+     /*Event that adds the dairy to the ingredients list on click. */
     $("#dairyDiv > p").click(function () {
         for (let i = 0; i < ingredients.length - 1; i++) {
             if (ingredients[i] == $(this).text()) {
@@ -123,6 +128,7 @@ $(document).ready(function () {
         }
     });
 
+    /**Styles the click event functions. */
     $("#search").click(function () {
         $("#searchBar").fadeIn(200);
         $("#searchCover").fadeIn(200);
@@ -152,6 +158,7 @@ $(document).ready(function () {
     $("#dairyIcon").click(function () {
         $("#dairyDiv").slideToggle(150);
     });
+
     /*****************************************/
     /*********removal functionality **********/
     /*****************************************/
@@ -254,7 +261,8 @@ $(document).ready(function () {
         });
     });
 
-
+    /*Event function that triggers when the green arrow is clicked. 
+    This function will dynamically load the recipe page based on the ingredients list, using Ajax calls.*/
     $("#arrow").click(function () {
         $("#whole").hide(500);
         $("#menu").show(500);
