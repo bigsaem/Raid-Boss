@@ -2,186 +2,189 @@
 <html lang="en">
 
 <head>
-	<title> About Us </title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="aboutStyle.css" />
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
-
-  <style>
-    #map {
-        height: 100%;
-        width: 50%;
-        margin:1%;
-        float:left;
-        }
-    html, body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+  <title> About Us </title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="./css/AboutStyle.css" />
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
 </head>
 
 
 
 <body>
-	<!-- Bootstrap stuff!-->
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- Bootstrap stuff!-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-	<header id="header">
-      <div id="menuDiv">
-          <span id = menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
-        <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
-      </div>
-      <a href="./index.html" style="text-decoration : none;"><p>Tap'N CooK</p></a>
+  <header id="header">
+    <div id="menuDiv">
+      <span id=m enuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+      <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
+    </div>
+    <a href="./index.html" style="text-decoration : none;">
+      <p>Tap'N CooK</p>
+    </a>
     <div id="header_rightside"></div>
-	</header>
+  </header>
 
-	<!-- Nav Bar -->
+  <!-- login bar -->
+  <div id="loginNav">
+    <div id="userInfo">
+      <img src="./icon/profile.png" alt="profile" />
+    </div>
+    <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
+  </div>
+
+  <!-- Nav Bar -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a class="links" href="./index.html">Home</a>
     <a class="links" href="./AboutUs.html">About Us</a>
-    <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
-    <a class="links" href="./login.html">Login</a>
-    <a class="links" href="./signup.html">Sign Up</a>
-    <a class="links" href="./bait.html">Don't Click</a>
+    <a class="links" id="loginHide" href="./login.html">Login</a>
+    <a class="links" id="signupHide" href="./signup.html">Sign Up</a>
+    <a class="links" href="./leaderboard.html">Leaderboard</a>
   </div>
   <div id="cover" onclick="closeNav()">
   </div>
   <!-- nav bar ends-->
-    
-	<div id="whole">
-        <img src = "aboutUsImg/headerDark2.png"/>
-		<p id = "aboutUs">About Us</p>
-        <p style = "font-size:24pt" id = "whatsTnC"><b>What is Tap'N Cook?</b></p>
-		<p style = "font-size:16pt">Tap'N Cook is a web app designed to reduce food waste. <br/>
-        The app's purpose follows the Love Food Hate Waste campaign <br/>
-		that was initiated by Metro Vancouver.</p>
-	</div>
-  
-  
-	<div id = "how">
-      <div id = "howText">
-        <p id="howTextHow"><b>How?</b></p>
-          <div id = "howInnerDiv">
-            <p><b>By selecting up to four ingredents that you have at home, the app will suggest various nutrious yet simple recipes 
-			using these ingredients. </b></p>
-            <p><b>Full recipe instructions, along with dietary restrictions and cooking times, are provided for your convinence.</b></p>
-            <p><b>You never have to go to another recipe website again!</b></p>
-          </div>
-		
-      </div>
-      <div id = "howImg">
-        <img src = "icon/carrot.png"/>
-        <img src = "icon/steak.png"/>
-        <img src = "icon/egg.png"/>
-        <img src = "icon/lettuce.png"/>
-      </div>
-    </div>
-    <div id = "advantage">
-      <p id = "advAdv"><b>Who We Are</b></p>
-      <img src = "aboutUsImg/kelv.jpg" alt="protoss" id = "img1"/>
-      <img src = "aboutUsImg/amir.jpg" alt="protoss" id = "img2"/>
-      <img src = "aboutUsImg/sam.jpg" alt="protoss" id = "img3"/>
-      <img src = "aboutUsImg/sam.jpg" alt="protoss" id = "img4"/>
-      <img src = "aboutUsImg/sam.jpg" alt="protoss" id = "img5"/>
-    </div>
-  
-  
-    <div id = "ourGoals">
-      <p id = "ourGoalsTitle"><b>Our Goals</b></p>
-      <div id = "ourGoalsInnerDiv">
-        <img src = "aboutUsImg/care-icon.png">
-        <p><b>Tap’N Cook helps our target audience, which are busy professionals, students living alone to reduce food waste, </b></p>
-        <img src = "aboutUsImg/care-icon.png">
-        <p><b>pursue healthy lifestyle and to create cleaner environment by cooking more often and producing less organic waste.</b></p>
-        
-        
-      </div>
-      
-      
-    </div>
-    <div id = "contactUs">
-      <p id ="contactUsTitle"><b>Contact Us</b></p>
-      <div id = "contactUsContainer">
-        <div id="map"></div>
-         <div id="CUText">
-      
-          <p>Should you have questions, need assistance, or simple want to give us a feedback,
-          Please feel free to contact our support team.
-          </p>
-          <p>NE22 103 3700 Willingdon Ave</p>
-          <p><b>Customer Support: 778 XXX XXXX</br>Email: info@tapncook.ca</b></p>
-          <p>Business Hours: 10:30am to 12:30pm PST Mon-Fri</p>
-        
 
-        </div>
-        
+  <div id="whole">
+    <img src="aboutUsImg/headerDark2.png" />
+    <p id="aboutUs">About Us</p>
+    <p style="font-size:24pt" id="whatsTnC">
+      <b>What is Tap'N Cook?</b>
+    </p>
+    <p style="font-size:16pt">Tap'N Cook is a web app designed to reduce food waste.
+      <br/> The app's purpose follows the Love Food Hate Waste campaign
+      <br/> that was initiated by Metro Vancouver.</p>
+  </div>
+
+
+  <div id="how">
+    <div id="howText">
+      <p id="howTextHow">
+        <b>How?</b>
+      </p>
+      <div id="howInnerDiv">
+        <p>
+          <b>By selecting up to four ingredents that you have at home, the app will suggest various nutrious yet simple recipes
+            using these ingredients. </b>
+        </p>
+        <p>
+          <b>Full recipe instructions, along with dietary restrictions and cooking times, are provided for your convinence.</b>
+        </p>
+        <p>
+          <b>You never have to go to another recipe website again!</b>
+        </p>
       </div>
+
     </div>
-      
-    
-    
-    
-    <script>
-      
-
-      
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 49.251253, lng: -123.003245}, //49.251253, -123.003245
-          zoom: 15
-        });
-      }
-
-      
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpDxHMussqqDPdGHdnbdqWs4WLbLSmI-E&callback=initMap"
-    async defer></script>
-
-	<div id="footer">
-      <div id="bcitdiv">
-      <a href = "https://www.bcit.ca/" target="blank">
-        <img src = "logos/192px-BCITwordmark.svg.png" id = "bcit"/>
-      </a>
-      </div>  
-      <div id="loveFooddiv">
-      <a href="https://www.lovefoodhatewaste.com/" target="blank">
-      <img src = "logos/logo_og.png" id = "loveFood"/>
-      </a>
-      </div>
-      <div id="metroVandiv">
-      <a href="http://www.metrovancouver.org/" target="blank">
-      <img src = "logos/metro-vancouver-logo-colour-illustrator-file.png" id = "metro"/>
-      </a>
-      </div>
+    <div id="howImg">
+      <img src="icon/carrot.png" />
+      <img src="icon/steak.png" />
+      <img src="icon/egg.png" />
+      <img src="icon/lettuce.png" />
     </div>
-    <script>
-    /************************************************/
-    /*****************Nav bar function***************/
-    /************************************************/
-    function openNav() {
-            document.getElementById("mySidenav").style.width = "350px";
-            document.getElementById("cover").style.display = "block";
-        }
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("cover").style.display = "none";
+  </div>
+  <div id="advantage">
+    <p id="advAdv">
+      <b>Who We Are</b>
+    </p>
+    <img src="aboutUsImg/kelv.jpg" alt="protoss" id="img1" />
+    <img src="aboutUsImg/amir.jpg" alt="protoss" id="img2" />
+    <img src="aboutUsImg/sam.jpg" alt="protoss" id="img3" />
+    <img src="aboutUsImg/sam.jpg" alt="protoss" id="img4" />
+    <img src="aboutUsImg/sam.jpg" alt="protoss" id="img5" />
+  </div>
+
+
+  <div id="ourGoals">
+    <p id="ourGoalsTitle">
+      <b>Our Goals</b>
+    </p>
+    <div id="ourGoalsInnerDiv">
+      <img src="aboutUsImg/care-icon.png">
+      <p>
+        <b>Tap’N Cook helps our target audience, which are busy professionals, students living alone to reduce food waste, </b>
+      </p>
+      <img src="aboutUsImg/care-icon.png">
+      <p>
+        <b>pursue healthy lifestyle and to create cleaner environment by cooking more often and producing less organic waste.</b>
+      </p>
+
+
+    </div>
+
+
+  </div>
+  <div id="contactUs">
+    <p id="contactUsTitle">
+      <b>Contact Us</b>
+    </p>
+    <div id="contactUsContainer">
+      <div id="map"></div>
+      <div id="CUText">
+
+        <p>Should you have questions, need assistance, or simple want to give us a feedback, Please feel free to contact our
+          support team.
+        </p>
+        <p>NE22 103 3700 Willingdon Ave</p>
+        <p>
+          <b>Customer Support: 778 XXX XXXX</br>Email: info@tapncook.ca</b>
+        </p>
+        <p>Business Hours: 10:30am to 12:30pm PST Mon-Fri</p>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <script>
+    var map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: 49.251253,
+          lng: -123.003245
+        }, //49.251253, -123.003245
+        zoom: 15
+      });
     }
-    </script>
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpDxHMussqqDPdGHdnbdqWs4WLbLSmI-E&callback=initMap" async
+    defer></script>
+
+  <div id="footer">
+    <div id="bcitdiv">
+      <a href="https://www.bcit.ca/" target="blank">
+        <img src="logos/192px-BCITwordmark.svg.png" id="bcit" />
+      </a>
+    </div>
+    <div id="loveFooddiv">
+      <a href="https://www.lovefoodhatewaste.com/" target="blank">
+        <img src="logos/logo_og.png" id="loveFood" />
+      </a>
+    </div>
+    <div id="metroVandiv">
+      <a href="http://www.metrovancouver.org/" target="blank">
+        <img src="logos/metro-vancouver-logo-colour-illustrator-file.png" id="metro" />
+      </a>
+    </div>
+  </div>
+  <script src="./js/navanduserbar.js"></script>
 </body>
 
 </html>
