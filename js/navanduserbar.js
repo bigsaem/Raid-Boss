@@ -27,6 +27,8 @@ $.ajax({
             $("#loginNav").css("display", "block");
             $("#userInfo").css("display", "inline-block");
             $("#logoutButton").css("display", "inline-block");
+            $("#loginHide").css("display", "none");
+            $("#signupHide").css("display", "none");
         }
     },
     error: function (jqXHR, textStatus, errorThrown) {
@@ -45,6 +47,11 @@ $("#logoutButton").click(function () {
         type: "GET",
         success: function (data) {
             $("#loginNav").html(data.msg);
+            $("#loginHide").css("display", "block");
+            $("#signupHide").css("display", "block");
+            setTimeout(function() {
+                location.reload();
+            }, 1500);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("could not logout");

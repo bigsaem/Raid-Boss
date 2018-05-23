@@ -120,6 +120,26 @@ body {
 
 /* sidebar ends */
 
+#loginNav {
+  background-color: rgb(5, 178, 82);
+  padding: 10px;
+  color: white;
+  display: none;
+}
+
+#userInfo {
+  background-color: rgb(5, 178, 82);
+  color: white;
+  font-size: 18pt;
+  display: none;
+  padding-right: 10px;
+}
+
+#logoutButton {
+  display: none;
+  float: right;
+}
+
 #header_rightside {
   float: right;
   width: 55px;

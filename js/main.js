@@ -222,6 +222,8 @@ $(document).ready(function () {
                 $("#loginNav").css("display", "block");
                 $("#userInfo").css("display", "inline-block");
                 $("#logoutButton").css("display", "inline-block");
+                $("#loginHide").css("display", "none");
+                $("#signupHide").css("display", "none");
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -240,6 +242,11 @@ $(document).ready(function () {
             type: "GET",
             success: function (data) {
                 $("#loginNav").html(data.msg);
+                $("#loginHide").css("display", "block");
+                $("#signupHide").css("display", "block");
+                setTimeout(function() {
+                    location.reload();
+                }, 1500);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 $("#p1").text(jqXHR.statusText);
