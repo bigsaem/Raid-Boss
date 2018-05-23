@@ -11,6 +11,8 @@
 
 <body>
 
+  <div id="bodyBG"></div>
+
   <!-- Bootstrap stuff!-->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -63,7 +65,8 @@
     <div id="searchCover"></div>
 
     <div class="iconsDivs">
-      <img id="vegIcon" class="icons" src="icon/lettuce.png" alt="Vegetables" />
+      <img id="vegIcon" class="icons" src="icon/lettuceT.png" alt="Vegetables" />
+      <br/><br/>
       <div id="vegDiv">
           <p>Carrot</p><br/> 
           <p>Lettuce</p><br/> 
@@ -75,7 +78,8 @@
     </div>
 
     <div class="iconsDivs">
-      <img id="fruitIcon" class="icons" src="icon/apple.png" alt="Vegetables" />
+      <img id="fruitIcon" class="icons" src="icon/appleT.png" alt="Fruits" />
+      <br/><br/>
       <div id="fruitDiv">
           <p>Banana</p><br/> 
           <p>Apple</p><br/> 
@@ -87,7 +91,8 @@
     </div>
 
     <div class="iconsDivs">
-      <img id="breadIcon" class="icons" src="icon/toast.png" alt="Bread" />
+      <img id="breadIcon" class="icons" src="icon/toastT.png" alt="Bread" />
+      <br/><br/>
       <div id="breadDiv">
           <p>Toast</p><br/> 
           <p>Flat Bread</p><br/> 
@@ -99,7 +104,8 @@
     </div>
 
     <div class="iconsDivs">
-      <img id="meatIcon" class="icons" src="icon/steak.png" alt="Bread" />
+      <img id="meatIcon" class="icons" src="icon/steakT.png" alt="Meat" />
+      <br/><br/>
       <div id="meatDiv">        
           <p>Beef</p><br/> 
           <p>Chicken</p><br/> 
@@ -112,21 +118,34 @@
     </div>
 
     <div class="iconsDivs">
-      <img id="dairyIcon" class="icons" src="icon/dairy.png" alt="Bread" />
+      <img id="dairyIcon" class="icons" src="icon/dairyT.png" alt="Dairy" />
+      <br/><br/>
       <div id="dairyDiv">        
           <p>Milk</p><br/>                
           <p>Cheese</p><br/>                  
           <p>Butter</p><br/>
           <p>Cream</p><br/>
           <p>Yogurt</p><br/>
-          <p>Eggs</p><br/>
-          
-        
+          <p>Eggs</p><br/>        
+      </div>
+    </div>
+
+    <div class="iconsDivs">
+      <img id="miscIcon" class="icons" src="icon/jamT.png" alt="Misc" />
+      <br/><br/>
+      <div id="miscDiv">        
+          <p>Peanut Butter</p><br/>                
+          <p>Strawberry Jam</p><br/>                  
+          <p>Blueberry Jam</p><br/>
+          <p>Honey</p><br/>
+          <p>Chips</p><br/>
+          <p>Pickles</p><br/>        
       </div>
     </div>
 
     <div id="basket">
       <div id="basket-title"><p>Basket</p></div>
+      
       <div id="inc">
         <div id="bdiv0" class="basketItem"><p>Test</p></div>
         <div id="bdiv1" class="basketItem"><p>Test</p></div>
@@ -434,6 +453,24 @@
           count++;
         }
       });
+
+      $("#miscDiv > p").click(function() {
+        for (let i = 0; i<ingredients.length-1;i++){
+          if(ingredients[i]==$(this).text()){
+            return;
+          }
+        }
+        if (count < 5) {
+          var idMisc = $(this).text();
+					$("#bdiv" + count + "").show();
+          $("#bdiv" + count + " > p").text(idMisc);
+          $("#arrow").show(500);
+          $("#inc").css("display", "flex");
+          ingredients[count] = idMisc;
+          console.log(ingredients);
+          count++;
+        }
+      });
 			
 		$("#search").click(function (){
         $("#searchBar").fadeIn(200);
@@ -463,6 +500,9 @@
       });
       $("#dairyIcon").click(function () {
         $("#dairyDiv").slideToggle(150);
+      }); 
+      $("#miscIcon").click(function () {
+        $("#miscDiv").slideToggle(150);
       }); 
         /*****************************************/
         /*********removal functionality **********/
