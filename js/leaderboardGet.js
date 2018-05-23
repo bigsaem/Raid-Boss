@@ -5,8 +5,8 @@
 $(document).ready(function () {
     $.ajax({
         url: "./php/GetLeaderboard.php",
-        dataType: "html",
         type: "GET",
+        dataType: "html",
         success: function (data) {
             $("#leaderTable").append(data);
         },

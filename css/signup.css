@@ -115,6 +115,7 @@
   background-color: rgb(5, 178, 82);
   padding: 10px;
   color: white;
+  display: none;
 }
 
 #userInfo {
@@ -210,4 +211,8 @@ li {
 .whiteColor {
   color: white;
   font-size: 12px;
+}
+
+#p1 {
+  display: none;
 }

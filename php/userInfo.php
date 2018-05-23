@@ -11,6 +11,8 @@
         // checks if username exists
         if ($uName != NULL) {
         $data = array("msg" => "$uName");
+        } else {
+            $data = array("msg" => NULL);
         }
 
     } else {

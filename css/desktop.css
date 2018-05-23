@@ -1,0 +1,347 @@
+/* side bar */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgba(238, 98, 4, 0.829);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav .links:hover {
+    color: rgba(238, 98, 4, 0.829);
+    display: block;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+  }
+  
+  .sidenav .links:active {
+    color: rgba(238, 98, 4, 0.829);
+    background: rgba(125, 125, 125, 1);
+    font-size: 35pt;
+    text-decoration: none;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .sidenav .closebtn:active {
+    font-size: 50pt;
+  }
+  
+  
+  @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  }
+  
+  #cover{
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    position: fixed;
+    display: none;
+  }
+  /* sidebar ends */
+  
+/** header **/
+#header {
+    text-align: center;
+    border-bottom:solid 3px rgb(5, 178, 82);
+    color:crimson;
+    padding: 1px;
+    font-family: 'Lily Script One', cursive;
+  }
+  #header a:link, #header a:visited {
+    text-decoration: none;
+    color: crimson;
+    cursor: pointer;
+  }
+  
+  #header p {
+  font-size:50pt;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: -60px;
+  }
+  
+  #header #menuDiv {
+  float: left;
+  width: 55px;
+  }
+
+  /* main body*/
+  .icons {
+    display: inline-block;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    background-color: rgba(240, 0, 0, 0.2);
+    width: 90%;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 28px #884444;      
+  }
+
+  .icons:hover {
+    box-shadow: 0px 0px 28px #888888;
+  }
+
+  .icons:active {
+    width: 87%;
+    height: 87%;
+  }
+  
+  #lastIcon {
+    margin: 0 auto;
+  }
+  
+  .icons p {
+      margin-top: -10%;
+  }
+  
+  .icons img {
+      width:90%;
+  }
+  
+  #whole div img{
+    width:100%;
+      margin: 4%;
+    
+  }
+  #whole {
+    font-family: 'PT Sans', sans-serif;
+    margin:0;   
+  }
+  
+  #whole div > p {
+    background-color:rgba(240, 45, 45, 1);
+    margin:0;
+    padding:1%;
+    text-align:center;
+    font-size:20pt;
+    color:white;
+  }
+  
+  #basket {
+    float: left;
+    background-color: lightsalmon;
+    margin-top: 1px;  
+    width: 100%;
+
+    
+  }
+  
+  .basketItem {
+    font-size: 20pt;
+    background-color: burlywood;
+    float: left;	
+    display:none;
+    border-style: solid;
+    border-color: cornsilk;
+    border-radius: 2px;
+    width: 16%;
+    vertical-align: middle;
+  }
+  
+  
+
+  #basket img {
+    width: 10%;
+    display: none;
+  }
+  
+  #arrow {
+    float: right;
+    display: none;
+    margin: 0;
+  }
+  
+  /***********************************/
+  /***********footer start************/
+  /***********************************/
+  #footer{
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.85);
+    float: left;
+    height: 120px;
+  }
+  
+  #bcitdiv{
+    width: 40%;
+    float:left;
+    height: 120px;
+  }
+  #loveFooddiv{
+    width: 20%;
+    float: left;
+    height: 120px;
+  }
+  #metroVandiv{
+    width:40%;
+    float:left;
+    height: 120px;
+  }
+  #bcit {
+    width:150px;
+    margin-top:-1px;
+  }
+  
+  #loveFood{
+    width:120px;
+    margin-top: -3px;
+  }
+  
+  #metro{
+    margin-top: 0.5px;
+    margin-bottom:0.5px;
+    padding-top:0.5px;
+    width:75px;
+  }
+  /***********************************/
+  /***********footer ends*************/
+  /***********************************/  
+
+
+  /* recipe body */
+h1{
+  text-align: center;
+}
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html, body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.content{
+  margin-top: 30px;
+}
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.recipe_title {
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+/*@media (min-width: 450px) {
+  .recipe_title {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  .recipe_title {
+    font-size: 3.05em;
+  }
+}*/
+@media (min-width: 0px) {
+  #menuDiv{
+    margin-left:25px;
+  }
+}
+/*@media (min-width: 1200px) {
+  #menuDiv{
+    margin-left:10%;
+  }
+} */
+
+
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover; 
+  transition: all .25s ease;
+} 
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
+
+
+
+/* modal */
+.modal-body p{
+  text-align:center;
+}
+.modal-content{
+  font-size: 20pt;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal-body img{
+  width:100%;
+}
+/*.container{
+  border-left:1px solid rgba(125, 125, 125, 1);
+  border-right:1px solid rgba(125, 125, 125, 1);
+}*/
