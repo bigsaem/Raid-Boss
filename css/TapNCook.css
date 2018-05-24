@@ -69,13 +69,16 @@
 
 /* header */
 #header {
+  position:fixed;
   text-align: center;
-  /* I think this color is the best*/
-  /*background-image: url(icon/green.png);*/
+  width: 100%;
   background-color: rgb(5, 178, 82);
   color:white;
   padding: 1px;
   font-family: 'Lily Script One', cursive;
+  left: 0;
+  right: 0;
+  top: 0;  
 }
 
 #loginNav {
@@ -203,10 +206,10 @@ margin-top: 10px;
   /***********************************/
   #footer{
     width:100%;
-    background: linear-gradient(to right, rgb(74, 221, 63), green, rgb(74, 221, 63));
+    background-color: rgb(5, 178, 82);
+    /*background: linear-gradient(to right, rgb(74, 221, 63), green, rgb(74, 221, 63));*/
     float: left;
-    height: 120px;
-    
+    height: 123px; 
   }
   
   #bcitdiv{
@@ -232,6 +235,7 @@ margin-top: 10px;
   #loveFood{
     width:120px;
     margin-top: -3px;
+    filter: brightness(125%);
   }
   
   #metro{
@@ -245,10 +249,11 @@ margin-top: 10px;
   /***********************************/  
   #whole {
     text-align: center;
+    margin-top: 105px;
 
   }
   #subhead {
-    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;  
   }
   
   #headAU{
@@ -516,7 +521,8 @@ margin-top: 10px;
 
   #basket {
     float: left;
-    background-color: rgba(200, 200, 200, 1) ;
+    background-color:rgb(233, 189, 189);
+   /* background-color: rgba(200, 200, 200, 1);*/
     margin-top: 1px;  
     width: 100%;    
   }
@@ -650,7 +656,7 @@ margin-top: 10px;
     margin-right: 7.5%;
     height: 100%;
     box-shadow: 0px 0px 28px #888888;
-
+    bottom: 0px;
   }
  
 

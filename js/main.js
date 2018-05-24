@@ -31,13 +31,8 @@ $(document).ready(function () {
             window.location.href = 'http://tapncook.ca/FoodNinja/foodninja.html';
         }
     });
-<<<<<<< HEAD
-    
-    // If a text inside the vegies div is clicked/tappped do this
-=======
 
     /*Event that adds the veggie to the ingredients list on click. */
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
     $('#vegDiv > p').click(function () {
         //checks if the user clicked a duplicate , if so, do nothing and return
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -58,11 +53,7 @@ $(document).ready(function () {
         }
     });
 
-<<<<<<< HEAD
-    // If a text inside the fruits div is clicked/tappped do this
-=======
      /*Event that adds the fruit to the ingredients list on click. */
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
     $('#fruitDiv > p').click(function () {
         //checks if the user clicked a duplicate , if so, do nothing and return
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -83,11 +74,7 @@ $(document).ready(function () {
         }
     });
 
-<<<<<<< HEAD
-    // If a text inside the bread div is clicked/tappped do this
-=======
      /*Event that adds the bread to the ingredients list on click. */
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
     $('#breadDiv > p').click(function () {
         //checks if the user clicked a duplicate , if so, do nothing and return
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -108,11 +95,7 @@ $(document).ready(function () {
         }
     });
 
-<<<<<<< HEAD
-    // If a text inside the meats div is clicked/tappped do this
-=======
      /*Event that adds the meat to the ingredients list on click. */
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
     $("#meatDiv > p").click(function () {
         //checks if the user clicked a duplicate , if so, do nothing and return
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -133,11 +116,7 @@ $(document).ready(function () {
         }
     });
 
-<<<<<<< HEAD
-    // If a text inside the dairy div is clicked/tappped do this
-=======
      /*Event that adds the dairy to the ingredients list on click. */
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
     $("#dairyDiv > p").click(function () {
         //checks if the user clicked a duplicate , if so, do nothing and return
         for (let i = 0; i < ingredients.length - 1; i++) {
@@ -158,7 +137,6 @@ $(document).ready(function () {
         }
     });
 
-<<<<<<< HEAD
     // If a text inside the misc div is clicked/tappped do this
     $("#miscDiv > p").click(function() {
         //checks if the user clicked a duplicate , if so, do nothing and return
@@ -182,9 +160,6 @@ $(document).ready(function () {
 
 
     // when the search icone is clicked/tapped do this
-=======
-    /**Styles the click event functions. */
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
     $("#search").click(function () {
         $("#searchBar").fadeIn(200);
         $("#searchCover").fadeIn(200);
@@ -218,13 +193,10 @@ $(document).ready(function () {
     $("#dairyIcon").click(function () {
         $("#dairyDiv").slideToggle(150);
     });
-<<<<<<< HEAD
     $("#miscIcon").click(function () {
         $("#miscDiv").slideToggle(150);
     });
 
-=======
->>>>>>> 38f41957872385049aa8c7c67841536c0379ed54
 
     /*****************************************/
     /*********removal functionality **********/
