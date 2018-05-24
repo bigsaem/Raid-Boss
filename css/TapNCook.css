@@ -69,13 +69,16 @@
 
 /* header */
 #header {
+  position:fixed;
   text-align: center;
-  /* I think this color is the best*/
-  /*background-image: url(icon/green.png);*/
+  width: 100%;
   background-color: rgb(5, 178, 82);
   color:white;
   padding: 1px;
   font-family: 'Lily Script One', cursive;
+  left: 0;
+  right: 0;
+  top: 0;  
 }
 
 #loginNav {
@@ -104,31 +107,32 @@
   cursor: pointer;
 }
 #header p {
-font-size:35pt;
+font-size:40pt;
 display: inline-block;
 background-color: rgb(5, 178, 82);
-margin-top: 5px;
+margin-top: 10px;
 }
 
 
 
 #header #menuDiv {
-float: left;
-width: 55px;
-margin-left: 25px;
+  float: left;
+  width: 75px;
+  margin-left: 4%;
+  margin-top: 2%;
 }
   
-  .icons {
+.icons {
     display: inline-block;
-      border-style: solid;
-      border-color: rgba(0, 0, 0, 0);
-      border-radius: 3px;
-    background-color: rgba(240, 0, 0, 0.2);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    background-color: rgb(255, 124, 124);
     width: 90%;
     margin: 20px;
-      padding-left: 10px;
-      padding-right: 10px;
-      box-shadow: 0px 0px 28px #884444;      
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 28px #884444;      
   }
 
   .icons:hover {
@@ -165,7 +169,7 @@ margin-left: 25px;
   
   div > p {
     background-color:rgba(240, 45, 45, 1);
-    margin:0;
+    margin: 0;
     padding:1%;
     text-align:center;
     font-size:20pt;
@@ -182,12 +186,9 @@ margin-left: 25px;
   }
   
   .basketItem {
-    font-size: 20pt;
-    background-color: burlywood;
+    font-size: 20pt;    
     float: left;	
     display:none;
-    border-style: solid;
-    border-color: cornsilk;
     border-radius: 2px;
     width: 16%;
     vertical-align: middle;
@@ -199,21 +200,16 @@ margin-left: 25px;
     display: none;
   }
   
-  #arrow {
-    float: right;
-    display: none;
-    margin: 0;
-  }
   
   /***********************************/
   /***********footer start************/
   /***********************************/
   #footer{
     width:100%;
-    background-color:rgba(0,0,0,0.85);
+    background-color: rgb(5, 178, 82);
+    /*background: linear-gradient(to right, rgb(74, 221, 63), green, rgb(74, 221, 63));*/
     float: left;
-    height: 120px;
-    
+    height: 123px; 
   }
   
   #bcitdiv{
@@ -239,6 +235,7 @@ margin-left: 25px;
   #loveFood{
     width:120px;
     margin-top: -3px;
+    filter: brightness(125%);
   }
   
   #metro{
@@ -252,10 +249,11 @@ margin-left: 25px;
   /***********************************/  
   #whole {
     text-align: center;
+    margin-top: 105px;
 
   }
   #subhead {
-    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;  
   }
   
   #headAU{
@@ -476,6 +474,39 @@ margin-left: 25px;
     margin: 0 auto;
     margin-top: -4%;
   }
+
+  #miscDiv {
+    display: none;  
+  }
+  
+  .misc {
+    background-color: rgba(200, 200, 200, 0.5);
+    border-style: hidden;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 0.5%;
+    float: left;
+    clear: left;
+  }
+  
+ /* .dairy p {
+    background-color: rgba(0, 0, 0, 0);
+    display: inline-flex;
+    text-align: center;
+    color: black;
+  }*/
+
+  #miscDiv p {
+    background-color: rgba(112, 48, 54, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+  
   
   .iconsDivs {
     display: inline-table;
@@ -490,7 +521,8 @@ margin-left: 25px;
 
   #basket {
     float: left;
-    background-color: lightsalmon;
+    background-color:rgb(233, 189, 189);
+   /* background-color: rgba(200, 200, 200, 1);*/
     margin-top: 1px;  
     width: 100%;    
   }
@@ -515,50 +547,23 @@ margin-left: 25px;
   }
 
   .basketItem p {
-    background-color: burlywood;
+    background-color: rgb(74, 221, 63);
     text-align: center;
-    border-color: cornsilk;
+    border-color: white;
+    border-style: solid;
     border-radius: 5px; 
-    
+    border-width: 2px;
+    margin: 5%;
   }
   
   #basket-title {
     display: block;
   }
-
-  /*.basketPara {
-    display: inline-block;
-    text-align: center;
-    background-color: blue;
-    width: 15%;    
-  }*/
-
-  /*.basketItem {
-    display: inline-block;
-    font-size: 15pt;
-    //background-color: burlywood;
-    float: left;	
-    //display:none;
-    border-style: solid;
-    border-color: cornsilk;
-    border-radius: 2px;
-    vertical-align: middle;
-  } */
-  
   
   #basket img {
     width: 10%;
     /*display: none;*/
   }
-
-  /*.basketItem p {
-    background-color: burlywood;
-		font-size: 15px;
-		text-align: center;
-    display: inline-block;
-    float: left; 
-		height: 100%;
-  }*/
   
   #arrow {
     float: right;
@@ -578,8 +583,13 @@ margin-left: 25px;
 
   #header #search {
     float: right;
-    width: 55px;
-    margin-right: 25px;
+    width: 75px;
+    margin-right: 3%;
+    margin-top: 0.5%;
+  }
+
+  #searchIcon{
+    width: 110%;
   }
 
   #searchCover{
@@ -633,7 +643,21 @@ margin-left: 25px;
     font-size: 40pt;
 
   }
-
+  
+  /***************************
+  *******Body Background******
+  ***************************/
+  #bodyBG {
+    z-index: -10;
+    background-color:rgba(211, 124, 124, 0.5);
+    position: fixed;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    height: 100%;
+    box-shadow: 0px 0px 28px #888888;
+    bottom: 0px;
+  }
  
 
 

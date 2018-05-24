@@ -115,6 +115,7 @@
   background-color: rgb(5, 178, 82);
   padding: 10px;
   color: white;
+  display: none;
 }
 
 #userInfo {

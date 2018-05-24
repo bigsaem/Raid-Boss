@@ -15,6 +15,9 @@ $(document).ready(function () {
                 if (listData === "Success") {
                     $("#p1").removeClass("alert alert-warning w-75 mx-auto text-center");
                     $("#p1").addClass("alert alert-success w-75 mx-auto text-center");
+                    setTimeout(function() {
+                        window.location.href="./index.html";
+                    }, 1500);
                 } else {
                     $("#p1").removeClass("alert alert-success w-75 mx-auto text-center");
                     $("#p1").addClass("alert alert-warning w-75 mx-auto text-center");
