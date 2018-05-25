@@ -37,7 +37,7 @@ $methodType = $_SERVER['REQUEST_METHOD'];
             //
         
         //THIS PART
-          $sql = "SELECT TOP 10 * FROM players ORDER BY highscore DESC"; 
+          $sql = "SELECT * FROM players ORDER BY highscore DESC LIMIT 10"; 
 
          $statement = $conn->prepare($sql);
          $statement->execute();  
@@ -47,8 +47,8 @@ $methodType = $_SERVER['REQUEST_METHOD'];
          //echo "the statement is: " . $statement;
          //probably try to change this to json...
          foreach($statement as $item) {
-             if (strlen($item["Player"]) < 15){
-                 $spaces1 = 10 - strlen($item["Player"]);
+             if (strlen($item["Player"]) < 70){
+                 $spaces1 = 70 - strlen($item["Player"]);
                  echo $item["Player"];
                  //echo $spaces1;
                  for ($i = 0; $i < $spaces1; $i++){
