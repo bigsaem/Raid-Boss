@@ -1,5 +1,6 @@
 
-//THE COORDINATES OF THE LEADERBOARD ARE HARD CODED!!! IT WILL NOT LINE UP DUE TO HTML BEING STUPID
+/////This file displays the Leaderboard///////
+//THE COORDINATES OF THE LEADERBOARD ARE CURRENTLY HARD CODED!!! THUS THERE WILL BE MISALIGNMENTS IN THE BOARD.
 var goBack;
 var music;
 
@@ -17,7 +18,7 @@ var leaderboard = {
 
         game.add.sprite(0, 0, 'menu-bg'); //adds the bg menu loading screen image 
         
-        // Create some text in the middle of the game area
+        /*Adds the "High Scores" text to the screen.*/
         var title = game.add.text(520, 100, 'High Scores', {
             fontSize: '32px',
             fill: '#00FFFF',
@@ -29,7 +30,8 @@ var leaderboard = {
             fill: '#FDFFB5',
         });
         goBack.inputEnabled = true;
-
+        
+        /*Ajax call to get the high scores from database.*/
         $.ajax({
             url: "getHighScores.php",
             dataType: "html",
@@ -65,8 +67,6 @@ var leaderboard = {
         goBack.events.onInputDown.add(returnedToMenu);
 
     }
-    
-
 }
 
 function hover(text) {

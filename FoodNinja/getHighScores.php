@@ -2,6 +2,7 @@
 
 $methodType = $_SERVER['REQUEST_METHOD'];
 
+    /*Database information*/
     $servername = "db736774578.db.1and1.com";
     $dblogin = "dbo736774578";
     $adminpass = "159753Rb$";
@@ -10,7 +11,6 @@ $methodType = $_SERVER['REQUEST_METHOD'];
     $data = array("status" => "fail", "msg" => "On $methodType");
 
     if ($methodType === 'GET') {
-      
         if(isset($_GET['output'])) {
             $output = $_GET['output'];
 
@@ -31,47 +31,45 @@ $methodType = $_SERVER['REQUEST_METHOD'];
 
         switch($output) {
             case "html":
-                  
-
             // YOUR CODE GOES HERE TO OUTPUT THE DATA FROM THE DATABASE
             //
         
         //THIS PART
-          $sql = "SELECT * FROM players ORDER BY highscore DESC LIMIT 10"; 
+            $sql = "SELECT * FROM players ORDER BY highscore DESC LIMIT 10"; 
 
-         $statement = $conn->prepare($sql);
-         $statement->execute();  
-        
-         $spaces1;
-         $spaces2;
-         //echo "the statement is: " . $statement;
-         //probably try to change this to json...
-         foreach($statement as $item) {
-             if (strlen($item["Player"]) < 70){
-                 $spaces1 = 70 - strlen($item["Player"]);
-                 echo $item["Player"];
-                 //echo $spaces1;
-                 for ($i = 0; $i < $spaces1; $i++){
-                    echo " ";
-                  //  echo 1;
-                 }
-                 
-             }
-             if (strlen($item["HighScore"]) < 20){
-                 $spaces2 = 20 - strlen($item["HighScore"]);
-                 for ($i = 0; $i < $spaces2; $i++){
-                     // echo " ";
-                 }
-                 echo $item["HighScore"];
-                 echo "\n";
-             }
-             else {
-                 echo "LOL CHEATER";
-             }
-             //echo $item["Player"] . "       " .$item["HighScore"] . "     ";
-         }
-        break;
-    }
+            $statement = $conn->prepare($sql);
+            $statement->execute();  
+            
+            $spaces1;
+            $spaces2;
+            //echo "the statement is: " . $statement;
+            //probably try to change this to json...
+            foreach($statement as $item) {
+                if (strlen($item["Player"]) < 70){
+                    $spaces1 = 70 - strlen($item["Player"]);
+                    echo $item["Player"];
+                    //echo $spaces1;
+                    for ($i = 0; $i < $spaces1; $i++){
+                        echo " ";
+                    //  echo 1;
+                    }
+                    
+                }
+                if (strlen($item["HighScore"]) < 20){
+                    $spaces2 = 20 - strlen($item["HighScore"]);
+                    for ($i = 0; $i < $spaces2; $i++){
+                        // echo " ";
+                    }
+                    echo $item["HighScore"];
+                    echo "\n";
+                }
+                else {
+                    echo "LOL CHEATER";
+                }
+                //echo $item["Player"] . "       " .$item["HighScore"] . "     ";
+            }
+            break;
+        }
         
          //this outputs raw html, which i cant format in phaser right now :(
          /*echo "<table><tr><th>ID</th><th>Player</th><th>Score</th></tr>";
@@ -84,7 +82,6 @@ $methodType = $_SERVER['REQUEST_METHOD'];
 
          break;
         } */
-    
     }
 } else {
     $data = array("msg" => "Error: only GET allowed");

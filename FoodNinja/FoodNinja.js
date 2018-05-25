@@ -325,7 +325,6 @@ var playState  = {
                     console.log("default case...");
 
             }
-
         }
     }
 }

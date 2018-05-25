@@ -44,8 +44,6 @@ var loadState = {
         game.load.audio("jump", "assets/soundeffects/jump.wav");
         game.load.audio("doubleJump", "assets/soundeffects/doubleJump.wav");
         game.load.audio("buffed", "assets/soundeffects/buffed.mp3");
-
-        
     },
     
     create:function() {

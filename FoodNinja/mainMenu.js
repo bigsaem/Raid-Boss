@@ -71,7 +71,6 @@ var menuState = {
         popupHowTo.inputEnabled = true;
         popupHowTo.input.enableDrag();
         popupHowTo.scale.set(0.1);
-
     },
 
     create: function () {

@@ -106,7 +106,7 @@ function sendData(){
     //var arrayObj = JSON.parse(arrayObj);
     jsonName = JSON.parse(playerName);
     jsonScore = JSON.parse(playerScore);
-``  
+  
     console.log("jsonName: " + jsonName);
     console.log("jsonScore: " + jsonScore);
 
@@ -129,9 +129,5 @@ function sendData(){
         error: function (jqXHR, textStatus, errorThrown) {
            console.log("Something went wrong: " + errorThrown);
         }
-
     });
-
-
-
 }

@@ -54,14 +54,9 @@ var level2EndState = {
         popupTip3.inputEnabled = true;
         popupTip3.input.enableDrag();
         popupTip3.scale.set(0.3);
-
-
-
-
     },
 
     create: function () {
-
     },
 
     update: function () {
@@ -74,8 +69,6 @@ var level2EndState = {
         nextLevel.events.onInputDown.add(goToLevel3);
         nextLevel.events.onInputOver.add(hover, this);
         nextLevel.events.onInputOut.add(hoverOut, this);
-
-      
     }
 }
 
