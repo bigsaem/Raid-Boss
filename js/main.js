@@ -16,7 +16,7 @@ $(document).ready(function () {
         modal.style.display = "none";
     }
     redirect.onclick = function(){
-        window.location.href = 'www.google.com';
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.pl.perry.tapncook';
     }
     
 
