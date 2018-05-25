@@ -1,3 +1,46 @@
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+
+  left: 0% !important;
+  top: 82% !important;
+
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+#message{
+  font-size:32px;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+#redirect{
+  font-size: 30px;
+  font-weight: bold;
+  color: #aaa;
+}
+.close {
+  color: #aaa;
+  font-size: 25px !important;
+  font-weight: bold;
+}
+
+#googlePlay{
+ 
+  width: 120px !important ;
+  height: 42px !important ;
+  max-width: 100% !important ;
+  max-height: 100% !important;
+  margin: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+
+}
+
 /* side bar */
 .sidenav {
   height: 100%;
@@ -72,6 +115,7 @@
   position:fixed;
   text-align: center;
   width: 100%;
+
   background-color: rgb(5, 178, 82);
   color:white;
   padding: 1px;
@@ -116,6 +160,7 @@ font-size:40pt;
 display: inline-block;
 background-color: rgb(5, 178, 82);
 margin-top: 10px;
+text-align: center;
 }
 
 
@@ -170,6 +215,14 @@ margin-top: 10px;
   body{
     font-family: 'PT Sans', sans-serif;
     margin:0;   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #googlePlayFooter {
+    position: sticky;
+    top: 0;
   }
   
   div > p {

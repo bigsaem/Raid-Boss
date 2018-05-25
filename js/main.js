@@ -1,8 +1,24 @@
 $(document).ready(function () {
 
+    var wantModel = true;
     var ingredients = ["", "", "", "", ""];
     var count = 0;
     var basketCount = 0;
+
+    /*Modal*/
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName("close")[0];
+    var redirect = document.getElementById("redirect");
+    if (wantModel){
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    redirect.onclick = function(){
+        window.location.href = 'www.google.com';
+    }
+    
 
     /*Function that adds the user-entered ingredient to the ingredients array*/
     $('#searchBar > input').keyup(function (e) {
@@ -596,3 +612,6 @@ $(".information").css("background-color", "orange");
 $(".information").css("border", "1px solid  black");
 $(".ingredients").css("border", "1px solid  black");
 $(".instructions").css("border", "1px solid black");
+
+
+
