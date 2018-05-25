@@ -268,6 +268,7 @@ $(document).ready(function () {
         dataType: "json",
         type: "GET",
         success: function (data) {
+          if(data.msg !=null){
             $("#userInfo").after(data.msg + '&nbsp;&nbsp;&nbsp;');
             $("#loginNav").css("display", "block");
             $("#loginNav").css("float", "");
@@ -275,6 +276,7 @@ $(document).ready(function () {
             $("#userInfo").css("display", "inline-block");
             $("#logoutButton").css("display", "inline-block");
             $("#header p").css("margin-bottom", "0");
+          }
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("error");
