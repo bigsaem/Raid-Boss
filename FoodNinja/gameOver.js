@@ -1,3 +1,6 @@
+/*This javascript file displays the menu when you lose all your lives*/
+/*This also includes a function that sends the user score to the database.*/
+
 var playerScore;
 var playerName;
 var level;
@@ -104,7 +107,7 @@ function sendData(){
 
     jsonName = JSON.parse(playerName);
     jsonScore = JSON.parse(playerScore);
-``  
+ 
     console.log("jsonName: " + jsonName);
     console.log("jsonScore: " + jsonScore);
 
