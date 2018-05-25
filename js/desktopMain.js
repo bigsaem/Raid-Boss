@@ -384,8 +384,8 @@ $(document).ready(function () {
                                 var ingredientsNeeded = new Array();
                                 console.log("-------data array--------");
                                 console.log(dataBody);
-                                console.log(data);
                                 console.log("--------------------");
+                                var stringIngredient = "";
                                 if (data["body"][0] != undefined){
                                     for (var i = 0; i < dataBody["steps"].length; i++) {
                                         for (var j = 0; j < dataBody["steps"][i]["ingredients"].length; j++) {
@@ -401,10 +401,10 @@ $(document).ready(function () {
                                     }
                                 }
                                 else {
-                                ingredientsNeeded = "Sorry, no recipe instructions can be obtained. ";
+                                stringIngredient = "Sorry, no recipe instructions can be obtained.";
                                 //console.log("databody not defined!");
                                 }
-                                var stringIngredient = "";
+                                
 
                                 //this code is to capitalize the first character of ingredients.
                                 for(let i = 0; i < ingredientsNeeded.length; i++){
