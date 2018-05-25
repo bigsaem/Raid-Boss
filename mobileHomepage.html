@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> TapNCook </title>
+  <link rel="author" href="icon/Logo1.png" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="./css/TapNCook.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="bodyBG"></div>
+
+  <!-- Bootstrap stuff!-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- Nav Bar -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="links" href="./index.html">Home</a>
+    <a class="links" href="./AboutUs.html">About Us</a>
+    <a class="links" id="loginHide" href="./login.html">Login</a>
+    <a class="links" id="signupHide" href="./signup.html">Sign Up</a>
+    <a class="links" href="./leaderboard.html">Leaderboard</a>
+  </div>
+  <div id="cover" onclick="closeNav()">
+  </div>
+  <!-- nav bar ends-->
+
+  
+  <div id="header">
+    
+    <div id="menuDiv">
+      <span id=menuIcon style="font-size:50px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+      <!--<img id="menuIcon" src="icon/Menu.png" alt="Menu"> -->
+    </div>
+
+    <a href="./index.html" style="text-decoration : none;">
+      <p>Tap'N CooK</p> 
+    </a>
+    
+    <div id="search">
+        
+      <img id="searchIcon" src="icon/Mag.png" alt="Search">
+    </div>
+  </div>
+
+  <div id="gap"></div>
+
+
+  <!-- user info bar-->
+  <div id="loginNav">
+    <div id="userInfo">
+      <img src="./icon/profile.png" alt="profile" />
+    </div>
+    <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
+  </div>
+
+
+  <!-- the main div -->
+  <div id="whole">
+    <p id="subhead">What do you want to use? &nbsp&nbsp &nbsp  </p>
+    
+    <div id="searchBar">
+      <span id="search-title">Search:</span>
+      <input type="search" id="search-input">
+    </div>
+    <div id="searchCover"></div>
+
+    <div class="iconsDivs">
+      <img id="vegIcon" class="icons" src="icon/lettuceT.png" alt="Vegetables" />
+      <br/><br/>
+      <div id="vegDiv">
+        <p>Carrot</p>
+        <br/>
+        <p>Lettuce</p>
+        <br/>
+        <p>Tomato</p>
+        <br/>
+        <p>Celery</p>
+        <br/>
+        <p>Onion</p>
+        <br/>
+        <p>Potato</p>
+        <br/>
+      </div>
+    </div>
+
+    <div class="iconsDivs">
+      <img id="fruitIcon" class="icons" src="icon/appleT.png" alt="Fruits" />
+      <br/><br/>
+      <div id="fruitDiv">
+        <p>Banana</p>
+        <br/>
+        <p>Apple</p>
+        <br/>
+        <p>Grapes</p>
+        <br/>
+        <p>Orange</p>
+        <br/>
+        <p>Blueberry</p>
+        <br/>
+        <p>Strawberry</p>
+        <br/>
+      </div>
+    </div>
+
+    <div class="iconsDivs">
+      <img id="breadIcon" class="icons" src="icon/toastT.png" alt="Bread" />
+      <br/><br/>
+      <div id="breadDiv">
+        <p>Toast</p>
+        <br/>
+        <p>Flat Bread</p>
+        <br/>
+        <p>Baguette</p>
+        <br/>
+        <p>Tortilla</p>
+        <br/>
+        <p>Naan</p>
+        <br/>
+        <p>Buns</p>
+        <br/>
+      </div>
+    </div>
+
+    <div class="iconsDivs">
+      <img id="meatIcon" class="icons" src="icon/steakT.png" alt="Bread" />
+      <br/><br/>
+      <div id="meatDiv">
+        <p>Beef</p>
+        <br/>
+        <p>Chicken</p>
+        <br/>
+        <p>Pork</p>
+        <br/>
+        <p>Turkey</p>
+        <br/>
+        <p>Shrimp</p>
+        <br/>
+        <p>Salmon</p>
+        <br/>
+
+      </div>
+    </div>
+
+    <div class="iconsDivs">
+      <img id="dairyIcon" class="icons" src="icon/dairyT.png" alt="Bread" />
+      <br/><br/>
+      <div id="dairyDiv">
+        <p>Milk</p>
+        <br/>
+        <p>Cheese</p>
+        <br/>
+        <p>Butter</p>
+        <br/>
+        <p>Cream</p>
+        <br/>
+        <p>Yogurt</p>
+        <br/>
+        <p>Eggs</p>
+        <br/>
+      </div>
+    </div>
+
+    <div class="iconsDivs">
+      <img id="miscIcon" class="icons" src="icon/jamT.png" alt="Misc" />
+      <br/><br/>
+      <div id="miscDiv">        
+          <p>Peanut Butter</p>
+          <br/>                
+          <p>Strawberry Jam</p>
+          <br/>                  
+          <p>Blueberry Jam</p>
+          <br/>
+          <p>Honey</p>
+          <br/>
+          <p>Chips</p>
+          <br/>
+          <p>Pickles</p>
+          <br/>        
+      </div>
+    </div>
+
+    <div id="basket">
+      <div id="basket-title">
+        <p>Basket</p>
+      </div>
+      <div id="inc">
+        <div id="bdiv0" class="basketItem">
+          <p>Test</p>
+        </div>
+        <div id="bdiv1" class="basketItem">
+          <p>Test</p>
+        </div>
+        <div id="bdiv2" class="basketItem">
+          <p>Test</p>
+        </div>
+        <div id="bdiv3" class="basketItem">
+          <p>Test</p>
+        </div>
+        <div id="bdiv4" class="basketItem">
+          <p>Test</p>
+        </div>
+        <img id="arrow" class="clickCounter" src="icon/whitearrow.png" alt="arrow" />
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="bcitdiv">
+        <a href="https://www.bcit.ca/" target="blank">
+          <img src="logos/192px-BCITwordmark.svg.png" id="bcit" alt="BCIT Logo" />
+        </a>
+      </div>
+      <div id="loveFooddiv">
+        <a href="https://www.lovefoodhatewaste.com/" target="blank">
+          <img src="logos/logo_og.png" id="loveFood" alt="love food logo"/>
+        </a>
+      </div>
+      <div id="metroVandiv">
+        <a href="http://www.metrovancouver.org/" target="blank">
+          <img src="logos/metro-vancouver-logo-colour-illustrator-file.png" id="metro" alt="Metro Vancouver" />
+        </a>
+      </div>
+    </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p id ="message">Wait! Tap'N'Cook is available on the Google Play App Store!</p>
+    <a id ="redirect" href ="https://play.google.com/store/apps/details?id=com.pl.perry.tapncook">Take me to the faster version specifically designed for Android!</a>
+    <span class="close">No thanks, I'll keep using the web version.</span>
+  </div>
+
+</div>
+
+  </div>
+  <!--#################################################################################
+      #############################Recipe page starts####################################
+      ###################################################################################-->
+  <div id="menu" style="display: none">
+    <div class="row" style="margin: 0 auto">
+      <div class="col-sm-12">
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+            <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+              <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+              <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+              <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+        <div class="recipes">
+          <div class="wrappers">
+              <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+          </div>
+          <div class="recipeName"></div>
+          <p class="information" style="display:none">Information</p>
+          <p class="recipeStats" style="display:none"></p>
+          <p class="ingredients" style="display:none">Ingredients</p>
+          <p class="ingredientAPI" style="display:none"></p>
+          <p class="instructions" style="display:none">Instruction</p>
+          <p class="recipeIns" style="display:none"></p>
+        </div>
+      </div>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+      <!-- src= "stuff" alt="something went wrong!"> -->
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+    <div class="recipes">
+      <a href='#'>
+        <p class="recipeID"></p>
+      </a>
+      <img class="images" src="./icon/blank" alt="Dynamically generated images"/>
+      <p class="information" style="display:none">Information</p>
+      <p class="recipeStats" style="display:none"></p>
+      <p class="ingredients" style="display:none">Ingredients</p>
+      <p class="ingredientAPI" style="display:none"></p>
+      <p class="instructions" style="display:none">Instruction</p>
+      <p class="recipeIns" style="display:none"></p>
+    </div>
+  </div>
+  <!--############################################################################################################
+      ######################################Recipe page ends####################################################
+      ##########################################################################################################-->
+
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>

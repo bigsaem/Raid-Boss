@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> TapNCook </title>
+  <link rel="Title Icon" href="icon/Logo1.png"/>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="./css/desktopHomepage.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|PT+Sans|Lily+Script+One|Oleo+Script+Swash+Caps:700" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Bootstrap stuff!-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- Nav Bar -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="links" href="./index.html">Home</a>
+    <a class="links" href="./desktopAboutUs.html">About Us</a>
+    <a class="links" href="./AffiliatedApps.html">Affiliated Apps</a>
+    <a class="links" href="./login.html">Login</a>
+    <a class="links" href="./signup.html">Sign Up</a>
+    <a class="links" href="./leaderboard.html">Leaderboard</a>
+  </div>
+  <div id="cover" onclick="closeNav()">
+  </div>
+  <!-- nav bar ends-->
+
+  <div id="header">
+    <div id="menuDiv">
+      <span id= 'menuIcon' enuIcon style="font-size:80px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+    </div>
+    <a id = "biggerTitle" href="./desktopHomepage.html" style="text-decoration : none;">
+      <p>Tap'N CooK</p>
+    </a>
+    <a id = "smallerTitle" href="./desktopHomepage.html" style="text-decoration : none;">
+      <p>Tap'N<br/>CooK</p>
+    </a>
+    
+    <div id="search">
+      <img id="searchIcon" src="icon/RedMag.png" alt="Search">
+    </div>
+
+    <div id="loginNav">
+      <div id="userInfo"><img src="./icon/profile2.png" alt="profile"/></div>
+      <button id="logoutButton" type="button" class="btn btn-dark">Logout</button>
+    </div>
+    
+    <div id="horizontalmenu">
+      <a class = "horizonmenu" href="./desktopHomepage.html"><p>Home</p></a>
+      <a class = "horizonmenu" href="./desktopAboutUs.html"><p>About Us</p></a>
+      <a class = "horizonmenu" href="./login.html"><p>Login</p></a>
+      <a class = "horizonmenu" href="./signup.html"><p>Sign up</p></a>
+      <a class = "horizonmenu" href="./leaderboard.html"><p>Leaderboard</p></a>
+    </div>
+  </div>
+  
+  
+
+  <!-- the main div -->
+  <div id="whole">
+    <div id="searchBar">
+      <span id="search-title">Search:<br/></span>
+      <input type="search" id="search-input">
+    </div>
+    <div id="searchCover"></div>
+    <br>
+    <br>
+    <div class="container"> 
+  <div id="question"><p>What would you like to use?</p></div>
+  <div id="searchBox">
+      <input type="search" id="searchbar"  autofocus>
+  </div>   
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        
+        <div class="panel-body" style="margin-top:4%">
+          <div class="iconsDivs" style="width:100%">
+            <img id="vegIcon" class="icons" src="icon/lettuceTR.png" alt="Vegetables" style="padding:0; margin:0; width:100%"/>
+            <div id="vegDiv">
+              <br>
+              <p>Carrot</p><br/> 
+              <p>Lettuce</p><br/> 
+              <p>Tomato</p><br/> 
+              <p>Celery</p><br/> 
+              <p>Onion</p><br/> 
+              <p>Potato</p><br/> 
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        
+        <div class="panel-body" style="margin-top:4%">
+          <div class="iconsDivs" style="width:100%">
+            <img id="fruitIcon" class="icons" src="icon/FruitTR.png" alt="Vegetables" style="padding:0; margin:0; width:100%" />
+            <div id="fruitDiv">
+              <br>
+              <p>Banana</p><br/> 
+              <p>Apple</p><br/> 
+              <p>Grapes</p><br/> 
+              <p>Orange</p><br/>
+              <p>Blueberry</p><br/>
+              <p>Strawberry</p><br/>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-body" style="margin-top:4%">
+          <div class="iconsDivs" style="width:100%">
+            <img id="breadIcon" class="icons" src="icon/breadTR.png" alt="Bread" style="padding:0; margin:0; width:100%"/>
+            <div id="breadDiv">
+              <br>
+              <p>Toast</p><br/> 
+              <p>Flat Bread</p><br/> 
+              <p>Baguette</p><br/> 
+              <p>Tortilla</p><br/> 
+              <p>Naan</p><br/> 
+              <p>Buns</p><br/> 
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        
+        <div class="panel-body" style="margin-top:4%">
+          <div class="iconsDivs" style="width:100%">
+            <img id="meatIcon" class="icons" src="icon/meatsTR.png" alt="Bread" style="padding:0; margin:0; width:100%"/>
+            <div id="meatDiv"> 
+              <br>
+              <p>Beef</p><br/> 
+              <p>Chicken</p><br/> 
+              <p>Pork</p><br/> 
+              <p>Turkey</p><br/> 
+              <p>Shrimp</p><br/> 
+              <p>Salmon</p><br/> 
+        
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-body" style="margin-top:4%">
+          <div class="iconsDivs" style="width:100%">
+            <img id="dairyIcon" class="icons" src="icon/dairyTR.png" alt="Bread" style="padding:0; margin:0; width:100%"/>
+            <div id="dairyDiv"> 
+              <br>
+              <p>Milk</p><br/>                
+              <p>Cheese</p><br/>                  
+              <p>Butter</p><br/>
+              <p>Cream</p><br/>
+              <p>Yogurt</p><br/>
+              <p>Eggs</p><br/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-body" style="margin-top:4%">
+          <div class="iconsDivs" style="width:100%">
+            <img id="miscIcon" class = "icons" src="icon/miscTR.png" alt="Image" style="padding:0; margin:0; width:100%;" />
+            <div id="miscDiv">       
+                <br/> 
+                <p>Peanut Butter</p><br/>                
+                <p>Strawberry Jam</p><br/>                  
+                <p>Blueberry Jam</p><br/>
+                <p>Honey</p><br/>
+                <p>Chips</p><br/>
+                <p>Pickles</p><br/>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <br>
+    <div id="basket">
+      <div id="basket-title"><p>Basket</p></div>
+      <div id="inc">
+        <div id="bdiv0" class="basketItem"><p>Test</p></div>
+        <div id="bdiv1" class="basketItem"><p>Test</p></div>
+        <div id="bdiv2" class="basketItem"><p>Test</p></div>
+        <div id="bdiv3" class="basketItem"><p>Test</p></div>
+        <div id="bdiv4" class="basketItem"><p>Test</p></div>
+        <img id="arrow" src="icon/whitearrow.png"/>
+      </div>
+    </div>
+  </div>
+<!--#################################################################################
+    #############################Recipe page starts####################################
+    ###################################################################################-->
+    <section class="wrapper" style="display:none;">
+      <div class="container-fostrap">
+          <div>
+              <h1 class="heading">
+                  Pick what you want to cook !
+              </h1>
+          </div>
+          <div class="content">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                          <div class="card">
+                              <a class="img-card">
+                                <img class ="recipe_image" src="./icon/banana.png" />
+                              </a>
+                              <div class="card-content">
+                                  <p class="recipe_title">
+                                  </p>
+                                  <p class="recipe_ingredient">
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                          <div class="card">
+                              <a class="img-card">
+                              <img class ="recipe_image" src="./icon/banana.png" />
+                            </a>
+                              <div class="card-content">
+                                  <p class="recipe_title">
+                                    </p>
+                                  <p class="recipe_ingredient"></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                          <div class="card">
+                              <a class="img-card">
+                              <img class ="recipe_image" src="./icon/banana.png" />
+                            </a>
+                              <div class="card-content">
+                                  <p class="recipe_title">
+                                    </p>
+                                  <p class="recipe_ingredient"></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                          <div class="card">
+                              <a class="img-card">
+                              <img class ="recipe_image" src="/icon/banana.png" />
+                            </a>
+                              <div class="card-content">
+                                  <p class="recipe_title">
+                                    </p>
+                                  <p class="recipe_ingredient"></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                          <div class="card">
+                              <a class="img-card">
+                              <img class ="recipe_image" src="./icon/banana.png" />
+                            </a>
+                              <div class="card-content">
+                                  <p class="recipe_title">
+                                    </p>
+                                  <p class="recipe_ingredient"></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                          <div class="card">
+                              <a class="img-card">
+                              <img class ="recipe_image" src="./icon/banana.png" />
+                            </a>
+                              <div class="card-content">
+                                  <p class="recipe_title">
+                                    </p>
+                                  <p class="recipe_ingredient"></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <div id="footer">
+      <div id="bcitdiv">
+        <a href="https://www.bcit.ca/" target="blank">
+          <img src="logos/192px-BCITwordmark.svg.png" id="bcit" />
+        </a>
+      </div>
+      <div id="loveFooddiv">
+        <a href="https://www.lovefoodhatewaste.com/" target="blank">
+          <img src="logos/logo_og.png" id="loveFood" />
+        </a>
+      </div>
+      <div id="metroVandiv">
+        <a href="http://www.metrovancouver.org/" target="blank">
+          <img src="logos/metro-vancouver-logo-colour-illustrator-file.png" id="metro" />
+        </a>
+      </div>
+    </div>
+  
+    <!--********** modal start **********-->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Image preview</h4>
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          </div>
+          <div class="modal-body">
+            <img src="" id="imagepreview" style="width: 100%;">
+            <p class="information"><b>Information</b></p><hr/>
+            <p class="information_content"></p>
+            <p class="ingredient"><b>Ingredient</b></p><hr/>
+            <p class="ingredient_content"></p>
+            <p class="instructions"><b>Instructions</b></p><hr/>
+            <p class="instructions_content"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="./js/desktopMain.js"></script>
+
+</body>
+
+</html>

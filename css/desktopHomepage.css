@@ -1,0 +1,739 @@
+/* side bar */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgba(238, 98, 4, 0.829);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .links:hover {
+  color: rgba(238, 98, 4, 0.829);
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.sidenav .links:active {
+  color: rgba(238, 98, 4, 0.829);
+  background: rgba(125, 125, 125, 1);
+  font-size: 35pt;
+  text-decoration: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav .closebtn:active {
+  font-size: 50pt;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  
+}
+
+#cover{
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  display: none;
+}
+
+
+/* sidebar ends */
+
+/* header */
+#header {
+  text-align: center;
+  
+  color:crimson;
+  padding: 1px;
+  font-family: 'Lily Script One', cursive;
+}
+
+
+#header #menuDiv {
+  float: left;
+  width: 45px;
+}
+
+#loginNav {
+  padding: 10px;
+  padding-top:0px;
+  color:black;
+  display: none;
+}
+#userInfo {
+  color:black;
+  font-size: 18pt;
+  display: none;
+  padding-right: 10px;
+}
+#userInfo img{
+  width:20px;
+}
+#logoutButton {
+  display: none;
+}
+
+#header a:link, #header a:visited {
+  text-decoration: none;
+  color: crimson;
+  cursor: pointer;
+}
+
+#header p {
+  display: inline-block;
+  margin-top: 5px;
+}
+#biggerTitle{
+  font-size:50pt;
+}
+#header #menuDiv {
+  float: left;
+  width: 55px;
+  margin-left: 15px;
+}
+
+#menuIcon {
+  font-size: 80pt;
+  display:none;
+}
+
+#horizontalmenu{
+  background-color:rgba(5, 178, 83, 0.246);
+  border-bottom:solid 3px rgba(5, 178, 82);
+}
+#horizontalmenu p{
+  margin:0% 4% 0% 4%;
+  color:black;
+  font-size:18pt;
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+#horizontalmenu a:hover {
+  color:white;
+}
+.horizonmenu p:hover{
+  background-color: rgba(0, 0, 0, 0.534);
+  color:white;
+}
+@media screen and (max-width:720px){
+  #horizontalmenu p{
+    margin:0% 2% 0% 2%;
+  }
+}
+/*******************************
+*******Search bar and icon*****
+******************************/
+#searchBar {
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+}
+
+#search {
+  display:none;
+}
+#search img {
+  margin:0;
+}
+#searchCover{
+  width: 100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.26);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  display: none;
+}
+
+input[type=search] {
+  margin: 0 auto; 
+  background: none;
+  width: 65%;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  border-left: none;
+  border-right: none;
+  border-top: none;    
+}
+
+
+
+input[type=search]:active{
+  border: 0px;
+}
+
+input:focus{
+  outline-width: 0;
+}
+
+#search-title {
+  z-index: 2;
+  color: white;
+  font-size: 40pt;
+}
+
+@media screen and (max-width:650px){
+  #search{
+    display:inline-block;
+  }
+  #smallerTitle{
+    display:inline-block;
+    font-size:25pt;
+  }
+ 
+  #header p{
+    font-size: 40pt;
+    margin-top:15px;
+    margin-left:5pt;
+  }
+  #horizontalmenu{
+    display:none;
+  }
+  #searchBox{
+    display:none;
+  }
+  #header{
+    border-bottom:3px solid rgb(5, 178, 82);
+  }
+  #menuIcon{
+    display:inline-block;
+  }
+  #search {
+    float: right;
+    width: 80px;
+    margin-right: 15px;
+    margin-top: 10px;
+    
+  }
+}
+#smallerTitle{
+  display: none;
+}
+@media screen and (max-width:520px){
+  #header p {
+    font-size:30pt;
+    line-height: 1.2;
+  }
+  #biggerTitle{
+    display:none;
+  }
+  #smallerTitle{
+    display:inline-block;
+  }
+  #question p {
+    font-size:20pt;
+    margin-bottom:0px;
+  }
+}
+
+/***********body start *************/
+  #question{
+    color:rgba(199, 12, 84, 0.808);
+    text-align: center;
+    margin:0 auto;
+    font-size:30pt;
+    margin-top:-25pt;
+    font-family: 'Oleo Script Swash Caps', cursive; 
+  }
+  #searchbar{
+    font-size: 15pt;
+    border-bottom:solid 1px rgb(1, 128, 58);
+    background-color: rgba(26, 221, 101, 0.445);
+    
+  }
+
+  #searchBox{
+    margin: 0 auto;
+    margin-top: -17px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .icons {
+    display: inline-block;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0);
+      border-radius: 3px;
+    background-color: rgba(240, 0, 0, 0.2);
+    width: 90%;
+    margin: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      box-shadow: 0px 0px 28px #884444;      
+  }
+
+  .icons:hover {
+    box-shadow: 0px 0px 28px #888888;
+    cursor: pointer;
+  }
+
+  .icons:active {
+    width: 87%;
+    height: 87%;
+  }
+  
+  #lastIcon {
+    margin: 0 auto;
+  }
+  
+  .iconsDivs p {
+      margin-top: -10%;
+      font-size: 20pt;
+  }
+  
+  .icons img {
+      width:90%;
+  }
+  
+  div img{
+    width:100%;
+    margin: 4%;
+  }
+ 
+  body{
+    font-family: 'PT Sans', sans-serif;
+    margin:0;   
+  }
+  
+
+  /****** basket start *******/
+  #basket-title{
+    border-bottom: 3px solid rgba(240, 45, 45, 0.726);
+    background-color:rgba(240, 45, 45, 0.774);
+    margin:0;
+    margin-bottom:0;
+    text-align:center;
+    color:white;
+  }
+
+  #basket-title p {
+    margin:0 auto;
+    font-size: 20pt;
+  }
+  #basket {
+    float: left;
+    margin-top: 1px;  
+    width: 100%;
+  }
+  #inc{
+    align-items: center;
+    background-color: rgba(236, 133, 65, 0.603);
+  }
+
+  .basketItem{
+    border-right:2px solid rgba(236, 133, 65, 0.315);
+    margin:0;
+    color:white;
+    height:80px;
+    font-size: 20pt;
+    background-color:rgba(12, 190, 80, 0.678);
+    float: left;	
+    display:none;
+    width: 18%;
+    text-align: center;
+  }
+  .basketItem p {
+    line-height: 70px;
+    vertical-align: middle;
+  }
+  
+
+  #arrow {
+    width: 80px;
+    float: right;
+    clear:right;
+    display: none;
+    margin: 0;
+  }
+
+
+  /***********************************/
+  /***********footer start************/
+  /***********************************/
+  #footer{
+    width:100%;
+    background-color:rgba(0,0,0,0.85);
+    float: left;
+    height: 120px;
+    text-align: center;
+  }
+  
+  #bcitdiv{
+    width: 40%;
+    float:left;
+    height: 120px;
+  }
+  #loveFooddiv{
+    width: 20%;
+    float: left;
+    height: 120px;
+  }
+  #metroVandiv{
+    width:40%;
+    float:left;
+    height: 120px;
+  }
+  #bcit{
+    width:150px;
+    margin-top:-1px;
+  }
+  
+  #loveFood{
+    width:120px;
+    margin-top: -3px;
+  }
+  
+  #metro{
+    margin-top: 0.5px;
+    margin-bottom:0.5px;
+    padding-top:0.5px;
+    width:75px;
+  }
+  /***********************************/
+  /***********footer ends*************/
+  /***********************************/  
+
+  
+  /*RECIPES PAGE CSS */
+  
+  .wrapper img {
+    margin:0;
+  }
+
+  .heading {
+    color: rgba(199, 12, 84, 0.808);
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-align: center;
+  }
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+  
+  html, body {
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    height: 100%;
+    width: 100%; 
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  .content{
+    margin-top: 30px;
+  }
+  .wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .recipe_title {
+    font-size: 1.15em;
+    font-weight: 900;
+    margin: 0 0 0.5em;
+    color: #505050;
+  }
+  /*@media (min-width: 450px) {
+    .recipe_title {
+      font-size: 3.55em;
+    }
+  }
+  @media (min-width: 760px) {
+    .recipe_title {
+      font-size: 3.05em;
+    }
+  }*/
+  
+    #menuDiv{
+      margin-left:25px;
+    } 
+  
+  /*@media (min-width: 1200px) {
+    #menuDiv{
+      margin-left:10%;
+    }
+  } */
+  
+  
+  .card {
+    display: block; 
+      margin-bottom: 20px;
+      line-height: 1.42857143;
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+      transition: box-shadow .25s; 
+  }
+  .card:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .img-card {
+    width: 100%;
+    height:200px;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    display:block;
+      overflow: hidden;
+  }
+  .img-card:hover{
+    -webkit-filter: brightness(0.50);
+    filter: brightness(0.50);
+    cursor:pointer;
+  }
+  .img-card img{
+    width: 100%;
+    height: 200px;
+    object-fit:cover; 
+    transition: all .25s ease;
+  } 
+  .card-content {
+    padding:15px;
+    text-align:left;
+  }
+  .card-title {
+    margin-top:0px;
+    font-weight: 700;
+    font-size: 1.65em;
+  }
+  .card-title a {
+    color: #000;
+    text-decoration: none !important;
+  }
+  .card-read-more {
+    border-top: 1px solid #D4D4D4;
+  }
+  .card-read-more a {
+    text-decoration: none !important;
+    padding:10px;
+    font-weight:600;
+    text-transform: uppercase
+  }
+  
+  
+  
+  /* modal */
+  .modal-body p{
+    text-align:center;
+  }
+  .modal-body img{
+    margin: 0;
+  }
+  .modal-content{
+    font-size: 20pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .modal-body img{
+    width:100%;
+  }
+  /*.container{
+    border-left:1px solid rgba(125, 125, 125, 1);
+    border-right:1px solid rgba(125, 125, 125, 1);
+  }*/
+
+
+
+
+  /* Categories */
+  
+  #vegDiv {
+    display: none;
+  }
+  
+  .vegies {
+    background-color: rgba(50, 150, 50, 0.5);
+    border-style: hidden;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 0.5%;
+    float: left;
+    clear: left;
+  }
+  
+  /*.vegies p {
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+  }*/
+
+  #vegDiv p {
+    background-color: rgba(56, 151, 68, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+  
+  #meatDiv p:hover{
+    cursor: pointer;
+  }
+  
+  #fruitDiv {
+    display: none;
+  }
+  
+  .fruits {
+    background-color: rgba(150, 150, 50, 0.5);
+    border-style: hidden;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 0.5%;
+    float: left;
+    clear: left;
+  }
+
+  #fruitDiv p {
+    background-color: rgba(218, 21, 37, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+  
+  #fruitDiv p:hover{
+    cursor: pointer;
+  }
+  
+  #breadDiv {
+    display: none;  
+  }
+  
+  .bread {
+    background-color: rgba(219, 185, 32, 0.5);
+    border-style: hidden;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 0.5%;
+    float: left;
+    clear: left;
+  }
+  
+  #breadDiv p {
+    background-color: rgba(185, 178, 80, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+
+  #breadDiv p:hover{
+    cursor: pointer;
+  }
+  
+  #meatDiv {
+    display: none;  
+  }
+
+  #meatDiv p {
+    background-color: rgba(212, 97, 97, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+
+  #meatDiv p:hover{
+    cursor: pointer;
+  }
+  
+  #dairyDiv {
+    display: none;  
+  }
+
+  #dairyDiv p {
+    background-color: rgba(99, 97, 212, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+  
+  #dairyDiv p:hover{
+    cursor: pointer;
+  }
+
+  .iconsDivs {
+    display: inline-table;
+    margin: 0-auto;
+    width: 40%;
+  }
+
+  #miscDiv {
+    display: none;  
+  }
+  
+  .misc {
+    background-color: rgba(150, 32, 32, 0.5);
+    border-style: hidden;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 0.5%;
+    float: left;
+    clear: left;
+  }
+
+  #miscDiv p {
+    background-color: rgba(212, 97, 97, 0.5);
+    color: white;
+    text-align: center;
+    width: 90%;
+    border-style: hidden;
+    border-radius: 10px;  
+    margin: 0 auto;
+    margin-top: -4%;
+  }
+
+   #miscDiv p:hover{
+    cursor: pointer;
+  }
+
